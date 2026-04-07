@@ -168,30 +168,35 @@ nav {
 
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(56px, 10vw, 108px);
+  font-size: clamp(32px, 5.5vw, 64px);
   font-weight: 300;
-  line-height: 1.15;
-  letter-spacing: 4px;
-  margin-bottom: 28px;
+  line-height: 1.6;
+  letter-spacing: 16px;
+  margin-bottom: 36px;
   animation: fadeUp 1s ease 0.3s both;
-  color: #ffffff;
-  text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+  color: rgba(255,255,255,0.90);
+  text-shadow:
+    0 0 80px rgba(255,230,200,0.25),
+    0 2px 30px rgba(0,0,0,0.35);
 }
 
 .hero-title em {
   font-style: italic;
-  color: #ffffff;
+  color: rgba(255,238,218,0.95);
+  text-shadow:
+    0 0 100px rgba(255,215,170,0.4),
+    0 2px 30px rgba(0,0,0,0.3);
 }
 
 .hero-subtitle {
   font-family: 'Noto Sans TC', sans-serif;
-  font-size: clamp(13px, 1.5vw, 15px);
+  font-size: clamp(13px, 1.6vw, 18px);
   font-weight: 300;
-  color: rgba(255,255,255,0.92);
-  letter-spacing: 3px;
-  margin-bottom: 48px;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 6px;
+  margin-bottom: 52px;
   animation: fadeUp 1s ease 0.5s both;
-  text-shadow: 0 1px 12px rgba(0,0,0,0.55);
+  text-shadow: 0 1px 16px rgba(0,0,0,0.45);
 }
 
 .hero-desc { display: none; }
@@ -778,11 +783,11 @@ footer strong { color: rgba(255,255,255,0.7); }
   <div class="hero-orb orb3"></div>
 
   <h1 class="hero-title serif">
-    肌膚吸收的問題<br><em>終於有了物理解法</em>
+    肌膚記得<br><em>它本來的樣子</em>
   </h1>
 
   <p class="hero-subtitle">
-    鑽石微晶重構通道 · 直達真皮重啟深層自癒
+    鑽石微晶重構通道 · Exa Peptasome 奈米精準滲透 · 深層自癒從這裡開始
   </p>
 
   <div class="hero-btns">
@@ -794,7 +799,7 @@ footer strong { color: rgba(255,255,255,0.7); }
     <div class="cert-item">韓國 CGMP 認證</div>
     <div class="cert-item">ISO 9001 品質管理</div>
     <div class="cert-item">ISO 22716 化妝品GMP</div>
-    <div class="cert-item">Exa Peptasome專利</div>
+    <div class="cert-item">Exa Peptasome 專利</div>
   </div>
 </section>
 
@@ -1656,7 +1661,7 @@ input.qz-input:focus { outline:none; border-color:#7F77DD; }
     </div>
     <div class="qz-success" id="qzSuccess">
       <div class="qz-success-icon">✓</div>
-      <h2>已送出！</h2>
+      <h2>問卷已送出！</h2>
       <p>你的肌膚資料已成功記錄，<br>我們將盡快與你聯繫，提供個人化的保養建議。</p>
     </div>
   </div>
