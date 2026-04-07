@@ -1330,50 +1330,102 @@ footer strong { color: rgba(255,255,255,0.7); }
   <div class="container">
     <div style="text-align:center; margin-bottom:16px;">
       <div class="section-eyebrow" style="justify-content:center;">FOR YOU, IF...</div>
-      <h2 class="section-title reveal">哪些人最適合 RENE-CELL？</h2>
+      <h2 class="section-title reveal">你是哪一種肌膚狀態？</h2>
+      <p class="section-sub reveal" style="margin:0 auto; text-align:center;">
+        不用對號年齡，只需對號困擾。<br>找到你的肌膚狀態，就找到最適合的起點。
+      </p>
     </div>
+/* ── AUDIENCE RESPONSIVE ── */
+.aud-grid-4 {
+  display: grid;
+  gap: 24px;
+  margin-top: 56px;
+  grid-template-columns: repeat(4, 1fr);
+}
 
-    <div class="aud-grid">
-      <div class="aud-card reveal" style="--aud-color:#d48fa0;">
-        <div class="aud-tag">熟齡美肌族</div>
-        <div class="aud-name">30-55歲，在意老化痕跡</div>
-        <ul class="aud-traits">
-          <li>細紋、鬆弛、暗沉困擾</li>
-          <li>曾做過醫美，想在療程間維持效果</li>
-          <li>消費力強，重視產品成分與品質</li>
-          <li>對韓系護膚有信任感</li>
-        </ul>
-      </div>
-      <div class="aud-card reveal" style="--aud-color:#9880b8;">
-        <div class="aud-tag">職業女性族</div>
-        <div class="aud-name">28-45歲，螢幕前工作者</div>
-        <ul class="aud-traits">
-          <li>長時間面對螢幕，藍光傷害困擾</li>
-          <li>工作繁忙，希望保養簡化但有效</li>
-          <li>外食 · 壓力大導致膚況不穩</li>
-          <li>願意投資有效的保養品</li>
-        </ul>
-      </div>
+/* 平板：2欄 */
+@media (max-width: 1024px) {
+  .aud-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 手機：1欄 */
+@media (max-width: 600px) {
+  .aud-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+   <div class="aud-grid-4">
+
+      <!-- 螢幕肌 -->
       <div class="aud-card reveal" style="--aud-color:#7ab4d8;">
-        <div class="aud-tag">敏感性肌膚族</div>
-        <div class="aud-name">各年齡，膚況敏感不穩定</div>
+        <div class="aud-tag">螢幕肌</div>
+        <div class="aud-name" style="font-size:15px; line-height:1.7; font-weight:400; color:var(--muted); margin-bottom:16px;">
+          每天盯著螢幕8小時以上，藍光、壓力、熬夜輪番傷害——<strong style="color:var(--ink);">肌膚來不及修復就已經在老化</strong>
+        </div>
         <ul class="aud-traits">
-          <li>肌膚容易泛紅、過敏</li>
-          <li>無法接受強酸或雷射療程</li>
-          <li>需要溫和有效的長期調理方案</li>
-          <li>偏好有認證、成分透明的品牌</li>
+          <li>膚色暗沉、毛孔越來越明顯</li>
+          <li>壓力大時特別容易冒痘、出油</li>
+          <li>沒時間做複雜保養，但不想放棄效果</li>
+          <li>想要洗完臉就能感受到變化</li>
         </ul>
+        <div style="margin-top:16px; padding:12px 16px; background:#ecf6fd; border-radius:10px; font-size:12px; color:#3d7aac; line-height:1.8;">
+          💡 <strong>入門建議：</strong>酵素潔面粉 + 多肽化妝水 + 透明質酸
+        </div>
       </div>
-      <div class="aud-card reveal" style="--aud-color:#6bbfaa;">
-        <div class="aud-tag">預防性保養族</div>
-        <div class="aud-name">25-35歲，提早布局肌膚資本</div>
+
+      <!-- 玻璃肌 -->
+      <div class="aud-card reveal" style="--aud-color:#d48fa0;">
+        <div class="aud-tag">玻璃肌</div>
+        <div class="aud-name" style="font-size:15px; line-height:1.7; font-weight:400; color:var(--muted); margin-bottom:16px;">
+          用什麼都怕、換季就崩潰、一不小心就泛紅脫皮——<strong style="color:var(--ink);">肌膚屏障已經在求救</strong>
+        </div>
         <ul class="aud-traits">
-          <li>開始出現初老徵兆，想提前預防</li>
-          <li>重視成分護膚，研究力強</li>
-          <li>對胜肽、幹細胞等科技成分有興趣</li>
-          <li>社群活躍，容易成為口碑推薦者</li>
+          <li>肌膚容易泛紅、乾燥緊繃反覆出現</li>
+          <li>被酸類或過度去角質傷過</li>
+          <li>無法接受強酸或雷射等刺激性療程</li>
+          <li>想修護但又怕選錯成分越補越糟</li>
         </ul>
+        <div style="margin-top:16px; padding:12px 16px; background:#fdf0f3; border-radius:10px; font-size:12px; color:#a8506a; line-height:1.8;">
+          💡 <strong>入門建議：</strong>酵素潔面粉 + 透明質酸 + Q肌底面霜
+        </div>
       </div>
+
+      <!-- 抗老焦慮肌 -->
+      <div class="aud-card reveal" style="--aud-color:#9880b8;">
+        <div class="aud-tag">抗老焦慮肌</div>
+        <div class="aud-name" style="font-size:15px; line-height:1.7; font-weight:400; color:var(--muted); margin-bottom:16px;">
+          照鏡子開始數細紋，摸臉感覺彈力不如以前——<strong style="color:var(--ink);">想介入但不知道從哪裡開始</strong>
+        </div>
+        <ul class="aud-traits">
+          <li>法令紋、眼尾紋、額頭紋漸漸明顯</li>
+          <li>膚色暗沉、失去光澤與彈力</li>
+          <li>重視成分與品質，不想亂買</li>
+          <li>想用有研發支撐的成分天天在家維持</li>
+        </ul>
+        <div style="margin-top:16px; padding:12px 16px; background:#f4effe; border-radius:10px; font-size:12px; color:#6d4fa8; line-height:1.8;">
+          💡 <strong>入門建議：</strong>鑽石面膜 + 鑽石精華 + 多肽霜
+        </div>
+      </div>
+
+      <!-- 醫美疲憊肌 -->
+      <div class="aud-card reveal" style="--aud-color:#c9a96e;">
+        <div class="aud-tag" style="background:#c9a96e;">醫美疲憊肌</div>
+        <div class="aud-name" style="font-size:15px; line-height:1.7; font-weight:400; color:var(--muted); margin-bottom:16px;">
+          做了幾年療程，皮膚反而越來越薄越敏感——<strong style="color:var(--ink);">開始懷疑一直刺激是對的嗎？</strong>
+        </div>
+        <ul class="aud-traits">
+          <li>雷射、換膚做完恢復期越來越長</li>
+          <li>療程間空窗期肌膚狀態忽好忽壞</li>
+          <li>花了大錢效果卻越來越難維持</li>
+          <li>想找更溫和但持續有效的長期方案</li>
+        </ul>
+        <div style="margin-top:16px; padding:12px 16px; background:#fdf7ee; border-radius:10px; font-size:12px; color:#a87040; line-height:1.8;">
+          💡 <strong>入門建議：</strong>水凝膜2號 + 鑽石精華 + 奇蹟鑽石修護霜
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
