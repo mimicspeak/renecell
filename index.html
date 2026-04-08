@@ -219,23 +219,25 @@ section { padding: 100px 24px; }
 
 /* comparison table styles */
 .cmp-wrap * { box-sizing:border-box; }
-.cmp-tbl { width:100%; border:0.5px solid #D8D0C4; border-radius:12px 12px 0 0; overflow:hidden; border-collapse:separate; border-spacing:0; }
-.cmp-tbl td,.cmp-tbl th { vertical-align:top; }
-.cmp-attr { width:100px; padding:10px 12px; font-size:11px; color:#8A7C6C; background:#F7F3EE; border-bottom:0.5px solid #D8D0C4; border-right:0.5px solid #D8D0C4; }
-.cmp-dc { padding:10px 14px; font-size:12px; line-height:1.75; color:#2E2820; background:#fff; border-bottom:0.5px solid #D8D0C4; border-right:0.5px solid #D8D0C4; }
+.cmp-tbl { width:100%; border:1px solid #C8BBA8; border-radius:12px; overflow:hidden; border-collapse:separate; border-spacing:0; }
+.cmp-tbl td,.cmp-tbl th { vertical-align:middle; }
+.cmp-attr { width:108px; padding:11px 13px; font-size:11px; color:#6A5C4C; background:#EDE6DC; border-bottom:1px solid #C8BBA8; border-right:1px solid #C8BBA8; }
+.cmp-dc { padding:11px 16px; font-size:12px; line-height:1.75; color:#2E2820; background:#fff; border-bottom:1px solid #D8D0C4; border-right:1px solid #D8D0C4; }
 .cmp-dc:last-child { border-right:none; }
-.cmp-sec td { padding:5px 12px; font-size:10px; letter-spacing:1.5px; color:#F7F3EE; background:#7A6C5C; border-bottom:0.5px solid #6A5C4C; border-right:0.5px solid #6A5C4C; }
+.cmp-sec td { padding:6px 13px; font-size:10px; letter-spacing:2px; color:#F5EFE6; background:#5C4E3C; border-bottom:1px solid #4A3E2E; border-right:1px solid #4A3E2E; }
 .cmp-sec td:last-child { border-right:none; }
 .hi-t { color:#9A5828; font-weight:500; }
 .hi-b { color:#185FA5; font-weight:500; }
-.cmp-verdict { display:grid; grid-template-columns:1fr 1fr; border:0.5px solid #D8D0C4; border-top:none; border-radius:0 0 12px 12px; overflow:hidden; }
-.cv-l { background:#FBF5EE; padding:11px 14px; border-right:0.5px solid #D8D0C4; }
-.cv-r { background:#EEF4FB; padding:11px 14px; }
-.cv-tag { font-size:10px; font-weight:500; letter-spacing:.5px; margin-bottom:4px; }
-.cv-l .cv-tag { color:#9A5828; }
-.cv-r .cv-tag { color:#185FA5; }
-.cv-body { font-size:11px; line-height:1.65; color:#5A5248; }
-.cmp-syn { margin-top:8px; padding:9px 14px; border-radius:8px; border:0.5px solid #D8D0C4; font-size:11px; color:#6A6050; line-height:1.65; }
+.cmp-none-badge { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:#185FA5; font-weight:500; }
+.cmp-v-attr { width:108px; padding:11px 13px; font-size:11px; color:#6A5C4C; background:#EDE6DC; border-right:1px solid #C8BBA8; border-bottom:none; vertical-align:top; border-radius:0 0 0 12px; }
+.cmp-v-laser { padding:12px 16px; font-size:12px; line-height:1.65; background:#E8C89A; border-right:1px solid #C8BBA8; border-bottom:none; vertical-align:top; }
+.cmp-v-rc { padding:12px 16px; font-size:12px; line-height:1.65; background:#E0EEF8; border-bottom:none; border-right:none; vertical-align:top; border-radius:0 0 12px 0; }
+.cv-tag { font-size:10px; font-weight:500; letter-spacing:.5px; margin-bottom:5px; }
+.cmp-v-laser .cv-tag { color:#5A2E08; }
+.cmp-v-rc .cv-tag { color:#185FA5; }
+.cv-body { font-size:12px; line-height:1.65; color:#4A4038; }
+.cmp-syn { margin-top:10px; padding:11px 16px; border-radius:8px; background:#2E2820; font-size:12px; color:rgba(255,255,255,.75); line-height:1.7; }
+.cmp-syn strong { color:rgba(255,255,255,.95); }
 
 /* ═══════════════════════════════════
    5. WHO ARE YOU
@@ -492,7 +494,7 @@ if(window.innerWidth<=768) document.getElementById('mob-cta').style.display='blo
           RENE-CELL 的技術核心，源自韓國生醫實驗室對皮膚再生機制的深度研究——
           原本用於醫療級傷口修復的細胞滲透理論，
           經過嚴格的配方工程化後，轉化為每天可在家使用的保養系統。<br><br>
-        
+          不是行銷概念，是真實的研發背景。
         </p>
         <div class="cert-badges">
           <div class="cert-badge">
@@ -981,14 +983,14 @@ if(window.innerWidth<=768) document.getElementById('mob-cta').style.display='blo
 <table class="cmp-tbl">
 <thead>
 <tr>
-  <th class="cmp-attr" style="width:100px;border-radius:12px 0 0 0;"></th>
-  <th class="cmp-dc" style="text-align:left;font-weight:400;background:#FBF5EE;">
-    <div style="font-size:12px;font-weight:500;color:#9A5828;margin-bottom:2px;">高強度能量療程</div>
-    <div style="font-size:10px;color:#B07840;">雷射 · 電波 · 磨皮換膚</div>
+  <th class="cmp-attr" style="border-radius:12px 0 0 0;"></th>
+  <th class="cmp-dc" style="text-align:left;font-weight:400;background:#E8C89A;border-right:1px solid #C8BBA8;">
+    <div style="font-size:13px;font-weight:500;color:#5A2E08;margin-bottom:3px;">高強度能量療程</div>
+    <div style="font-size:10px;color:#7A3E10;">雷射 · 電波 · 磨皮換膚</div>
   </th>
-  <th class="cmp-dc" style="text-align:left;font-weight:400;background:#EEF4FB;border-right:none;border-radius:0 12px 0 0;">
-    <div style="font-size:12px;font-weight:500;color:#185FA5;margin-bottom:2px;">RENE-CELL</div>
-    <div style="font-size:10px;color:#378ADD;">居家 · 365天持續調理</div>
+  <th class="cmp-dc" style="text-align:left;font-weight:400;background:#E0EEF8;border-right:none;border-radius:0 12px 0 0;">
+    <div style="font-size:13px;font-weight:500;color:#0C447C;margin-bottom:3px;">RENE-CELL</div>
+    <div style="font-size:10px;color:#185FA5;">居家 · 365天持續調理</div>
   </th>
 </tr>
 </thead>
@@ -1018,7 +1020,7 @@ if(window.innerWidth<=768) document.getElementById('mob-cta').style.display='blo
 <tr>
   <td class="cmp-attr">長期代價</td>
   <td class="cmp-dc"><span class="hi-t">屏障反覆穿孔，修復週期漸長</span><br>肌膚對外力刺激依賴性增加<br>停療後自然機能難以恢復</td>
-  <td class="cmp-dc">無</td>
+  <td class="cmp-dc"><div class="cmp-none-badge">✓ 無長期代價</div></td>
 </tr>
 <tr class="cmp-sec"><td></td><td colspan="2">長期效益</td></tr>
 <tr>
@@ -1026,13 +1028,20 @@ if(window.innerWidth<=768) document.getElementById('mob-cta').style.display='blo
   <td class="cmp-dc">單次結果可維持約 2–3 年<br><span style="font-size:11px;color:#A09080;">個體差異大，需配合日常防曬保養</span></td>
   <td class="cmp-dc" style="border-right:none;"><span class="hi-b">重啟肌膚自癒機制</span>，每天持續作用<br>每日高滲透活性成分，持續滋養棘狀層<br><span class="hi-b">屏障越用越健康，停用不反彈</span><br>365天溫和累積，效果複利式增長</td>
 </tr>
+<tr>
+  <td class="cmp-v-attr">最適合</td>
+  <td class="cmp-v-laser">
+    <div class="cv-tag">高強度能量療程</div>
+    <div class="cv-body">深度痘疤、顯著老化<br>能接受恢復期、追求單次明顯改變</div>
+  </td>
+  <td class="cmp-v-rc">
+    <div class="cv-tag">RENE-CELL</div>
+    <div class="cv-body">日常保養、醫美術後維持<br>敏感肌、想讓肌膚屏障越來越健康</div>
+  </td>
+</tr>
 </tbody>
 </table>
-<div class="cmp-verdict">
-  <div class="cv-l"><div class="cv-tag">最適合</div><div class="cv-body">深度痘疤、非敏感肌、能接受恢復期、追求單次明顯改變</div></div>
-  <div class="cv-r"><div class="cv-tag">最適合</div><div class="cv-body">日常保養、敏感肌、醫美術後維持、想讓肌膚屏障健康</div></div>
-</div>
-<div class="cmp-syn">兩者並非對立 — RENE-CELL 與診所療程搭配效果更佳：療程後鞏固屏障、延長成果，讓下次回診間距自然拉長。</div>`;
+<div class="cmp-syn">兩者並非對立 — <strong>RENE-CELL 與診所療程搭配效果更佳</strong>：療程後鞏固屏障、延長成果，讓下次回診間距自然拉長。</div>`;
   document.getElementById('cmp-container').innerHTML = html;
 })();
 
@@ -1088,211 +1097,211 @@ const AUDIENCE = [
 const PRODUCTS = [
   {
     id:'enzyme-cleanser', cat:'清潔', name:'酵素潔面粉',
-    tagline:'溫和酵素去角質，洗後不緊繃',
-    color:'#E8D8C8', icon:'🧼',
-    desc:'含蛋白酶、脂肪酶等活性酵素，溫和分解老廢角質與皮脂，讓清潔同時進行角質代謝。',
-    usage:['取少量加水搓出細泡','輕柔按摩全臉 30–60 秒','清水沖洗乾淨，避免殘留'],
+    tagline:'溫和酵素去角質 · 7種胜肽同步作用',
+    color:'#D8F0E8', icon:'🧼',
+    desc:'木瓜蛋白酶、米麴菌發酵液溫和代謝老廢角質，7種胜肽抗氧提亮修護同步，洗後保留水分不緊繃。',
+    usage:['取硬幣大小加水起泡，按摩10-20秒後溫水洗淨','油痘肌可敷臉5-10分鐘','敏感肌可混合1滴精華使用'],
     sections:[
-      {title:'核心功效成分',color:'#1D9E75',items:[{n:'蛋白酶',d:'分解死皮蛋白質'},{n:'脂肪酶',d:'溶解多餘皮脂'},{n:'澱粉酶',d:'清潔毛孔污垢'}]},
-      {title:'屏障保護成分',color:'#378ADD',items:[{n:'玻尿酸',d:'洗後即補水'},{n:'甘油',d:'維持保濕平衡'}]}
+      {title:'清潔酵素',color:'#6bbfaa',items:[{n:'木瓜蛋白酶',d:'溫和代謝老廢角質'},{n:'米麴菌發酵液',d:'毛孔清透'},{n:'椰油醯基羥乙磺酸鈉',d:'溫和起泡低刺激'}]},
+      {title:'7種胜肽＋修護',color:'#378ADD',items:[{n:'咖啡醯八胜肽-4',d:'抗氧提亮'},{n:'三胜肽-1',d:'修護'},{n:'五胜肽-4',d:'促膠原'},{n:'茶樹葉油',d:'抗菌消炎'}]}
     ]
   },
   {
-    id:'peptide-toner', cat:'化妝水', name:'多肽化妝水',
-    tagline:'12種胜肽導入 · 抗藍光配方',
-    color:'#D8E8F5', icon:'💧',
-    desc:'超薄導入型化妝水，搭載12種功能性胜肽，使用後立即感受皮膚吸收力提升，抗藍光成分適合螢幕族。',
-    usage:['潔顏後立即使用','化妝棉輕拍或手掌輕壓導入','可疊用 2–3 層加強補水'],
+    id:'water-gel-1', cat:'清潔', name:'水凝膜1號 去角質面膜',
+    tagline:'AHA+PHA雙酸 · 10種胜肽 · 可見角質脫落',
+    color:'#C8E8D8', icon:'🌀',
+    desc:'乙醇酸（AHA）＋乳糖酸（PHA）＋纖維素，深層喚醒角質代謝，可見屑屑脫落；10種胜肽修護同步作用。',
+    usage:['正常肌一週一次，敏感肌兩週一次，油痘肌一週兩次','均勻塗抹全臉薄敷3-5分鐘後輕柔洗掉','不需按摩，避開眼角和嘴角'],
     sections:[
-      {title:'抗老胜肽群',color:'#7F77DD',items:[{n:'類肉毒胜肽',d:'放鬆動態紋'},{n:'促膠原胜肽',d:'刺激膠原合成'},{n:'GHK-Cu',d:'銅胜肽促修護'},{n:'緊緻胜肽',d:'改善彈力'}]},
-      {title:'抗藍光 & 保濕',color:'#1D9E75',items:[{n:'雪絨花幹細胞',d:'抗藍光、抗氧化'},{n:'北極莓萃取',d:'極地抗氧化'},{n:'多分子玻尿酸',d:'多層次補水'}]}
+      {title:'去角質核心',color:'#6bbfaa',items:[{n:'乙醇酸 AHA',d:'深層喚醒角質代謝'},{n:'乳糖酸 PHA',d:'溫和適合敏感肌'},{n:'纖維素',d:'與角質結合可見脫落'}]},
+      {title:'修護與亮白',color:'#378ADD',items:[{n:'尿囊素＋積雪草苷',d:'去角質後舒緩'},{n:'熊果素',d:'淡斑提亮'},{n:'10種胜肽',d:'抗老修護同步'}]}
     ]
   },
   {
-    id:'hyaluronic-serum', cat:'精華液', name:'透明質酸精華',
-    tagline:'三分子玻尿酸 · 15種胜肽',
-    color:'#C8E0F0', icon:'🔬',
-    desc:'三種不同分子量玻尿酸（大/中/小）分層補水，搭載15種功能性胜肽，從表皮到深層全面保濕鎖水。',
-    usage:['化妝水後使用','取 2–3 滴輕壓全臉','可搭配後續面霜加強鎖水'],
+    id:'water-gel-2', cat:'清潔', name:'水凝膜2號 水潤滋養面膜',
+    tagline:'神經醯胺屏障 · 11種胜肽 · CoQ10抗氧',
+    color:'#B8E0D0', icon:'🌸',
+    desc:'神經醯胺NP、磷脂、膽固醇強化角質層；CoQ10＋菸鹼醯胺提亮；11種胜肽緊緻亮白，搭配1號使用效果最佳。',
+    usage:['均勻塗抹全臉，避開眼睛和嘴巴','約10-15分鐘後輕柔按摩','用海綿擦拭或清水洗淨'],
     sections:[
-      {title:'三分子玻尿酸系統',color:'#378ADD',items:[{n:'大分子 HA',d:'表皮膜式鎖水'},{n:'中分子 HA',d:'中層持續補水'},{n:'小分子 HA',d:'深層吸收導入'}]},
-      {title:'功能性胜肽 ×15',color:'#7F77DD',items:[{n:'抗老胜肽群',d:'緊緻 / 撫紋'},{n:'消浮腫胜肽',d:'改善眼周水腫'},{n:'亮白胜肽',d:'均勻膚色'}]}
+      {title:'屏障強化',color:'#6bbfaa',items:[{n:'神經醯胺-3',d:'仿真角質層脂質'},{n:'磷脂',d:'屏障重建'},{n:'膽固醇',d:'黃金比例屏障矩陣'}]},
+      {title:'亮白與胜肽',color:'#9880b8',items:[{n:'CoQ10',d:'抗氧化提亮'},{n:'菸鹼醯胺',d:'均色亮白'},{n:'11種胜肽',d:'撫紋緊緻修護'}]}
     ]
   },
   {
-    id:'diamond-mask', cat:'鑽石系列', name:'奇蹟鑽石面膜',
-    tagline:'鑽石微晶導引 · 喚醒代謝節律',
-    color:'#E8E0F0', icon:'💎',
-    desc:'含鑽石粉、紅寶石、藍寶石微細晶體的核心面膜，物理性協助角質疏通與成分導入，週期性使用逐步重建肌膚活力。',
-    usage:['清潔後直接塗抹均勻','靜置 15–20 分鐘','輕柔按摩吸收，無需清洗'],
+    id:'diamond-mask', cat:'鑽石套組', name:'奇蹟鑽石面膜',
+    tagline:'礦石煥膚 · 蜂毒緊緻 · 蜘蛛胜肽修護',
+    color:'#E8E0F8', icon:'💎',
+    desc:'鑽石粉、紅寶石、藍寶石、紫水晶物理煥膚；蜘蛛胜肽、蜂毒全方位緊緻撫紋；膨潤土礦物淨化。',
+    usage:['避開眼口，均勻塗抹臉頸','按摩5分鐘助吸收','雙掌輕壓後以海綿柔和擦去殘留'],
     sections:[
-      {title:'礦物導引核心',color:'#9880b8',items:[{n:'鑽石微晶',d:'物理調理通道'},{n:'紅寶石粉末',d:'活化礦物能量'},{n:'藍寶石微粒',d:'鎮靜協調功效'}]},
-      {title:'活化修護成分',color:'#378ADD',items:[{n:'水解彈性蛋白',d:'補充肌膚彈力'},{n:'CoQ10',d:'抗氧化活化'},{n:'積雪草苷',d:'舒敏修護'},{n:'多重胜肽×8',d:'多維度抗老'}]}
+      {title:'礦石煥膚',color:'#9880b8',items:[{n:'鑽石粉',d:'物理去角質'},{n:'紅寶石＋藍寶石粉',d:'礦物能量'},{n:'紫水晶＋膨潤土',d:'淨化毛孔'}]},
+      {title:'抗老胜肽',color:'#7F77DD',items:[{n:'蜂毒',d:'緊緻撫紋'},{n:'蜘蛛胜肽-1',d:'修護彈力'},{n:'乙醯六胜肽-8',d:'類肉毒放鬆'}]}
     ]
   },
   {
-    id:'diamond-serum', cat:'鑽石系列', name:'鑽石精華液',
-    tagline:'高濃度鑽石微晶 · 密集修護',
-    color:'#D8D0E8', icon:'✨',
-    desc:'鑽石系列精華精粹，高濃度礦物微晶配合多重胜肽，密集修護課程的核心步驟。',
-    usage:['面膜後或單獨使用','取適量輕拍全臉','早晚均可，晚間效果更佳'],
+    id:'diamond-serum', cat:'鑽石套組', name:'奇蹟鑽石精華',
+    tagline:'彈性蛋白修護 · 神經醯胺屏障 · CoQ10抗氧',
+    color:'#DDD4F5', icon:'✨',
+    desc:'水解彈性蛋白修護彈力；神經醯胺NP＋磷脂＋膽固醇全面修復角質層；CoQ10＋維C雙效抗氧；蜂毒胜肽緊緻。',
+    usage:['使用鑽石面膜後','取充足量順著肌膚紋理輕輕塗抹整個臉部','輕拍至吸收'],
     sections:[
-      {title:'礦物精華',color:'#9880b8',items:[{n:'鑽石微晶',d:'高濃度版本'},{n:'紅寶石粉末',d:'活化能量'},{n:'藍寶石',d:'舒緩調理'}]},
-      {title:'修護胜肽群',color:'#7F77DD',items:[{n:'促膠原胜肽',d:'刺激膠原新生'},{n:'緊緻胜肽',d:'提升彈力'},{n:'修護胜肽',d:'細胞層級修復'}]}
+      {title:'深層修護',color:'#9880b8',items:[{n:'水解彈性蛋白',d:'彈力修護補充'},{n:'神經醯胺NP',d:'角質層結構修復'},{n:'積雪草苷',d:'舒敏修護'}]},
+      {title:'抗氧化與胜肽',color:'#7F77DD',items:[{n:'CoQ10',d:'細胞抗氧化'},{n:'蜂毒',d:'緊緻消水腫'},{n:'蜘蛛胜肽-1',d:'高階修護'}]}
     ]
   },
   {
-    id:'diamond-cream', cat:'鑽石系列', name:'奇蹟鑽石修護霜',
-    tagline:'深度修護 · 鎖住每天進步',
-    color:'#E0D8F0', icon:'🪬',
-    desc:'鑽石系列收官面霜，神經醯胺屏障矩陣搭配礦物微晶，鎖住精華步驟的所有努力。',
-    usage:['精華液後最後一步','取蠶豆大小溫和推開','早晚均可使用'],
+    id:'diamond-cream', cat:'鑽石套組', name:'奇蹟鑽石滋養霜',
+    tagline:'彈性蛋白 · 神經醯胺 · 三重抗氧緊緻',
+    color:'#D4CCF0', icon:'🪬',
+    desc:'水解彈性蛋白＋植物固醇深層修護；神經醯胺屏障重建；CoQ10＋維E＋維C三重抗氧；蜂毒全效緊緻。',
+    usage:['奇蹟鑽石精華後使用','取足量沿著皮膚紋理輕柔塗抹全臉','讓肌膚充分吸收'],
     sections:[
-      {title:'屏障修護核心',color:'#9880b8',items:[{n:'神經醯胺 NP',d:'仿真角質層脂質'},{n:'磷脂',d:'黃金比例屏障'},{n:'鑽石微晶',d:'持續通道維護'}]},
-      {title:'抗老活化',color:'#7F77DD',items:[{n:'水解彈性蛋白',d:'深層彈力補充'},{n:'CoQ10',d:'細胞抗氧化'},{n:'多肽複合物',d:'全面修護'}]}
+      {title:'屏障與修護',color:'#9880b8',items:[{n:'水解彈性蛋白',d:'彈力修護'},{n:'神經醯胺NP',d:'屏障重建'},{n:'磷脂＋膽固醇',d:'角質層脂質補充'}]},
+      {title:'抗氧化胜肽',color:'#7F77DD',items:[{n:'CoQ10',d:'抗氧化'},{n:'積雪草苷',d:'提亮修護'},{n:'蜂毒',d:'全效緊緻'}]}
     ]
   },
   {
-    id:'water-gel-1', cat:'水凝膜', name:'水凝膜1號 去角質',
-    tagline:'AHA + PHA 雙酸代謝 · 週1–2次',
-    color:'#D0EAE0', icon:'🌀',
-    desc:'AHA（乙醇酸）搭配PHA（乳糖酸）雙酸協同，深層喚醒角質代謝，每週1-2次使用讓後續保養吸收率大幅提升。',
-    usage:['潔顏後取適量塗全臉（避開眼周）','停留 5–10 分鐘（初次請先 3 分鐘測試）','清水沖淨，勿過夜使用'],
+    id:'diamond-cb-cream', cat:'鑽石套組', name:'奇蹟鑽石修護霜（CB霜）',
+    tagline:'積雪草舒敏 · 礦物防護 · 谷胱甘肽美白',
+    color:'#C8C0E8', icon:'🛡️',
+    desc:'積雪草全萃複合強效舒敏；二氧化鈦＋氧化鋅物理防護；谷胱甘肽修復抗氧美白；蜂毒胜肽緊緻。',
+    usage:['奇蹟鑽石滋養霜後使用','取適量沿著肌膚紋理輕輕塗抹全臉','可作為最後一步防護'],
     sections:[
-      {title:'雙酸去角質系統',color:'#1D9E75',items:[{n:'乙醇酸 AHA',d:'喚醒角質代謝'},{n:'乳糖酸 PHA',d:'溫和適合敏感肌'}]},
-      {title:'同步修護配方',color:'#378ADD',items:[{n:'積雪草',d:'酸後舒緩修護'},{n:'神經醯胺',d:'維持屏障完整'},{n:'蘆薈萃取',d:'鎮定降敏'}]}
+      {title:'舒敏防護',color:'#9880b8',items:[{n:'積雪草苷＋積雪草酸',d:'強效舒敏修護'},{n:'二氧化鈦',d:'物理防護'},{n:'氧化鋅',d:'礦物雙效防護'}]},
+      {title:'美白與胜肽',color:'#7F77DD',items:[{n:'谷胱甘肽',d:'抗氧修復美白'},{n:'神經醯胺NP',d:'屏障修復'},{n:'蜂毒',d:'消眼腫緊緻'}]}
     ]
   },
   {
-    id:'water-gel-2', cat:'水凝膜', name:'水凝膜2號 水潤滋養',
-    tagline:'神經醯胺屏障 · 11種胜肽滋養',
-    color:'#C8E8E0', icon:'🌸',
-    desc:'神經醯胺屏障配方搭載11種胜肽，專為乾敏肌、術後修護設計，使用後立即感受水潤與舒緩。',
-    usage:['潔顏後塗抹全臉','靜置 15 分鐘','輕柔按摩吸收，無需清洗'],
+    id:'peptide-toner', cat:'基礎保養', name:'多肽化妝水',
+    tagline:'12種胜肽 · 抗藍光 · 隨時導入補水',
+    color:'#D8EEF8', icon:'💧',
+    desc:'12種胜肽抗老緊緻修護；生物類黃酮＋雪絨花幹細胞抗藍光；北極莓舒緩；可作所有步驟的起點導入。',
+    usage:['保養前、面膜前、種鑽前','「直噴」導入，作為所有步驟的起點','隨時補噴補水'],
     sections:[
-      {title:'屏障修護系統',color:'#1D9E75',items:[{n:'神經醯胺',d:'仿真角質層脂質'},{n:'磷脂',d:'屏障強化'},{n:'角鯊烷',d:'深層滋潤'}]},
-      {title:'胜肽修護群 ×11',color:'#7F77DD',items:[{n:'修護胜肽',d:'促進細胞再生'},{n:'抗炎胜肽',d:'舒緩泛紅'},{n:'保濕胜肽',d:'鎖水功效'}]}
+      {title:'12種胜肽',color:'#378ADD',items:[{n:'三胜肽＋六胜肽',d:'抗老緊緻'},{n:'五胜肽',d:'促膠原'},{n:'類肉毒胜肽',d:'放鬆動態紋'}]},
+      {title:'抗藍光＋修護',color:'#7F77DD',items:[{n:'雪絨花幹細胞',d:'抗藍光抗氧化'},{n:'北極莓萃取',d:'舒緩修護'},{n:'Ectoin',d:'屏障穩定'}]}
     ]
   },
   {
-    id:'q-cream', cat:'面霜', name:'Q肌底面霜',
-    tagline:'益生菌屏障強化 · 8種胜肽修護',
-    color:'#F0E8D8', icon:'🫐',
-    desc:'益生菌發酵萃取強化肌膚微生態屏障，8種胜肽持續修護，特別適合乾敏肌、術後修護與日常打底。',
-    usage:['精華液後使用作為最後一步','取蠶豆大小溫和推開','早晚皆可，夜間加量使用修護效果更佳'],
+    id:'q-ampoule', cat:'基礎保養', name:'Q肌底精華（安瓶）',
+    tagline:'彈性蛋白支撐 · 菸鹼醯胺美白 · 12種胜肽',
+    color:'#C8E0F0', icon:'💉',
+    desc:'大豆胚芽＋水解豌豆蛋白彈性支撐；菸鹼醯胺＋熊果葉美白；12種胜肽撫紋緊緻；Ectoin屏障穩定。',
+    usage:['多肽化妝水後使用','按壓2-3下，先針對皮膚凹陷處打圈圈','剩餘擦全臉'],
     sections:[
-      {title:'益生菌屏障系統',color:'#C9A96E',items:[{n:'乳酸桿菌發酵液',d:'強化微生態屏障'},{n:'神經醯胺 NP',d:'仿真角質層脂質'},{n:'磷脂',d:'黃金比例屏障矩陣'}]},
-      {title:'胜肽修護群 ×8',color:'#7F77DD',items:[{n:'修護胜肽',d:'促進細胞再生'},{n:'抗炎胜肽',d:'舒緩泛紅'},{n:'Matrixyl 3000',d:'膠原再生訊號'}]}
+      {title:'彈性蛋白修護',color:'#378ADD',items:[{n:'大豆胚芽萃取',d:'彈性支撐'},{n:'水解膠原蛋白',d:'蛋白修護'},{n:'水解豌豆蛋白',d:'促彈力恢復'}]},
+      {title:'美白胜肽',color:'#7F77DD',items:[{n:'菸鹼醯胺',d:'美白均色'},{n:'熊果葉萃取',d:'淡斑提亮'},{n:'12種胜肽',d:'撫紋緊緻'}]}
     ]
   },
   {
-    id:'multi-peptide-cream', cat:'面霜', name:'多肽修護霜',
-    tagline:'高濃度多肽 · 全面抗老',
-    color:'#E8D8E8', icon:'⚗️',
-    desc:'搭載高濃度抗老胜肽複合物，針對細紋、鬆弛、暗沉三大老化問題全面出擊。',
-    usage:['精華液或面膜後使用','取適量溫和推開全臉','建議夜間使用效果更佳'],
+    id:'hyaluronic-serum', cat:'基礎保養', name:'透明質酸精華',
+    tagline:'三分子玻尿酸 · 15種胜肽 · 抗藍光',
+    color:'#B8D8F0', icon:'🔬',
+    desc:'大中小分子玻尿酸全覆蓋深層補水；穀胱甘肽＋維C淡斑均色；15種胜肽抗老；雪絨花幹細胞抗藍光。',
+    usage:['按壓2-6下，依缺水程度調整','全臉輕柔塗抹至半乾','可搭配後續精華加強'],
     sections:[
-      {title:'抗老胜肽複合物',color:'#9880b8',items:[{n:'類肉毒胜肽',d:'動態紋放鬆'},{n:'促膠原胜肽',d:'真皮膠原合成'},{n:'緊緻胜肽',d:'輪廓提拉'}]},
-      {title:'保濕鎖水',color:'#378ADD',items:[{n:'玻尿酸複合物',d:'多層次補水'},{n:'神經醯胺',d:'屏障鎖水'}]}
+      {title:'三分子玻尿酸',color:'#378ADD',items:[{n:'水解玻尿酸（小分子）',d:'深層吸收'},{n:'玻尿酸鈉（中分子）',d:'持續補水'},{n:'陽離子玻尿酸（大分子）',d:'表層鎖水'}]},
+      {title:'亮白抗老',color:'#9880b8',items:[{n:'穀胱甘肽',d:'抗氧美白'},{n:'Ectoin',d:'屏障穩定抗藍光'},{n:'15種胜肽',d:'多維度抗老'}]}
     ]
   },
   {
-    id:'miracle-cream', cat:'面霜', name:'奇蹟修護霜',
-    tagline:'植物幹細胞 · 全效修護',
-    color:'#E8F0D8', icon:'🌿',
-    desc:'番茄、北極莓、雪絨花等珍稀植物幹細胞萃取，賦予肌膚自然再生能量，適合各種膚質的全效修護。',
-    usage:['作為日常保養最後一步','取適量均勻推開','早晚皆可使用'],
+    id:'vitamin-c-serum', cat:'基礎保養', name:'維生素C精華',
+    tagline:'雙型態維C · 強效提亮淡斑 · 多胜肽協同',
+    color:'#F8EEC8', icon:'🍊',
+    desc:'抗壞血酸（直接抗氧）＋抗壞血酸磷酸鈉（長效美白）雙型態維C；多種胜肽抗老協同；角鯊烷輕盈修護。',
+    usage:['多肽水和透明質酸後使用','早晚各一次','順著肌膚紋理塗抹臉部'],
     sections:[
-      {title:'植物幹細胞能量網絡',color:'#1D9E75',items:[{n:'番茄幹細胞',d:'抗氧化再生'},{n:'北極莓',d:'極地抗氧化'},{n:'雪絨花',d:'抗藍光防護'}]},
-      {title:'修護活化',color:'#C9A96E',items:[{n:'CoQ10',d:'細胞活化'},{n:'積雪草苷',d:'舒敏修護'},{n:'角鯊烷',d:'深層潤澤'}]}
+      {title:'雙型態維C',color:'#C9A96E',items:[{n:'抗壞血酸',d:'直接抗氧化'},{n:'抗壞血酸磷酸鈉',d:'長效美白淡斑'},{n:'穀胱甘肽',d:'協同提亮'}]},
+      {title:'修護胜肽',color:'#7F77DD',items:[{n:'乙醯六胜肽-8',d:'類肉毒撫紋'},{n:'五胜肽-4',d:'促膠原'},{n:'洋甘菊Bisabolol',d:'鎮靜修護'}]}
     ]
   },
   {
-    id:'radiance-spray', cat:'噴霧', name:'活顏噴霧',
-    tagline:'植物幹細胞抗衰 · 隨時補濕提亮',
+    id:'recovery-serum', cat:'基礎保養', name:'滋潤修護精華',
+    tagline:'多油脂修護膜 · 15種胜肽 · Ectoin屏障',
+    color:'#F0E0C8', icon:'🧪',
+    desc:'矽靈＋角鯊烷＋多種植物油形成修護膜；Ectoin屏障強化；15種胜肽含抗浮腫；敏感肌打底首選。',
+    usage:['依膚況按壓1-3下','可混和維他命C精華使用','敏感肌可於保養前打底'],
+    sections:[
+      {title:'修護油脂膜',color:'#C9A96E',items:[{n:'角鯊烷',d:'輕盈修護油膜'},{n:'馬魯拉果油',d:'深層滋潤'},{n:'Ectoin',d:'屏障強化'}]},
+      {title:'15種胜肽',color:'#9880b8',items:[{n:'類肉毒胜肽',d:'放鬆動態紋'},{n:'抗浮腫胜肽',d:'消浮腫'},{n:'雪絨花幹細胞',d:'舒緩修護'}]}
+    ]
+  },
+  {
+    id:'peptide-cream', cat:'基礎保養', name:'多肽霜',
+    tagline:'拉提緊緻核心 · 15種胜肽 · 菸鹼醯胺亮白',
+    color:'#E8D8F0', icon:'⚗️',
+    desc:'15種胜肽含類肉毒、消水腫、五胜肽；菸鹼醯胺均色提亮；乳木果油潤澤；需搭配拉提手法使用。',
+    usage:['適量臉部塗抹，需搭配拉提手法','敏感肌、痘痘肌不使用或少量使用','建議晚間使用'],
+    sections:[
+      {title:'15種胜肽拉提',color:'#9880b8',items:[{n:'類肉毒胜肽',d:'動態紋放鬆'},{n:'消水腫胜肽',d:'改善浮腫'},{n:'五胜肽',d:'膠原支撐'}]},
+      {title:'亮白滋潤',color:'#C9A96E',items:[{n:'菸鹼醯胺',d:'均色提亮'},{n:'乳木果油',d:'豐潤滋養'},{n:'咖啡因',d:'促循環消腫'}]}
+    ]
+  },
+  {
+    id:'shield-cream', cat:'基礎保養', name:'保濕修護霜',
+    tagline:'三層保護膜 · 8種胜肽 · 抗藍光',
+    color:'#E0ECD8', icon:'🫐',
+    desc:'矽油＋植物油＋卵磷脂三層保護膜深層修護；8種胜肽抗老促膠原；生物類黃酮抗藍光；2-4cm早晚使用。',
+    usage:['早晚塗抹全臉，2-4cm用量','可作為保養最後一步鎖水','全膚質適用'],
+    sections:[
+      {title:'三層保護膜',color:'#1D9E75',items:[{n:'矽油',d:'表面屏障保護'},{n:'植物油複合',d:'修補皮脂膜'},{n:'卵磷脂',d:'細胞間脂質重建'}]},
+      {title:'8種胜肽＋抗藍光',color:'#378ADD',items:[{n:'五胜肽',d:'膠原支撐'},{n:'類EGF胜肽',d:'促修護'},{n:'生物類黃酮',d:'抗藍光全護'}]}
+    ]
+  },
+  {
+    id:'whitening-cream', cat:'特殊保養', name:'淡斑霜',
+    tagline:'谷胱甘肽＋菸鹼醯胺三重美白 · 腺苷修護',
+    color:'#FFF0D0', icon:'☀️',
+    desc:'菸鹼醯胺＋谷胱甘肽＋甘草次酸三大美白協同淡斑；穩定型維C；多種胜肽抗老；早晚重點斑點部位塗抹。',
+    usage:['早/晚使用','針對斑點及暗沉部位重點塗抹','搭配防曬效果更佳'],
+    sections:[
+      {title:'三重美白核心',color:'#C9A96E',items:[{n:'谷胱甘肽',d:'抗氧化美白'},{n:'菸鹼醯胺',d:'抑制黑色素轉移'},{n:'甘草次酸',d:'協同淡斑'}]},
+      {title:'修護抗老',color:'#7F77DD',items:[{n:'腺苷 Adenosine',d:'抗自由基促修護'},{n:'維生素E',d:'抗氧化'},{n:'多種胜肽',d:'抗老協同'}]}
+    ]
+  },
+  {
+    id:'ice-cream', cat:'特殊保養', name:'119冰潤霜',
+    tagline:'積雪草急救 · 薄荷吸熱降溫 · 14種胜肽',
+    color:'#D0EEE8', icon:'❄️',
+    desc:'積雪草苷急救舒緩；赤藻糖醇＋薄荷乳酸酯清涼降溫；14種胜肽抗老；可厚敷當急救面膜或薄塗當修護霜。',
+    usage:['可厚敷10-15分鐘後洗掉（急救面膜）','或薄塗作為日常修護霜使用','曬後、術後急救首選'],
+    sections:[
+      {title:'急救舒緩',color:'#1D9E75',items:[{n:'積雪草苷',d:'強效舒緩消炎'},{n:'馬齒莧＋尿囊素',d:'鎮靜修護'},{n:'Ectoin',d:'屏障穩定'}]},
+      {title:'清涼抗老',color:'#378ADD',items:[{n:'赤藻糖醇',d:'吸熱降溫'},{n:'薄荷乳酸酯',d:'清涼舒緩感'},{n:'14種胜肽',d:'全面抗老'}]}
+    ]
+  },
+  {
+    id:'radiance-spray', cat:'特殊保養', name:'活顏噴霧',
+    tagline:'多種植物幹細胞抗衰 · 增亮除皺 · 12種胜肽',
     color:'#D8E8F8', icon:'🌬️',
-    desc:'隨身攜帶的即時補濕利器，植物幹細胞萃取搭配保濕成分，定妝後噴霧補水、隨時提亮膚色。',
-    usage:['距臉部 20–30cm 均勻噴灑','輕拍幫助吸收','上妝前後均可使用，隨時補濕'],
+    desc:'番茄、米糠、人蔘、蓮花、北極莓、雪絨花等多種植物幹細胞深層修復抗衰；12種胜肽撫紋；熊果素亮白。',
+    usage:['「上往下噴」形成保濕膜','隨時可噴，增加肌膚亮度','敏感肌適合，痘痘肌少量使用'],
     sections:[
-      {title:'植物幹細胞活化',color:'#378ADD',items:[{n:'北極莓幹細胞',d:'抗氧化活化'},{n:'雪絨花萃取',d:'抗藍光防護'},{n:'蓮花幹細胞',d:'淨化提亮'}]},
-      {title:'即時保濕',color:'#1D9E75',items:[{n:'玻尿酸',d:'快速補水'},{n:'甘油',d:'保濕鎖水'},{n:'蘆薈',d:'舒緩鎮靜'}]}
+      {title:'植物幹細胞抗衰',color:'#378ADD',items:[{n:'番茄＋人蔘幹細胞',d:'深層抗衰老'},{n:'北極莓＋雪絨花',d:'抗藍光抗氧化'},{n:'蓮花幹細胞',d:'淨化提亮'}]},
+      {title:'12種胜肽＋亮白',color:'#9880b8',items:[{n:'六胜肽',d:'撫紋緊緻'},{n:'熊果素',d:'抑黑提亮'},{n:'Ectoin',d:'屏障光防護'}]}
     ]
   },
   {
-    id:'whitening-serum', cat:'精華液', name:'美白亮采精華',
-    tagline:'谷胱甘肽 · 三重協同淡斑',
-    color:'#F5F0D8', icon:'☀️',
-    desc:'谷胱甘肽配合菸鹼醯胺、維生素C三重協同，淡化斑點、均勻膚色，提升整體膚色亮度。',
-    usage:['化妝水後使用','取 2–3 滴輕壓全臉，重點部位加強','早晨使用後請搭配防曬'],
+    id:'sunscreen', cat:'白天防護', name:'防曬霜 SPF50+/PA++++',
+    tagline:'化學＋物理複合防曬 · 14種胜肽日間抗老 · 抗藍光',
+    color:'#FFF0C8', icon:'🌞',
+    desc:'化學性防曬（Tinosorb S等）＋二氧化鈦物理散射雙重防護；14種胜肽日間抗老同步；生物類黃酮抗藍光。',
+    usage:['基礎護理最後一步','2-4cm均勻塗抹臉部頸部','流汗後需補擦'],
     sections:[
-      {title:'三重亮白協同',color:'#C9A96E',items:[{n:'谷胱甘肽',d:'醫美等級抗氧化美白'},{n:'菸鹼醯胺',d:'抑制黑色素轉移'},{n:'維生素C',d:'亮白抗氧化'}]},
-      {title:'輔助成分',color:'#378ADD',items:[{n:'熊果素',d:'淡斑美白'},{n:'傳明酸',d:'頑固斑點淡化'},{n:'玻尿酸',d:'保濕底料'}]}
+      {title:'複合防曬系統',color:'#C9A96E',items:[{n:'Tinosorb S',d:'UVA+UVB廣效防護'},{n:'二氧化鈦',d:'物理散射防護'},{n:'甲氧基肉桂酸乙基己酯',d:'高效吸收UVB'}]},
+      {title:'14種胜肽＋抗藍光',color:'#378ADD',items:[{n:'生物類黃酮',d:'抗藍光全護'},{n:'雪絨花幹細胞',d:'Ectoin環境防護'},{n:'14種胜肽',d:'日間抗老同步'}]}
     ]
   },
   {
-    id:'eye-care', cat:'眼部護理', name:'眼部精華',
-    tagline:'消浮腫胜肽 · 黑眼圈修護',
-    color:'#E8EAF0', icon:'👁️',
-    desc:'針對眼周肌膚設計的輕薄精華，消浮腫胜肽搭配眼周專用修護成分，改善黑眼圈、眼袋與細紋。',
-    usage:['取少量點在眼周','無名指輕拍導入，勿拉扯','早晚使用，搭配輕柔按摩'],
+    id:'bb-cream', cat:'白天防護', name:'滋潤BB霜',
+    tagline:'礦物粉體遮瑕 · 7種胜肽護膚 · 鐵氧化物抗藍光',
+    color:'#F0E0C0', icon:'🎨',
+    desc:'二氧化鈦＋氧化鋅＋鐵氧化物自然膚色修正；7種胜肽邊上妝邊護膚；鐵氧化物天然抗藍光，適合螢幕族。',
+    usage:['防曬霜後使用','取適量順著肌膚紋理塗抹','彩妝品，請勿入眼'],
     sections:[
-      {title:'眼周專用胜肽',color:'#9880b8',items:[{n:'消浮腫胜肽',d:'改善眼袋水腫'},{n:'眼周緊緻胜肽',d:'細紋撫平'},{n:'黑眼圈胜肽',d:'促進循環'}]},
-      {title:'溫和修護',color:'#378ADD',items:[{n:'玻尿酸',d:'眼周深層補水'},{n:'積雪草',d:'舒緩敏感眼周'},{n:'咖啡因',d:'促進循環消腫'}]}
-    ]
-  },
-  {
-    id:'sunscreen', cat:'防護', name:'防曬隔離霜 SPF50',
-    tagline:'抗藍光防護 · 輕透不悶',
-    color:'#FFF0D8', icon:'🌞',
-    desc:'抗藍光防曬配方，生物類黃酮與雪絨花幹細胞協同防護，輕透不泛白，適合日常與螢幕工作族。',
-    usage:['早晨保養最後一步','取適量均勻推開全臉','每 2–3 小時補塗一次'],
-    sections:[
-      {title:'防曬防護系統',color:'#C9A96E',items:[{n:'SPF50 PA++++',d:'高效紫外線防護'},{n:'生物類黃酮',d:'抗藍光防護'},{n:'雪絨花幹細胞',d:'額外抗氧化'}]},
-      {title:'輕透成膜',color:'#1D9E75',items:[{n:'矽靈聚合物',d:'輕透不悶'},{n:'玻尿酸',d:'防曬同時補水'},{n:'Ectoin',d:'環境壓力防護'}]}
-    ]
-  },
-  {
-    id:'cleanser-foam', cat:'清潔', name:'胺基酸潔顏慕斯',
-    tagline:'胺基酸界面活性劑 · 溫和弱酸性',
-    color:'#F0E8E0', icon:'🫧',
-    desc:'弱酸性胺基酸配方，洗後 pH 維持在肌膚適合的弱酸環境，不破壞屏障，適合每日早晚使用。',
-    usage:['沾水後擠出適量泡沫','輕柔按摩全臉 30 秒','清水沖洗乾淨'],
-    sections:[
-      {title:'溫和潔淨',color:'#C4857A',items:[{n:'月桂醯谷氨酸',d:'胺基酸界面活性劑'},{n:'椰油醯甘氨酸',d:'溫和起泡清潔'},{n:'甜菜鹼',d:'保濕型潔淨'}]},
-      {title:'洗後修護',color:'#1D9E75',items:[{n:'泛醇',d:'修護潔後屏障'},{n:'積雪草',d:'舒緩清潔後肌膚'},{n:'玻尿酸',d:'洗後即補水'}]}
-    ]
-  },
-  {
-    id:'body-lotion', cat:'身體護理', name:'全效身體乳',
-    tagline:'全身適用 · 保濕緊緻',
-    color:'#E8F0E0', icon:'🧴',
-    desc:'臉部核心胜肽技術延伸至全身護理，輕透快吸收，保濕同時提供胜肽抗老功效。',
-    usage:['沐浴後肌膚微濕時使用','取適量均勻推開全身','重點乾燥部位可加量'],
-    sections:[
-      {title:'核心保濕成分',color:'#1D9E75',items:[{n:'玻尿酸複合物',d:'多層次補水'},{n:'乳木果油',d:'深層滋潤'},{n:'神經醯胺',d:'屏障修護'}]},
-      {title:'胜肽抗老',color:'#7F77DD',items:[{n:'緊緻胜肽',d:'全身肌膚緊緻'},{n:'保濕胜肽',d:'持久鎖水'},{n:'修護胜肽',d:'肌膚再生'}]}
-    ]
-  },
-  {
-    id:'essence-mask', cat:'面膜', name:'奢華精華面膜',
-    tagline:'高濃度精華 · 一片頂多片',
-    color:'#E0E8F0', icon:'💆',
-    desc:'高濃度精華液浸泡的薄型蠶絲面膜，一片相當於數倍精華量，週期性使用快速密集補給。',
-    usage:['潔顏後敷上面膜','靜置 15–20 分鐘','取下後輕拍吸收剩餘精華，無需清洗'],
-    sections:[
-      {title:'面膜精華成分',color:'#378ADD',items:[{n:'三分子玻尿酸',d:'深層強效補水'},{n:'功能性胜肽×10',d:'多維度修護'},{n:'植物幹細胞',d:'活化再生'}]},
-      {title:'蠶絲面膜載體',color:'#C4857A',items:[{n:'蠶絲蛋白',d:'服貼導入'},{n:'生物纖維素',d:'緊密服貼'},{n:'甘油',d:'鎖住精華'}]}
-    ]
-  },
-  {
-    id:'neck-cream', cat:'頸部護理', name:'頸部緊緻霜',
-    tagline:'頸紋改善 · 提升緊緻度',
-    color:'#E8E0D8', icon:'🦢',
-    desc:'針對頸部肌膚特性設計，高濃度緊緻胜肽搭配提拉成分，改善頸紋與頸部鬆弛。',
-    usage:['臉部保養後延伸至頸部','由下往上輕拍推開','早晚均可，晚間效果更佳'],
-    sections:[
-      {title:'頸部緊緻配方',color:'#9880b8',items:[{n:'緊緻胜肽',d:'抗鬆弛提拉'},{n:'DMAE',d:'即時緊緻效果'},{n:'類視黃醇',d:'加速代謝更新'}]},
-      {title:'深層修護',color:'#C9A96E',items:[{n:'玻尿酸',d:'深層補水'},{n:'乳木果油',d:'滋潤修護'},{n:'維生素E',d:'抗氧化保護'}]}
+      {title:'礦物潤色防護',color:'#C9A96E',items:[{n:'二氧化鈦',d:'自然遮瑕提亮'},{n:'鐵氧化物三色',d:'膚色修正＋抗藍光'},{n:'氧化鋅',d:'礦物防護'}]},
+      {title:'護膚級BB配方',color:'#9880b8',items:[{n:'7種胜肽',d:'邊妝邊護膚'},{n:'水解豌豆蛋白',d:'彈性撐起妝感'},{n:'生物類黃酮',d:'抗藍光加乘'}]}
     ]
   }
 ];
