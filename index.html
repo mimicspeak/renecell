@@ -3,855 +3,535 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>💎來自韓國的居家類醫美護膚體驗💎</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+<title>RENE-CELL｜來自韓國的居家醫美護膚體驗</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-  .aud-grid-4 {
-  display: grid;
-  gap: 24px;
-  margin-top: 56px;
-  grid-template-columns: repeat(4, 1fr);
-}
-@media (max-width: 1024px) {
-  .aud-grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .aud-grid-4 { grid-template-columns: 1fr; }
-}
-  
-:root {
-  --cream:   #fdf8f4;
-  --blush:   #f5e8e0;
-  --rose:    #d4a0a8;
-  --rose-dk: #a87080;
-  --sage:    #b8cfca;
-  --sage-dk: #7aaa9a;
-  --gold:    #c9a96e;
-  --gold-lt: #e8d8b8;
-  --ink:     #2a2025;
-  --muted:   #8a7880;
-  --white:   #ffffff;
-  --lavender:#e8e0f0;
-  --lav-dk:  #9880b8;
-}
-
+/* ─── RESET & BASE ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Noto Sans TC', sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  overflow-x: hidden;
-}
-
-/* ── TYPOGRAPHY ── */
+body { font-family: 'Noto Sans TC', sans-serif; background: #fdf8f4; color: #1e1a17; overflow-x: hidden; }
 .serif { font-family: 'Cormorant Garamond', serif; }
-.serif-tc { font-family: 'Noto Serif TC', serif; }
+a { text-decoration: none; }
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity:0; transform: translateY(30px); }
-  to   { opacity:1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity:0; }
-  to   { opacity:1; }
-}
-@keyframes shimmer {
-  0%,100% { opacity:0.4; }
-  50%      { opacity:1; }
-}
-@keyframes floatY {
-  0%,100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
-}
-@keyframes rotateSlow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@keyframes lineGrow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
+/* ─── CSS VARS ─── */
+:root {
+  --cream: #fdf8f4;
+  --blush: #f5ede6;
+  --ink:   #1e1a17;
+  --muted: #8a7c6c;
+  --rose:  #c4857a;
+  --blue:  #185FA5;
+  --blue-lt: #E6F1FB;
+  --blue-mid: #378ADD;
+  --tan:   #9A5828;
+  --gold:  #c9a96e;
+  --gold-lt: #f0dfc0;
+  --border: rgba(30,26,23,0.1);
 }
 
-.fade-up { animation: fadeUp 0.8s ease both; }
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp   { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn   { from{opacity:0} to{opacity:1} }
+@keyframes floatY   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes breathe  { 0%,100%{opacity:.45} 50%{opacity:.9} }
+@keyframes shimmer  { 0%{background-position:200% center} 100%{background-position:-200% center} }
+.fade-up { animation: fadeUp .9s ease both; }
 .fade-in { animation: fadeIn 1s ease both; }
+.reveal  { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
 
-/* ── NAV ── */
+/* ─── NAV ─── */
 nav {
   position: fixed; top:0; left:0; right:0; z-index:100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 40px;
-  background: rgba(253,248,244,0.92);
+  padding: 16px 40px;
+  background: rgba(253,248,244,.93);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,169,110,0.2);
+  border-bottom: 1px solid rgba(201,169,110,.18);
 }
-
-.nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.nav-logo span { color: var(--rose-dk); }
-
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--rose-dk); }
-
+.nav-logo { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; letter-spacing:4px; color:var(--ink); }
+.nav-logo span { color:var(--rose); }
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a { font-size:11px; letter-spacing:2px; color:var(--muted); transition:color .3s; }
+.nav-links a:hover { color:var(--ink); }
 .nav-cta {
-  background: var(--ink);
-  color: white !important;
-  padding: 8px 20px;
-  border-radius: 30px;
-  font-size: 11px !important;
-  letter-spacing: 2px;
+  background:var(--ink); color:#fff; padding:8px 20px;
+  border-radius:30px; font-size:11px; letter-spacing:2px; cursor:pointer;
+  border:none; font-family:'Noto Sans TC',sans-serif;
+  transition:background .3s;
 }
+.nav-cta:hover { background:var(--rose); }
+@media(max-width:768px){ .nav-links{display:none} nav{padding:14px 20px} }
 
-/* ── HERO ── */
+/* ─── SECTION COMMON ─── */
+section { padding: 100px 24px; }
+.container { max-width: 1080px; margin: 0 auto; }
+.eyebrow {
+  font-size:10px; letter-spacing:4px; color:var(--gold); text-transform:uppercase;
+  display:flex; align-items:center; gap:10px; margin-bottom:12px;
+}
+.eyebrow::before,.eyebrow::after { content:''; height:1px; width:28px; background:var(--gold-lt); display:inline-block; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(30px,4.5vw,50px); font-weight:300; line-height:1.2; margin-bottom:14px; }
+.section-sub { font-size:14px; color:var(--muted); line-height:1.9; max-width:540px; }
+
+/* ═══════════════════════════════════
+   1. HERO
+═══════════════════════════════════ */
 .hero {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 120px 24px 80px;
-  position: relative;
-  overflow: hidden;
+  display: flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:120px 24px 80px;
+  position:relative; overflow:hidden;
 }
-
 .hero-bg {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(20,10,5,0.38), rgba(20,10,5,0.38)),
-    url('images/Hero_Background.png');
-  background-size: cover;
-  background-position: center;
+  position:absolute; inset:0;
+  background: linear-gradient(160deg,#1a120a 0%,#2c1e14 40%,#1a1018 100%);
 }
-
+.hero-bg::after {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(196,133,122,.12) 0%, transparent 65%),
+              radial-gradient(ellipse 50% 50% at 20% 70%, rgba(24,95,165,.08) 0%, transparent 60%);
+}
 .hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  animation: floatY 6s ease-in-out infinite;
+  position:absolute; border-radius:50%;
+  filter:blur(50px); animation:floatY 7s ease-in-out infinite;
 }
-.orb1 { width:300px; height:300px; background: rgba(212,160,168,0.15); top:-80px; right:10%; animation-delay:0s; }
-.orb2 { width:200px; height:200px; background: rgba(184,207,202,0.18); bottom:10%; left:5%; animation-delay:2s; }
-.orb3 { width:150px; height:150px; background: rgba(201,169,110,0.12); top:30%; left:15%; animation-delay:4s; }
-
+.orb1 { width:320px;height:320px;background:rgba(196,133,122,.12);top:-60px;right:8%;animation-delay:0s; }
+.orb2 { width:200px;height:200px;background:rgba(24,95,165,.10);bottom:12%;left:6%;animation-delay:3s; }
+.hero-content { position:relative; z-index:1; }
 .hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: white;
-  border: 1px solid var(--gold-lt);
-  border-radius: 30px;
-  padding: 6px 18px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: var(--gold);
-  margin-bottom: 32px;
-  animation: fadeIn 1s ease 0.2s both;
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.08); border:1px solid rgba(201,169,110,.3);
+  border-radius:30px; padding:6px 18px;
+  font-size:10px; letter-spacing:3px; color:var(--gold);
+  margin-bottom:28px; animation:fadeIn 1s ease .2s both;
 }
-
-.hero-badge::before { content:'✦'; font-size:8px; }
-
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 5.5vw, 64px);
-  font-weight: 300;
-  line-height: 1.6;
-  letter-spacing: 16px;
-  margin-bottom: 36px;
-  animation: fadeUp 1s ease 0.3s both;
-  color: rgba(255,255,255,0.90);
-  text-shadow:
-    0 0 80px rgba(255,230,200,0.25),
-    0 2px 30px rgba(0,0,0,0.35);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(34px,5.5vw,68px);
+  font-weight:300; line-height:1.55; letter-spacing:12px;
+  color:rgba(255,255,255,.92);
+  margin-bottom:24px;
+  animation:fadeUp 1s ease .3s both;
+  text-shadow:0 2px 40px rgba(0,0,0,.4);
 }
-
-.hero-title em {
-  font-style: italic;
-  color: rgba(255,238,218,0.95);
-  text-shadow:
-    0 0 100px rgba(255,215,170,0.4),
-    0 2px 30px rgba(0,0,0,0.3);
+.hero-title em { font-style:italic; color:rgba(220,200,180,.95); }
+.hero-sub {
+  font-size:clamp(12px,1.5vw,15px); font-weight:300;
+  color:rgba(255,255,255,.65); letter-spacing:5px;
+  margin-bottom:44px; animation:fadeUp 1s ease .5s both;
 }
-
-.hero-subtitle {
-  font-family: 'Noto Sans TC', sans-serif;
-  font-size: clamp(13px, 1.6vw, 18px);
-  font-weight: 300;
-  color: rgba(255,255,255,0.82);
-  letter-spacing: 6px;
-  margin-bottom: 52px;
-  animation: fadeUp 1s ease 0.5s both;
-  text-shadow: 0 1px 16px rgba(0,0,0,0.45);
-}
-
-.hero-desc { display: none; }
-
-.hero-btns {
-  display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
-  animation: fadeUp 1s ease 0.7s both;
-}
-
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; animation:fadeUp 1s ease .7s both; }
 .btn-primary {
-  background: var(--ink);
-  color: white;
-  padding: 14px 36px;
-  border-radius: 40px;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  transition: all 0.3s;
+  background:rgba(255,255,255,.95); color:var(--ink);
+  padding:13px 34px; border-radius:40px;
+  font-size:12px; letter-spacing:2px; font-weight:500;
+  transition:all .3s;
 }
-.btn-primary:hover { background: var(--rose-dk); transform: translateY(-2px); }
-
-.btn-outline {
-  border: 1.5px solid var(--rose);
-  color: var(--rose-dk);
-  padding: 14px 36px;
-  border-radius: 40px;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  transition: all 0.3s;
+.btn-primary:hover { background:#fff; transform:translateY(-2px); }
+.btn-ghost {
+  border:1px solid rgba(255,255,255,.4); color:rgba(255,255,255,.85);
+  padding:13px 34px; border-radius:40px;
+  font-size:12px; letter-spacing:2px;
+  transition:all .3s; cursor:pointer; background:none;
+  font-family:'Noto Sans TC',sans-serif;
 }
-.btn-outline:hover { background: var(--blush); transform: translateY(-2px); }
-
+.btn-ghost:hover { border-color:#fff; color:#fff; }
 .hero-certs {
-  margin-top: 60px;
-  display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; align-items: center;
-  animation: fadeIn 1.2s ease 1s both;
+  display:flex; gap:16px; flex-wrap:wrap; justify-content:center;
+  margin-top:52px; animation:fadeIn 1.2s ease 1s both;
 }
-
 .cert-item {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: #ffffff;
-  padding: 8px 18px;
-  border: 1px solid rgba(255,255,255,0.45);
-  border-radius: 20px;
-  background: rgba(0,0,0,0.32);
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; letter-spacing:1.5px; color:rgba(255,255,255,.6);
+  padding:6px 14px; border:1px solid rgba(255,255,255,.18); border-radius:20px;
 }
-.cert-item::before { content: '✓'; color: #c9e8c0; font-weight: 700; }
+.cert-item::before { content:'✓'; color:rgba(180,220,180,.8); font-weight:700; font-size:9px; }
 
-/* ── SECTION COMMON ── */
-section { padding: 100px 24px; }
-
-.container { max-width: 1100px; margin: 0 auto; }
-
-.section-eyebrow {
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  display: flex; align-items: center; gap: 10px;
+/* ═══════════════════════════════════
+   2. ORIGIN
+═══════════════════════════════════ */
+.origin { background:var(--ink); color:#fff; padding:100px 24px; }
+.origin-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.origin-left .eyebrow { color:var(--gold); }
+.origin-left .eyebrow::before,.origin-left .eyebrow::after { background:rgba(201,169,110,.25); }
+.origin-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,4vw,46px); font-weight:300; line-height:1.3;
+  color:#fff; margin-bottom:20px;
 }
-.section-eyebrow::before, .section-eyebrow::after {
-  content:'';
-  height:1px;
-  width:30px;
-  background: var(--gold-lt);
-  display: inline-block;
+.origin-title em { font-style:italic; color:rgba(220,200,170,.9); }
+.origin-body { font-size:13.5px; color:rgba(255,255,255,.6); line-height:2; margin-bottom:32px; }
+.cert-badges { display:flex; flex-direction:column; gap:12px; }
+.cert-badge {
+  display:flex; align-items:center; gap:14px;
+  padding:14px 18px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:12px;
 }
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 5vw, 52px);
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 16px;
+.cert-badge-icon {
+  width:36px;height:36px; border-radius:50%;
+  background:linear-gradient(135deg,rgba(201,169,110,.25),rgba(201,169,110,.1));
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px; flex-shrink:0;
 }
+.cert-badge-name { font-size:13px; font-weight:500; color:#fff; margin-bottom:2px; }
+.cert-badge-desc { font-size:11px; color:rgba(255,255,255,.45); }
 
-.section-sub {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.9;
-  max-width: 560px;
+.origin-patent {
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(201,169,110,.2);
+  border-radius:20px; padding:36px 32px;
+  position:relative;
 }
-
-/* ── PAIN POINT ── */
-.pain {
-  background: var(--ink);
-  color: white;
-  padding: 100px 24px;
-  position: relative;
-  overflow: hidden;
+.origin-patent::before {
+  content:'✦'; position:absolute; top:-12px; left:32px;
+  font-size:22px; color:var(--gold);
+  background:var(--ink); padding:0 8px;
 }
-
-.pain::before {
-  content:'';
-  position: absolute; inset:0;
-  background: radial-gradient(ellipse 60% 80% at 80% 20%, rgba(212,160,168,0.08) 0%, transparent 60%);
+.patent-title { font-size:12px; letter-spacing:3px; color:var(--gold); margin-bottom:16px; }
+.patent-name {
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px; font-weight:300; color:#fff; margin-bottom:10px; line-height:1.3;
 }
+.patent-desc { font-size:13px; color:rgba(255,255,255,.55); line-height:1.9; }
+.patent-stats { display:flex; gap:28px; margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,.08); }
+.patent-stat-num { font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; color:#fff; }
+.patent-stat-label { font-size:10px; letter-spacing:1px; color:rgba(255,255,255,.4); margin-top:2px; }
 
-.pain-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+@media(max-width:768px){
+  .origin-grid { grid-template-columns:1fr; gap:48px; }
 }
 
-.pain-left .section-eyebrow { color: var(--rose); }
-.pain-left .section-eyebrow::before,
-.pain-left .section-eyebrow::after { background: rgba(212,160,168,0.3); }
+/* ═══════════════════════════════════
+   3. SKIN SCIENCE
+═══════════════════════════════════ */
+.skin-science { background:#fff; }
+.skin-science-inner { text-align:center; margin-bottom:56px; }
+.skin-svg-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
 
-.pain-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 300;
-  line-height: 1.25;
-  margin-bottom: 24px;
-  color: white;
-}
+/* ═══════════════════════════════════
+   4. METHOD COMPARISON
+═══════════════════════════════════ */
+.comparison { background:var(--blush); }
+.comparison-inner { text-align:center; margin-bottom:48px; }
 
-.pain-title em { font-style: italic; color: var(--rose); }
+/* comparison table styles */
+.cmp-wrap * { box-sizing:border-box; }
+.cmp-tbl { width:100%; border:0.5px solid #D8D0C4; border-radius:12px 12px 0 0; overflow:hidden; border-collapse:separate; border-spacing:0; }
+.cmp-tbl td,.cmp-tbl th { vertical-align:top; }
+.cmp-attr { width:100px; padding:10px 12px; font-size:11px; color:#8A7C6C; background:#F7F3EE; border-bottom:0.5px solid #D8D0C4; border-right:0.5px solid #D8D0C4; }
+.cmp-dc { padding:10px 14px; font-size:12px; line-height:1.75; color:#2E2820; background:#fff; border-bottom:0.5px solid #D8D0C4; border-right:0.5px solid #D8D0C4; }
+.cmp-dc:last-child { border-right:none; }
+.cmp-sec td { padding:5px 12px; font-size:10px; letter-spacing:1.5px; color:#F7F3EE; background:#7A6C5C; border-bottom:0.5px solid #6A5C4C; border-right:0.5px solid #6A5C4C; }
+.cmp-sec td:last-child { border-right:none; }
+.hi-t { color:#9A5828; font-weight:500; }
+.hi-b { color:#185FA5; font-weight:500; }
+.cmp-verdict { display:grid; grid-template-columns:1fr 1fr; border:0.5px solid #D8D0C4; border-top:none; border-radius:0 0 12px 12px; overflow:hidden; }
+.cv-l { background:#FBF5EE; padding:11px 14px; border-right:0.5px solid #D8D0C4; }
+.cv-r { background:#EEF4FB; padding:11px 14px; }
+.cv-tag { font-size:10px; font-weight:500; letter-spacing:.5px; margin-bottom:4px; }
+.cv-l .cv-tag { color:#9A5828; }
+.cv-r .cv-tag { color:#185FA5; }
+.cv-body { font-size:11px; line-height:1.65; color:#5A5248; }
+.cmp-syn { margin-top:8px; padding:9px 14px; border-radius:8px; border:0.5px solid #D8D0C4; font-size:11px; color:#6A6050; line-height:1.65; }
 
-.pain-body { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 2; margin-bottom: 32px; }
-
-.pain-list { list-style: none; }
-.pain-list li {
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  font-size: 13.5px;
-  color: rgba(255,255,255,0.75);
-  display: flex; align-items: center; gap: 12px;
-}
-.pain-list li::before {
-  content: '×';
-  color: var(--rose);
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.solution-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 24px;
-  padding: 48px 40px;
-  position: relative;
-}
-
-.solution-card::before {
-  content: '✦';
-  position: absolute;
-  top: -12px; left: 40px;
-  font-size: 24px;
-  color: var(--gold);
-  background: var(--ink);
-  padding: 0 8px;
-}
-
-.sol-item {
-  display: flex; gap: 16px; align-items: flex-start;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-.sol-item:last-child { border-bottom: none; }
-
-.sol-icon {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(212,160,168,0.3), rgba(184,207,202,0.3));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
-  flex-shrink: 0;
-}
-
-.sol-title { font-size: 14px; font-weight: 500; color: white; margin-bottom: 4px; }
-.sol-body { font-size: 12.5px; color: rgba(255,255,255,0.5); line-height: 1.7; }
-
-/* ── TECH ── */
-.tech { background: var(--blush); }
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 56px;
-}
-
-.tech-card {
-  background: white;
-  border-radius: 20px;
-  padding: 36px 28px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.tech-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(180,120,140,0.15); }
-
-.tech-card::after {
-  content:'';
-  position: absolute;
-  bottom:0; left:0; right:0;
-  height: 3px;
-  background: var(--grad);
-}
-
-.tech-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 60px;
-  font-weight: 300;
-  color: var(--num-color);
-  opacity: 0.15;
-  line-height: 1;
-  margin-bottom: -10px;
-}
-
-.tech-icon { font-size: 28px; margin-bottom: 16px; }
-
-.tech-name {
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--ink);
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-.tech-desc { font-size: 13px; color: var(--muted); line-height: 1.8; }
-
-/* ── PRODUCT CATEGORIES ── */
-.products { background: var(--cream); }
-
-.products-intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  margin-bottom: 80px;
-}
-
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.cat-card {
-  border-radius: 20px;
-  padding: 32px 24px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  display: block;
-}
-.cat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
-
-.cat-icon-wrap {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.7);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px;
-  margin: 0 auto 16px;
-  border: 2px solid rgba(255,255,255,0.9);
-}
-
-.cat-name {
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--ink);
-  margin-bottom: 6px;
-  letter-spacing: 2px;
-}
-
-.cat-count {
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 1px;
-}
-
-.cat-arrow {
-  position: absolute;
-  bottom: 16px; right: 20px;
-  font-size: 18px;
-  color: rgba(0,0,0,0.2);
-  transition: color 0.3s, transform 0.3s;
-}
-.cat-card:hover .cat-arrow { color: var(--rose-dk); transform: translateX(4px); }
-
-.cat-clean   { background: linear-gradient(135deg, #e8f7f4, #d0ede8); }
-.cat-diamond { background: linear-gradient(135deg, #f0ecf8, #e0d4f4); }
-.cat-basic   { background: linear-gradient(135deg, #e8f2fc, #d0e4f8); }
-.cat-special { background: linear-gradient(135deg, #fce8ed, #f8d4de); }
-.cat-day     { background: linear-gradient(135deg, #fdf4e3, #f8e8c8); }
-
-/* ── RITUAL ── */
-.ritual { background: var(--lavender); padding: 100px 24px; }
-
-.ritual-title {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.steps {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.steps::before {
-  content:'';
-  position: absolute;
-  top: 36px; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--lav-dk), transparent);
-}
-
-.step {
-  flex: 0 0 180px;
-  text-align: center;
-  padding: 0 12px;
-  position: relative;
-}
-
-.step-circle {
-  width: 72px; height: 72px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid var(--lav-dk);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 26px;
-  margin: 0 auto 16px;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 4px 20px rgba(152,128,184,0.2);
-}
-
-.step-num {
-  position: absolute;
-  top: -6px; right: -6px;
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  background: var(--lav-dk);
-  color: white;
-  font-size: 10px;
-  font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-}
-
-.step-name {
-  font-weight: 700;
-  font-size: 13px;
-  color: var(--ink);
-  margin-bottom: 4px;
-  letter-spacing: 1px;
-}
-
-.step-prod {
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* ── KEY INGREDIENTS ── */
-.ingredients { background: white; }
-
-.ing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 24px;
-  margin-top: 56px;
-}
-
-.ing-card {
-  border-radius: 16px;
-  padding: 28px 24px;
-  border: 1.5px solid #f0e8ec;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.ing-card:hover {
-  border-color: var(--rose);
-  box-shadow: 0 8px 24px rgba(212,160,168,0.15);
-}
-
-.ing-icon { font-size: 32px; margin-bottom: 12px; }
-.ing-name { font-weight: 700; font-size: 14px; color: var(--ink); margin-bottom: 8px; }
-.ing-benefit { font-size: 11px; letter-spacing: 2px; color: var(--rose-dk); margin-bottom: 8px; }
-.ing-desc { font-size: 12.5px; color: var(--muted); line-height: 1.7; }
-
-/* ── TARGET AUDIENCE ── */
-.audience { background: var(--blush); }
-
-.aud-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 56px;
-}
+/* ═══════════════════════════════════
+   5. WHO ARE YOU
+═══════════════════════════════════ */
+.audience { background:var(--cream); }
+.aud-intro { text-align:center; margin-bottom:52px; }
+.aud-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:48px; }
+@media(max-width:1024px){ .aud-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:600px){ .aud-grid{grid-template-columns:1fr} }
 
 .aud-card {
-  background: white;
-  border-radius: 20px;
-  padding: 36px 28px;
-  position: relative;
-  overflow: hidden;
+  background:#fff; border-radius:18px; padding:28px 22px;
+  border:1px solid var(--border);
+  position:relative; overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
 }
-
-.aud-card::before {
-  content:'';
-  position: absolute;
-  top:0; left:0;
-  width: 4px; height: 100%;
-  background: var(--aud-color);
-}
-
+.aud-card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(30,26,23,.08); }
+.aud-card::before { content:''; position:absolute; top:0;left:0; width:3px;height:100%; background:var(--ac); }
 .aud-tag {
-  display: inline-block;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: white;
-  background: var(--aud-color);
-  padding: 3px 10px;
-  border-radius: 20px;
-  margin-bottom: 12px;
+  display:inline-block; font-size:10px; letter-spacing:1.5px;
+  color:#fff; background:var(--ac); padding:3px 10px;
+  border-radius:20px; margin-bottom:12px;
 }
-
-.aud-name {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 12px;
-}
-
-.aud-traits { list-style: none; }
+.aud-headline { font-size:13.5px; line-height:1.7; color:var(--muted); margin-bottom:14px; }
+.aud-headline strong { color:var(--ink); }
+.aud-traits { list-style:none; }
 .aud-traits li {
-  font-size: 13px;
-  color: var(--muted);
-  padding: 5px 0;
-  padding-left: 16px;
-  position: relative;
+  font-size:12px; color:var(--muted); padding:5px 0 5px 14px;
+  position:relative; border-bottom:1px solid rgba(30,26,23,.05);
 }
-.aud-traits li::before {
-  content:'·';
-  position: absolute; left:0;
-  color: var(--aud-color);
-  font-size: 18px;
-  line-height: 1.1;
+.aud-traits li:last-child { border-bottom:none; }
+.aud-traits li::before { content:'·'; position:absolute;left:0; color:var(--ac); font-size:18px; line-height:1.1; }
+.aud-rec { margin-top:14px; padding:10px 13px; border-radius:8px; background:var(--ac-lt); font-size:11px; line-height:1.7; color:var(--ac-dk); }
+
+.aud-cta {
+  text-align:center; padding:32px 32px;
+  background:linear-gradient(135deg,rgba(24,95,165,.06),rgba(196,133,122,.06));
+  border-radius:18px; border:1px solid var(--border);
 }
+.aud-cta p { font-size:14px; color:var(--muted); margin-bottom:18px; line-height:1.9; }
 
-/* ── CTA FINAL ── */
-.cta-final {
-  background: var(--ink);
-  color: white;
-  text-align: center;
-  padding: 120px 24px;
-  position: relative;
-  overflow: hidden;
+/* ═══════════════════════════════════
+   6. PRODUCTS
+═══════════════════════════════════ */
+.products { background:var(--blush); }
+.products-intro { text-align:center; margin-bottom:48px; }
+.prod-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
 }
+@media(max-width:960px){ .prod-grid{grid-template-columns:repeat(3,1fr)} }
+@media(max-width:640px){ .prod-grid{grid-template-columns:repeat(2,1fr)} }
 
-.cta-final::before {
-  content:'';
-  position: absolute; inset:0;
-  background:
-    radial-gradient(ellipse 50% 60% at 30% 50%, rgba(212,160,168,0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 50% at 70% 50%, rgba(184,207,202,0.08) 0%, transparent 60%);
+.prod-card {
+  background:#fff; border-radius:14px;
+  border:1px solid var(--border);
+  cursor:pointer; overflow:hidden;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
 }
-
-.cta-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(22px, 4vw, 40px);
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.5;
-  max-width: 700px;
-  margin: 0 auto 16px;
+.prod-card:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(30,26,23,.09); border-color:rgba(24,95,165,.2); }
+.prod-img-wrap {
+  aspect-ratio:1; background:var(--cream);
+  display:flex; align-items:center; justify-content:center;
+  border-bottom:1px solid var(--border); position:relative; overflow:hidden;
 }
+.prod-body { padding:12px 14px 14px; }
+.prod-cat { font-size:9px; letter-spacing:2px; color:var(--muted); margin-bottom:4px; text-transform:uppercase; }
+.prod-name { font-size:13px; font-weight:500; color:var(--ink); line-height:1.4; margin-bottom:4px; }
+.prod-tagline { font-size:11px; color:var(--muted); line-height:1.5; }
+.prod-more { margin-top:8px; font-size:11px; color:var(--blue-mid); }
 
-.cta-quote em { color: var(--rose); font-style: normal; }
-
-.cta-sub {
-  font-size: 13px;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 3px;
-  margin-bottom: 48px;
+/* ── Modal ── */
+.modal-overlay {
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(20,14,10,.6); backdrop-filter:blur(6px);
+  align-items:center; justify-content:center; padding:1rem;
 }
-
-.cta-divider {
-  width: 40px; height: 1px;
-  background: var(--gold);
-  margin: 24px auto;
+.modal-overlay.open { display:flex; }
+.modal-box {
+  background:#fff; border-radius:18px; border:1px solid var(--border);
+  width:100%; max-width:500px; max-height:88vh;
+  overflow-y:auto; padding:1.5rem;
+  position:relative; animation:fadeUp .3s ease;
 }
+.modal-close {
+  position:absolute; top:14px; right:16px;
+  background:none; border:none; font-size:18px;
+  cursor:pointer; color:var(--muted); line-height:1;
+}
+.modal-close:hover { color:var(--ink); }
+.modal-header { display:flex; gap:14px; align-items:flex-start; margin-bottom:1rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+.modal-icon-wrap { width:60px;height:60px; border-radius:12px; background:var(--cream); display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden; }
+.modal-title { font-size:15px; font-weight:500; color:var(--ink); margin-bottom:4px; }
+.modal-sub { font-size:12px; color:var(--muted); line-height:1.65; }
+.ing-section { margin-bottom:14px; }
+.ing-section-title { font-size:10px; letter-spacing:1.5px; color:var(--muted); margin-bottom:8px; }
+.ing-chips { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:6px; }
+.ing-chip { display:flex;align-items:center;gap:6px; padding:5px 10px; border-radius:999px; border:0.5px solid var(--border); background:var(--cream); font-size:11px; color:var(--ink); }
+.ing-chip .dot { width:6px;height:6px;border-radius:50%;flex-shrink:0; }
+.ing-desc-list { font-size:11px; color:var(--muted); line-height:1.7; }
+.use-steps { display:flex;flex-direction:column;gap:7px; margin-top:10px; }
+.use-step { display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--ink); }
+.use-num { width:20px;height:20px;border-radius:50%;background:var(--blue-lt);color:var(--blue);font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
 
-.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
+/* ═══════════════════════════════════
+   7. FINAL CTA
+═══════════════════════════════════ */
+.final-cta {
+  background:var(--ink); color:#fff;
+  text-align:center; padding:120px 24px;
+  position:relative; overflow:hidden;
+}
+.final-cta::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 55% 65% at 25% 55%,rgba(196,133,122,.09) 0%,transparent 60%),
+             radial-gradient(ellipse 40% 50% at 75% 45%,rgba(24,95,165,.07) 0%,transparent 60%);
+}
+.final-cta-inner { position:relative;z-index:1; }
+.cta-eyebrow { font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:20px; }
+.cta-heading {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(40px,6vw,68px); font-weight:300;
+  color:#fff; margin-bottom:16px; line-height:1.2;
+}
+.cta-heading em { font-style:italic; color:rgba(220,200,170,.9); }
+.cta-body { font-size:15px; color:rgba(255,255,255,.6); line-height:2; max-width:420px; margin:0 auto 44px; }
 .btn-gold {
-  background: var(--gold);
-  color: var(--ink);
-  padding: 16px 44px;
-  border-radius: 40px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-decoration: none;
-  transition: all 0.3s;
+  background:var(--gold); color:var(--ink);
+  padding:15px 44px; border-radius:40px;
+  font-size:13px; font-weight:700; letter-spacing:2px;
+  border:none; cursor:pointer; font-family:'Noto Sans TC',sans-serif;
+  transition:all .3s;
 }
-.btn-gold:hover { background: #e8c080; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,169,110,0.4); }
+.btn-gold:hover { background:#dfc080; transform:translateY(-2px); box-shadow:0 10px 30px rgba(201,169,110,.35); }
+.cta-stats { display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-top:64px;opacity:.5; }
+.cta-stat-num { font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:#fff; }
+.cta-stat-label { font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.5);margin-top:3px; }
 
-.btn-ghost {
-  border: 1px solid rgba(255,255,255,0.3);
-  color: rgba(255,255,255,0.8);
-  padding: 16px 44px;
-  border-radius: 40px;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.btn-ghost:hover { border-color: white; color: white; }
+/* ─── FOOTER ─── */
+footer { background:#140e0a;color:rgba(255,255,255,.35);text-align:center;padding:36px 24px;font-size:10px;letter-spacing:1.5px;line-height:2.2; }
 
-/* ── FOOTER ── */
-footer {
-  background: #1a1015;
-  color: rgba(255,255,255,0.4);
-  text-align: center;
-  padding: 40px 24px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  line-height: 2;
-}
-
-footer strong { color: rgba(255,255,255,0.7); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-  nav { padding: 14px 20px; }
-  .nav-links { display: none; }
-  .pain-grid { grid-template-columns: 1fr; }
-  .tech-grid { grid-template-columns: 1fr 1fr; }
-  .products-intro { grid-template-columns: 1fr; gap: 40px; }
-  .steps::before { display:none; }
-  .step { flex: 0 0 130px; }
-}
-
-@media (max-width: 480px) {
-  .tech-grid { grid-template-columns: 1fr; }
-  .cat-grid { grid-template-columns: 1fr 1fr; }
-}
-
-/* ── SCROLL REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible { opacity:1; transform: translateY(0); }
+/* ─── QUIZ MODAL ─── */
+.quiz-overlay { display:none;position:fixed;inset:0;z-index:9999;background:rgba(20,14,10,.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem; }
+.quiz-overlay.open { display:flex; }
+.quiz-modal { background:#fff;border-radius:20px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;padding:2rem 1.75rem;position:relative;animation:fadeUp .3s ease; }
+.quiz-close { position:absolute;top:1rem;right:1.25rem;background:none;border:none;font-size:22px;cursor:pointer;color:#888;line-height:1; }
+.qz-progress { display:flex;align-items:center;gap:10px;margin-bottom:1.75rem; }
+.qz-dots { display:flex;gap:6px;flex:1; }
+.qz-dot { flex:1;height:4px;border-radius:4px;background:#e5e3dc;transition:background .3s; }
+.qz-dot.done { background:#185FA5; }
+.qz-dot.active { background:#85B7EB; }
+.qz-lbl { font-size:12px;color:#888;white-space:nowrap; }
+.qz-tag { font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:#185FA5;margin-bottom:8px; }
+.qz-title { font-size:18px;font-weight:600;line-height:1.45;margin-bottom:6px;color:#1a1a18; }
+.qz-sub { font-size:14px;color:#5f5e5a;margin-bottom:1.25rem;line-height:1.6; }
+.qz-pills { display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.25rem; }
+.qz-pill { padding:8px 16px;border-radius:999px;border:1px solid #d3d1c7;background:#fff;color:#3d3d3a;font-size:13px;cursor:pointer;transition:all .15s;font-family:inherit; }
+.qz-pill:hover { border-color:#85B7EB;color:#185FA5; }
+.qz-pill.sel { background:#E6F1FB;border-color:#185FA5;color:#185FA5;font-weight:500; }
+.qz-cards-2,.qz-cards-3 { display:grid;gap:10px;margin-bottom:1rem; }
+.qz-cards-2 { grid-template-columns:repeat(2,1fr); }
+.qz-cards-3 { grid-template-columns:repeat(3,1fr); }
+@media(max-width:480px){ .qz-cards-3,.qz-cards-2{grid-template-columns:1fr} }
+.qz-card { padding:1rem;border-radius:12px;border:1px solid #d3d1c7;background:#fff;cursor:pointer;transition:all .15s;text-align:left; }
+.qz-card:hover { border-color:#85B7EB; }
+.qz-card.sel { border:2px solid #185FA5;background:#E6F1FB; }
+.qz-card-title { font-size:14px;font-weight:500;color:#1a1a18;margin-bottom:4px; }
+.qz-card-desc { font-size:12px;color:#5f5e5a;line-height:1.5; }
+.qz-card.sel .qz-card-title { color:#185FA5; }
+.qz-sub-box { background:#f5f4f0;border-radius:12px;padding:1rem;margin-bottom:.75rem; }
+.qz-sub-lbl { font-size:13px;font-weight:500;color:#5f5e5a;margin-bottom:10px; }
+textarea.qz-input,.qz-input { width:100%;padding:10px 14px;border-radius:8px;border:1px solid #d3d1c7;background:#fff;color:#1a1a18;font-size:14px;font-family:inherit;margin-top:8px; }
+textarea.qz-input { resize:none; }
+.qz-input:focus { outline:none;border-color:#185FA5; }
+.qz-name-row { margin-bottom:1.25rem; }
+.qz-lbl-sm { font-size:13px;color:#5f5e5a;display:block;margin-bottom:6px;font-weight:500; }
+.qz-contact-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:8px 0 1rem; }
+.qz-cc { display:flex;align-items:center;gap:10px;padding:.85rem 1rem;border-radius:12px;border:1px solid #d3d1c7;background:#fff;cursor:pointer;transition:all .15s; }
+.qz-cc:hover { border-color:#85B7EB; }
+.qz-cc.sel { border:2px solid #185FA5;background:#E6F1FB; }
+.qz-cc-lbl { font-size:14px;font-weight:500;color:#1a1a18; }
+.qz-cc.sel .qz-cc-lbl { color:#185FA5; }
+.qz-contact-in { margin-bottom:1rem;display:none; }
+.qz-privacy { font-size:12px;color:#888;line-height:1.6;margin-top:1rem; }
+.qz-btn-row { display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem; }
+.qz-btn-back { padding:10px 20px;border-radius:8px;border:1px solid #d3d1c7;background:transparent;color:#5f5e5a;font-size:14px;cursor:pointer;font-family:inherit; }
+.qz-btn-next { padding:10px 28px;border-radius:8px;border:none;background:#185FA5;color:#fff;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit; }
+.qz-btn-next:hover:not(:disabled) { background:#0C447C; }
+.qz-btn-next:disabled { background:#d3d1c7;color:#888;cursor:not-allowed; }
+.qz-error { margin-top:1rem;padding:10px 14px;border-radius:8px;background:#FCEBEB;border:1px solid #F09595;color:#791F1F;font-size:14px;display:none; }
+.qz-success { display:none;text-align:center;padding:2.5rem 1rem; }
+.qz-success-icon { width:56px;height:56px;border-radius:50%;background:#E6F1FB;color:#185FA5;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem; }
+.qz-block { display:none; }
+.qz-block.active { display:block; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ── -->
 <nav>
-  <a href="#" class="nav-logo">RENE<span>·</span>CELL</a>
+  <div class="nav-logo">RENE<span>·</span>CELL</div>
   <ul class="nav-links">
-    <li><a href="#philosophy">品牌理念</a></li>
-    <li><a href="#technology">核心技術</a></li>
+    <li><a href="#origin">品牌起源</a></li>
+    <li><a href="#science">皮膚科學</a></li>
+    <li><a href="#comparison">方案比較</a></li>
     <li><a href="#products">產品系列</a></li>
-    <li><a href="#ritual">使用步驟</a></li>
-    <li><a href="#" class="nav-cta" onclick="openQuiz();return false;">立即諮詢</a></li>
+    <li><button class="nav-cta" onclick="openQuiz()">立即諮詢</button></li>
   </ul>
+  <button class="nav-cta" style="display:none" id="mob-cta" onclick="openQuiz()">諮詢</button>
 </nav>
+<script>
+if(window.innerWidth<=768) document.getElementById('mob-cta').style.display='block';
+</script>
 
-
-<!-- ══ HERO ══ -->
+<!-- ════════════════════════════════
+  1. HERO
+════════════════════════════════ -->
 <section class="hero" id="home">
-  <div class="hero-bg" style="background-image:url('images/Hero_Background.png'); background-size:cover; background-position:center;"></div>
+  <div class="hero-bg"></div>
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
-  <div class="hero-orb orb3"></div>
-
-  <h1 class="hero-title serif">
-    肌膚吸收的問題<br><em>終於有了物理解法</em>
-  </h1>
-
-  <p class="hero-subtitle">
-    鑽石微晶重構通道 · 直達真皮重啟深層自癒
-  </p>
-
-  <div class="hero-btns">
-    <a href="#products" class="btn-primary">探索產品系列</a>
-    <a href="#" onclick="openQuiz();return false;" class="btn-outline" style="border-color:rgba(255,255,255,0.6);color:#fff;">立即諮詢體驗</a>
-  </div>
-
-  <div class="hero-certs">
-    <div class="cert-item">韓國 CGMP 認證</div>
-    <div class="cert-item">ISO 9001 品質管理</div>
-    <div class="cert-item">ISO 22716 化妝品GMP</div>
-    <div class="cert-item">Exa Peptasome 專利</div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ 韓國醫療級皮膚再生技術</div>
+    <h1 class="hero-title serif">
+      肌膚吸收的問題<br><em>終於有了物理解法</em>
+    </h1>
+    <p class="hero-sub">鑽石微晶重構通道 · 直達表皮活性層 · 重啟深層自癒</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">探索產品系列</a>
+      <button class="btn-ghost" onclick="openQuiz()">立即諮詢體驗</button>
+    </div>
+    <div class="hero-certs">
+      <div class="cert-item">韓國 CGMP 認證</div>
+      <div class="cert-item">ISO 9001 品質管理</div>
+      <div class="cert-item">ISO 22716 化妝品GMP</div>
+      <div class="cert-item">Exa Peptasome 專利</div>
+    </div>
   </div>
 </section>
 
-
-<!-- ══ PAIN POINT → SOLUTION ══ -->
-<section class="pain" id="philosophy">
+<!-- ════════════════════════════════
+  2. ORIGIN
+════════════════════════════════ -->
+<section class="origin" id="origin">
   <div class="container">
-    <div class="pain-grid">
-      <div class="pain-left reveal">
-        <div class="section-eyebrow">THE PROBLEM</div>
-        <h2 class="pain-title">醫美有效，<br>但你願意<em>一直做</em>嗎？</h2>
-        <p class="pain-body">
-          許多人選擇雷射、換膚、注射來維持肌膚狀態，
-          卻忽略了一個事實——療程結束後，肌膚仍需要每天的細心呵護。
-          高強度療程，代價不只是金錢，還有恢復期與刺激風險。
+    <div class="origin-grid">
+      <div class="origin-left reveal">
+        <div class="eyebrow" style="color:var(--gold)">BRAND ORIGIN</div>
+        <h2 class="origin-title">
+          從醫療級<br><em>傷口修復研究</em><br>到居家護膚
+        </h2>
+        <p class="origin-body">
+          RENE-CELL 的技術核心，源自韓國生醫實驗室對皮膚再生機制的深度研究——
+          原本用於醫療級傷口修復的細胞滲透理論，
+          經過嚴格的配方工程化後，轉化為每天可在家使用的保養系統。<br><br>
+          不是行銷概念，是真實的研發背景。
         </p>
-        <ul class="pain-list">
-          <li>單次療程費用高，效果難以持久</li>
-          <li>修復期間肌膚脆弱，日常護理困難</li>
-          <li>長期依賴外力刺激，肌膚自然機能下降</li>
-          <li>療程間空窗期，肌膚狀態忽好忽壞</li>
-        </ul>
+        <div class="cert-badges">
+          <div class="cert-badge">
+            <div class="cert-badge-icon">🏭</div>
+            <div>
+              <div class="cert-badge-name">韓國 CGMP 認證</div>
+              <div class="cert-badge-desc">Cosmetic Good Manufacturing Practice · 化妝品最高生產規範</div>
+            </div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-icon">📋</div>
+            <div>
+              <div class="cert-badge-name">ISO 9001 · ISO 22716</div>
+              <div class="cert-badge-desc">品質管理系統 · 國際化妝品 GMP 雙認證</div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="solution-card reveal">
-        <div class="section-eyebrow" style="color:var(--sage-dk); margin-bottom:24px;">THE RENE-CELL WAY</div>
-        <div class="sol-item">
-          <div class="sol-icon">🔬</div>
+      <div class="origin-patent reveal">
+        <div class="patent-title">CORE TECHNOLOGY</div>
+        <div class="patent-name">Exa Peptasome™<br>專利導入技術</div>
+        <p class="patent-desc">
+          專利奈米囊化系統，將功能性胜肽包覆於仿生脂質載體中，
+          配合鑽石微晶的物理疏通，
+          突破一般保養品停留於角質層表面的限制，
+          讓活性成分有效抵達表皮活性增殖區（棘狀層）。
+        </p>
+        <div class="patent-stats">
           <div>
-            <div class="sol-title">物理性角質優化技術</div>
-            <div class="sol-body">來自韓國的深層角質調理技術，溫和而有效地喚醒肌膚節律，無需破壞性外力。</div>
+            <div class="patent-stat-num">15<span style="font-size:18px;color:rgba(255,255,255,.4)">+</span></div>
+            <div class="patent-stat-label">種功能性胜肽</div>
           </div>
-        </div>
-        <div class="sol-item">
-          <div class="sol-icon">💎</div>
           <div>
-            <div class="sol-title">鑽石微晶導引系統</div>
-            <div class="sol-body">鑽石、紅寶石、藍寶石微細晶體，協助肌膚喚醒活力，透過物理性導引，精準啟動肌膚內在養護節律。</div>
+            <div class="patent-stat-num">365</div>
+            <div class="patent-stat-label">天持續調理</div>
           </div>
-        </div>
-        <div class="sol-item">
-          <div class="sol-icon">🧬</div>
           <div>
-            <div class="sol-title">多層次胜肽工程</div>
-            <div class="sol-body">每款產品搭載7-15種功能性胜肽，從抗老、緊緻到亮白，365天天天在作用。</div>
-          </div>
-        </div>
-        <div class="sol-item">
-          <div class="sol-icon">🌿</div>
-          <div>
-            <div class="sol-title">植物幹細胞能量網絡</div>
-            <div class="sol-body">番茄、北極莓、雪絨花等植物幹細胞萃取，賦予肌膚自然再生能量。</div>
+            <div class="patent-stat-num">3</div>
+            <div class="patent-stat-label">項國際認證</div>
           </div>
         </div>
       </div>
@@ -859,674 +539,132 @@ footer strong { color: rgba(255,255,255,0.7); }
   </div>
 </section>
 
-<!-- ══ TARGET AUDIENCE ══ -->
-<section class="audience">
+<!-- ════════════════════════════════
+  3. SKIN SCIENCE
+════════════════════════════════ -->
+<section class="skin-science" id="science">
   <div class="container">
-    <div style="text-align:center; margin-bottom:16px;">
-      <div class="section-eyebrow" style="justify-content:center;">You are...</div>
-      <h2 class="section-title reveal">你是哪一種肌膚狀態？</h2>
-      <p class="section-sub reveal" style="margin:0 auto; text-align:center;">
-       <br>找到你的肌膚狀態，就找到最適合的起點。
+    <div class="skin-science-inner reveal">
+      <div class="eyebrow" style="justify-content:center">SKIN SCIENCE</div>
+      <h2 class="section-title">為什麼滲透深度決定一切</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">
+        同樣塗在皮膚上，停留在角質層和抵達棘狀層，效果相差的不只是一層。
       </p>
     </div>
-
-   <div class="aud-grid-4">
-
-      <!-- 螢幕肌 -->
-      <div class="aud-card reveal" style="--aud-color:#7ab4d8;">
-        <div class="aud-tag">螢幕肌</div>
-        <div class="aud-name" style="font-size:15px; line-height:1.7; font-weight:400; color:var(--muted); margin-bottom:16px;">
-          每天盯著螢幕8小時以上，藍光、壓力、熬夜輪番傷害——<strong style="color:var(--ink);">肌膚來不及修復就已經在老化</strong>
-        </div>
-        <ul class="aud-traits">
-          <li>膚色暗沉、毛孔越來越明顯</li>
-          <li>壓力大時特別容易冒痘、出油</li>
-          <li>沒時間做複雜保養，但不想放棄效果</li>
-          <li>想要洗完臉就能感受到變化</li>
-        </ul>
-        <div style="margin-top:16px; padding:12px 16px; background:#ecf6fd; border-radius:10px; font-size:12px; color:#3d7aac; line-height:1.8;">
-          💡 <strong>入門建議：</strong>酵素潔面粉 + 多肽化妝水 + 透明質酸
-        </div>
-      </div>
-
-      <!-- 玻璃肌 -->
-      <div class="aud-card reveal" style="--aud-color:#d48fa0;">
-        <div class="aud-tag">玻璃肌</div>
-        <div class="aud-name" style="font-size:15px; line-height:1.7; font-weight:400; color:var(--muted); margin-bottom:16px;">
-          用什麼都怕、換季就崩潰、一不小心就泛紅脫皮——<strong style="color:var(--ink);">肌膚屏障已經在求救</strong>
-        </div>
-        <ul class="aud-traits">
-          <li>肌膚容易泛紅、乾燥緊繃反覆出現</li>
-          <li>被酸類或過度去角質傷過</li>
-          <li>無法接受強酸或雷射等刺激性療程</li>
-          <li>想修護但又怕選錯成分越補越糟</li>
-        </ul>
-        <div style="margin-top:16px; padding:12px 16px; background:#fdf0f3; border-radius:10px; font-size:12px; color:#a8506a; line-height:1.8;">
-          💡 <strong>入門建議：</strong>酵素潔面粉 + 透明質酸 + Q肌底面霜
-        </div>
-      </div>
-
-      <!-- 抗老焦慮肌 -->
-      <div class="aud-card reveal" style="--aud-color:#9880b8;">
-        <div class="aud-tag">抗老焦慮肌</div>
-        <div class="aud-name" style="font-size:15px; line-height:1.7; font-weight:400; color:var(--muted); margin-bottom:16px;">
-          照鏡子開始數細紋，摸臉感覺彈力不如以前——<strong style="color:var(--ink);">想介入但不知道從哪裡開始</strong>
-        </div>
-        <ul class="aud-traits">
-          <li>法令紋、眼尾紋、額頭紋漸漸明顯</li>
-          <li>膚色暗沉、失去光澤與彈力</li>
-          <li>重視成分與品質，不想亂買</li>
-          <li>想用有研發支撐的成分天天在家維持</li>
-        </ul>
-        <div style="margin-top:16px; padding:12px 16px; background:#f4effe; border-radius:10px; font-size:12px; color:#6d4fa8; line-height:1.8;">
-          💡 <strong>入門建議：</strong>鑽石面膜 + 鑽石精華 + 多肽霜
-        </div>
-      </div>
-
-      <!-- 醫美疲憊肌 -->
-      <div class="aud-card reveal" style="--aud-color:#c9a96e;">
-        <div class="aud-tag" style="background:#c9a96e;">醫美疲憊肌</div>
-        <div class="aud-name" style="font-size:15px; line-height:1.7; font-weight:400; color:var(--muted); margin-bottom:16px;">
-          做了幾年療程，皮膚反而越來越薄越敏感——<strong style="color:var(--ink);">開始懷疑一直刺激是對的嗎？</strong>
-        </div>
-        <ul class="aud-traits">
-          <li>雷射、換膚做完恢復期越來越長</li>
-          <li>療程間空窗期肌膚狀態忽好忽壞</li>
-          <li>花了大錢效果卻越來越難維持</li>
-          <li>想找更溫和但持續有效的長期方案</li>
-        </ul>
-        <div style="margin-top:16px; padding:12px 16px; background:#fdf7ee; border-radius:10px; font-size:12px; color:#a87040; line-height:1.8;">
-          💡 <strong>入門建議：</strong>水凝膜2號 + 鑽石精華 + 奇蹟鑽石修護霜
-        </div>
-      </div>
-
+    <div class="skin-svg-wrap reveal">
+      <div id="skin-svg-container"></div>
     </div>
   </div>
 </section>
 
-<!-- ══ PRODUCT CATEGORIES ══ -->
+<!-- ════════════════════════════════
+  4. METHOD COMPARISON
+════════════════════════════════ -->
+<section class="comparison" id="comparison">
+  <div class="container">
+    <div class="comparison-inner reveal">
+      <div class="eyebrow" style="justify-content:center">OBJECTIVE COMPARISON</div>
+      <h2 class="section-title">客觀比較：兩種選擇，各有代價</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">
+        沒有一種方法只有好處。了解完整的優缺點，才能找到最適合自己的方式。
+      </p>
+    </div>
+    <div class="cmp-wrap reveal" id="cmp-container"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  5. WHO ARE YOU
+════════════════════════════════ -->
+<section class="audience" id="audience">
+  <div class="container">
+    <div class="aud-intro reveal">
+      <div class="eyebrow" style="justify-content:center">YOU ARE...</div>
+      <h2 class="section-title">你是哪一種肌膚狀態？</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">
+        找到你的肌膚狀態，就找到最適合的起點。
+      </p>
+    </div>
+    <div class="aud-grid" id="aud-grid"></div>
+    <div class="aud-cta reveal">
+      <p>不確定自己是哪種狀態？<br>填寫簡短問卷，讓我們幫你找到最適合的入門組合。</p>
+      <button class="btn-gold" onclick="openQuiz()">立即諮詢體驗 →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  6. PRODUCTS
+════════════════════════════════ -->
 <section class="products" id="products">
   <div class="container">
-    <div style="margin-bottom:80px; display:flex; flex-direction:column; gap:40px; max-width:700px; margin-left:auto; margin-right:auto;">
-      <div class="reveal">
-        <div class="section-eyebrow">3 STEPS</div>
-        <h2 class="section-title">重啟肌膚自癒機制三階段</h2>
-        <p class="section-sub">
-          一場精準的循環啟動，幫助肌膚突破停滯慣性。
-        </p>
-      </div>
-   <div class="reveal" style="display:flex; flex-direction:column; gap:16px;">
-
-        <div style="background:linear-gradient(135deg,#eaf9f6,#f4f0fc); border-radius:20px; padding:24px 28px; display:flex; gap:16px; align-items:flex-start;">
-          <div style="flex-shrink:0; width:40px; height:40px; border-radius:50%; background:rgba(107,191,170,0.2); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; color:#3d8a78;">01</div>
-          <div>
-            <div style="font-size:10px; letter-spacing:4px; color:#6bbfaa; margin-bottom:6px;">THE RESET · 清潔與代謝</div>
-            <div style="font-size:15px; font-weight:700; color:#2a2025; margin-bottom:8px;">每日清潔，建立吸收基礎</div>
-            <p style="font-size:12.5px; color:#6a5860; line-height:1.8;">溫和清除老廢角質與日常污染，讓肌膚回到最乾淨的起點，為後續保養建立最佳吸收條件。</p>
-          </div>
-        </div>
-
-        <div style="background:linear-gradient(135deg,#f0ecf8,#fce8ed); border-radius:20px; padding:24px 28px; display:flex; gap:16px; align-items:flex-start; border:1.5px solid rgba(152,128,184,0.3);">
-          <div style="flex-shrink:0; width:40px; height:40px; border-radius:50%; background:rgba(152,128,184,0.2); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; color:#6d4fa8;">02</div>
-          <div>
-            <div style="font-size:10px; letter-spacing:4px; color:#9880b8; margin-bottom:6px;">THE REVITALIZE · 深層活化</div>
-            <div style="font-size:15px; font-weight:700; color:#2a2025; margin-bottom:8px;">鑽石系列，喚醒代謝節律</div>
-            <p style="font-size:12.5px; color:#6a5860; line-height:1.8;">週期性的物理性導引，精準喚醒肌膚代謝節律，讓長期停滯的肌膚狀態重新啟動，透亮與緊緻感顯著提升。</p>
-            <div style="margin-top:10px; display:inline-block; font-size:10px; letter-spacing:2px; color:#6d4fa8; background:rgba(152,128,184,0.12); padding:4px 12px; border-radius:20px;">💎 鑽石套組核心步驟</div>
-          </div>
-        </div>
-
-        <div style="background:linear-gradient(135deg,#fdf7ee,#fce8ed); border-radius:20px; padding:24px 28px; display:flex; gap:16px; align-items:flex-start;">
-          <div style="flex-shrink:0; width:40px; height:40px; border-radius:50%; background:rgba(201,169,110,0.2); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; color:#a87040;">03</div>
-          <div>
-            <div style="font-size:10px; letter-spacing:4px; color:#c9a96e; margin-bottom:6px;">THE RESTORE · 修護與防護</div>
-            <div style="font-size:15px; font-weight:700; color:#2a2025; margin-bottom:8px;">屏障修護，守住每天的進步</div>
-            <p style="font-size:12.5px; color:#6a5860; line-height:1.8;">深層補水、強化屏障、阻擋UV與藍光，讓前兩階段的成果穩定累積，肌膚重回健康循環。</p>
-          </div>
-        </div>
-
-      </div>
-</section>
-
-<!-- ══ STARTER GUIDE ══ -->
-<section style="background:white; padding:100px 24px;" id="starter">
-  <div class="container">
-    <div style="text-align:center; margin-bottom:56px;">
-      <div class="section-eyebrow" style="justify-content:center;">STARTER GUIDE</div>
-      <h2 class="section-title reveal">不知道從哪裡開始？</h2>
-      <p class="section-sub reveal" style="margin:0 auto; text-align:center;">
-        不用一次買齊，先找到最適合你的入門組合，<br>
-        感受效果後再逐步升級屬於你的保養系統。
+    <div class="products-intro reveal">
+      <div class="eyebrow" style="justify-content:center">PRODUCT LINE</div>
+      <h2 class="section-title">完整產品系列</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">
+        點擊任一產品，查看完整成分與使用說明。
       </p>
     </div>
-
-    <!-- 油痘肌 -->
-    <div class="reveal" style="margin-bottom:48px;">
-      <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
-        <div style="width:8px; height:8px; border-radius:50%; background:#6bbfaa; flex-shrink:0;"></div>
-        <h3 style="font-size:18px; font-weight:700; letter-spacing:3px; color:#3d8a78;">油痘肌 · 毛孔控油型</h3>
-        <div style="flex:1; height:1px; background:#eaf9f6;"></div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-
-        <!-- 小資版 油痘肌 -->
-        <div style="border:1.5px solid #b2e2d8; border-radius:20px; padding:32px 28px; position:relative; background:#f8fefd;">
-          <div style="position:absolute; top:-14px; left:24px; background:#6bbfaa; color:white; font-size:11px; font-weight:700; letter-spacing:3px; padding:4px 16px; border-radius:20px;">小資入門版</div>
-          <div style="font-size:12px; color:#6bbfaa; letter-spacing:2px; margin-bottom:20px; margin-top:8px;">體驗核心功效 · 輕鬆上手</div>
-
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #e0f5f0;">
-              <span style="font-size:18px;">🧼</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">酵素潔面粉</div>
-                <div style="font-size:11px; color:#8a7880;">溫和酵素去角質 · 控油清潔</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#b2e2d8; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #e0f5f0;">
-              <span style="font-size:18px;">💧</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">多肽化妝水</div>
-                <div style="font-size:11px; color:#8a7880;">12種胜肽導入 · 抗藍光</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#b2e2d8; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #e0f5f0;">
-              <span style="font-size:18px;">🔬</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">透明質酸精華</div>
-                <div style="font-size:11px; color:#8a7880;">三分子玻尿酸 · 15種胜肽</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:20px; padding-top:16px; border-top:1px dashed #b2e2d8; font-size:12px; color:#6bbfaa;">
-            ✦ 清潔→補水→保濕，建立基礎控油屏障
-          </div>
-        </div>
-
-        <!-- 進階版 油痘肌 -->
-        <div style="border:1.5px solid #6bbfaa; border-radius:20px; padding:32px 28px; position:relative; background:linear-gradient(135deg,#f8fefd,#eaf9f6);">
-          <div style="position:absolute; top:-14px; left:24px; background:#3d8a78; color:white; font-size:11px; font-weight:700; letter-spacing:3px; padding:4px 16px; border-radius:20px;">進階強效版</div>
-          <div style="font-size:12px; color:#3d8a78; letter-spacing:2px; margin-bottom:20px; margin-top:8px;">深層調理 · 全面改善膚質</div>
-
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #b2e2d8;">
-              <span style="font-size:18px;">🧼</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">酵素潔面粉</div>
-                <div style="font-size:11px; color:#8a7880;">溫和酵素去角質 · 控油清潔</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#6bbfaa; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #b2e2d8;">
-              <span style="font-size:18px;">🌀</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">水凝膜1號 去角質面膜</div>
-                <div style="font-size:11px; color:#8a7880;">AHA+PHA雙酸 · 週1-2次深層代謝</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#6bbfaa; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #b2e2d8;">
-              <span style="font-size:18px;">💧</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">多肽化妝水</div>
-                <div style="font-size:11px; color:#8a7880;">12種胜肽導入 · 抗藍光</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#6bbfaa; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #b2e2d8;">
-              <span style="font-size:18px;">🔬</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">透明質酸精華</div>
-                <div style="font-size:11px; color:#8a7880;">三分子玻尿酸 · 15種胜肽</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:20px; padding-top:16px; border-top:1px dashed #6bbfaa; font-size:12px; color:#3d8a78;">
-            ✦ 加入雙酸面膜，深度疏通毛孔、改善痘後暗沉
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 乾敏肌 -->
-    <div class="reveal">
-      <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
-        <div style="width:8px; height:8px; border-radius:50%; background:#d48fa0; flex-shrink:0;"></div>
-        <h3 style="font-size:18px; font-weight:700; letter-spacing:3px; color:#a8506a;">乾敏肌 · 修護保濕型</h3>
-        <div style="flex:1; height:1px; background:#fce8ed;"></div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-
-        <!-- 小資版 乾敏肌 -->
-        <div style="border:1.5px solid #f0c9d4; border-radius:20px; padding:32px 28px; position:relative; background:#fdf8fa;">
-          <div style="position:absolute; top:-14px; left:24px; background:#d48fa0; color:white; font-size:11px; font-weight:700; letter-spacing:3px; padding:4px 16px; border-radius:20px;">小資入門版</div>
-          <div style="font-size:12px; color:#d48fa0; letter-spacing:2px; margin-bottom:20px; margin-top:8px;">體驗核心功效 · 輕鬆上手</div>
-
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f5dde5;">
-              <span style="font-size:18px;">🧼</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">酵素潔面粉</div>
-                <div style="font-size:11px; color:#8a7880;">溫和清潔 · 洗後不緊繃</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#f0c9d4; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f5dde5;">
-              <span style="font-size:18px;">💧</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">多肽化妝水</div>
-                <div style="font-size:11px; color:#8a7880;">12種胜肽導入 · 即時補水</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#f0c9d4; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f5dde5;">
-              <span style="font-size:18px;">🔬</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">透明質酸精華</div>
-                <div style="font-size:11px; color:#8a7880;">三分子玻尿酸 · 深層鎖水</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#f0c9d4; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f5dde5;">
-              <span style="font-size:18px;">✨</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">Q肌底面霜</div>
-                <div style="font-size:11px; color:#8a7880;">益生菌屏障 · 8種胜肽修護</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:20px; padding-top:16px; border-top:1px dashed #f0c9d4; font-size:12px; color:#d48fa0;">
-            ✦ 清潔→導入→深層補水→屏障鎖水，溫和穩定敏感肌
-          </div>
-        </div>
-
-        <!-- 進階版 乾敏肌 -->
-        <div style="border:1.5px solid #d48fa0; border-radius:20px; padding:32px 28px; position:relative; background:linear-gradient(135deg,#fdf8fa,#fce8ed);">
-          <div style="position:absolute; top:-14px; left:24px; background:#a8506a; color:white; font-size:11px; font-weight:700; letter-spacing:3px; padding:4px 16px; border-radius:20px;">進階強效版</div>
-          <div style="font-size:12px; color:#a8506a; letter-spacing:2px; margin-bottom:20px; margin-top:8px;">深層修護 · 全面改善乾燥敏感</div>
-
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f0c9d4;">
-              <span style="font-size:18px;">🧼</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">酵素潔面粉</div>
-                <div style="font-size:11px; color:#8a7880;">溫和清潔 · 洗後不緊繃</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#d48fa0; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f0c9d4;">
-              <span style="font-size:18px;">🌸</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">水凝膜2號 水潤滋養面膜</div>
-                <div style="font-size:11px; color:#8a7880;">神經醯胺屏障 · 11種胜肽滋養</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#d48fa0; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f0c9d4;">
-              <span style="font-size:18px;">✨</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">活顏噴霧</div>
-                <div style="font-size:11px; color:#8a7880;">植物幹細胞抗衰 · 隨時補濕提亮</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#d48fa0; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f0c9d4;">
-              <span style="font-size:18px;">🔬</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">透明質酸精華</div>
-                <div style="font-size:11px; color:#8a7880;">三分子玻尿酸 · 深層鎖水</div>
-              </div>
-            </div>
-            <div style="text-align:center; color:#d48fa0; font-size:18px; line-height:1;">↓</div>
-            <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:white; border-radius:12px; border:1px solid #f0c9d4;">
-              <span style="font-size:18px;">✨</span>
-              <div>
-                <div style="font-size:13px; font-weight:700; color:#2a2025;">Q肌底面霜</div>
-                <div style="font-size:11px; color:#8a7880;">益生菌屏障 · 8種胜肽深層修護</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:20px; padding-top:16px; border-top:1px dashed #d48fa0; font-size:12px; color:#a8506a;">
-            ✦ 加入滋養面膜＋活顏噴霧，全面舒緩修護乾敏肌屏障
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 底部提示 -->
-    <div class="reveal" style="text-align:center; margin-top:56px; padding:28px 32px; background:linear-gradient(135deg,#f4effe,#fce8ed); border-radius:20px;">
-      <div style="font-size:13px; color:#8a7880; line-height:2;">
-        💡 以上為建議入門組合，實際使用效果因膚質而異<br>
-        <span style="color:#a87080; font-weight:500;">想了解更多或諮詢專屬保養建議，歡迎直接聯繫我們</span>
-      </div>
-      <a href="#" onclick="openQuiz();return false;" style="display:inline-block; margin-top:16px; background:#2a2025; color:white; padding:12px 32px; border-radius:30px; font-size:12px; letter-spacing:2px; text-decoration:none;">立即諮詢體驗 →</a>
-    </div>
-
-  </div>
-</section>
-  
-<!-- ══ TECHNOLOGY + INGREDIENTS ══ -->
-<section class="tech" id="technology">
-  <div class="container">
-
-    <!-- 標題 -->
-    <div style="text-align:center; margin-bottom:56px;">
-      <div class="section-eyebrow" style="justify-content:center;">TECHNOLOGY & HERO INGREDIENTS</div>
-      <h2 class="section-title reveal">為什麼 RENE-CELL 與眾不同</h2>
-      <p class="section-sub reveal" style="margin:0 auto; text-align:center;">
-        每一瓶的背後，是韓國頂尖實驗室的研發積累。<br>
-        六大核心技術，搭載八大明星成分，日夜不間斷作用。
-      </p>
-    </div>
-
-    <!-- 六大技術 -->
-    <div style="margin-bottom:16px;">
-      <div style="font-size:11px; letter-spacing:4px; color:var(--gold); text-align:center; margin-bottom:32px;">── 六大核心技術 ──</div>
-    </div>
-
-    <div class="tech-grid" style="margin-bottom:80px;">
-      <div class="tech-card reveal" style="--grad:linear-gradient(90deg,#d4a0a8,#f0c8d0); --num-color:#d4a0a8;">
-        <div class="tech-num">01</div>
-        <div class="tech-icon">💎</div>
-        <div class="tech-name">鑽石微晶物理技術</div>
-        <div class="tech-desc">鑽石粉、紅寶石、藍寶石、紫水晶微細晶體構成的物理性角質優化系統。無酸性刺激，溫和喚醒肌膚，讓後續保養成分深達肌底。</div>
-      </div>
-      <div class="tech-card reveal" style="--grad:linear-gradient(90deg,#9880b8,#c4b4e0); --num-color:#9880b8;">
-        <div class="tech-num">02</div>
-        <div class="tech-icon">🧬</div>
-        <div class="tech-name">多胜肽工程配方</div>
-        <div class="tech-desc">搭載7-15種生物工程胜肽，涵蓋類肉毒胜肽、抗老胜肽、促膠原胜肽、消浮腫胜肽等功能分工，全面作用，日夜不間斷。</div>
-      </div>
-      <div class="tech-card reveal" style="--grad:linear-gradient(90deg,#7ab4d8,#b4d8f0); --num-color:#7ab4d8;">
-        <div class="tech-num">03</div>
-        <div class="tech-icon">🌿</div>
-        <div class="tech-name">植物幹細胞能量網絡</div>
-        <div class="tech-desc">北極莓、雪絨花、蓮花、人蔘、番茄等珍稀植物幹細胞萃取，賦予肌膚自然再生能量，支持長期調理。</div>
-      </div>
-      <div class="tech-card reveal" style="--grad:linear-gradient(90deg,#6bbfaa,#a0dfd0); --num-color:#6bbfaa;">
-        <div class="tech-num">04</div>
-        <div class="tech-icon">🔬</div>
-        <div class="tech-name">AHA + PHA 雙酸協同</div>
-        <div class="tech-desc">乙醇酸（AHA）搭配乳糖酸（PHA），分子量精準設計，深層喚醒角質代謝，同時維持肌膚屏障完整性，敏感肌也能使用。</div>
-      </div>
-      <div class="tech-card reveal" style="--grad:linear-gradient(90deg,#d4a86e,#f0d090); --num-color:#d4a86e;">
-        <div class="tech-num">05</div>
-        <div class="tech-icon">🛡️</div>
-        <div class="tech-name">神經醯胺屏障矩陣</div>
-        <div class="tech-desc">神經醯胺NP + 磷脂 + 膽固醇，完美仿照天然角質層的黃金比例，強化屏障、鎖住水分，讓所有功效成分不流失。</div>
-      </div>
-      <div class="tech-card reveal" style="--grad:linear-gradient(90deg,#d48fa0,#f0b8c8); --num-color:#d48fa0;">
-        <div class="tech-num">06</div>
-        <div class="tech-icon">☀️</div>
-        <div class="tech-name">抗藍光防護體系</div>
-        <div class="tech-desc">生物類黃酮、雪絨花幹細胞、Ectoin，全系列搭載抗藍光成分。在螢幕時代，從保養到防曬全方位守護肌膚。</div>
-      </div>
-    </div>
-
-    <!-- 分隔線 -->
-    <div style="text-align:center; margin-bottom:48px;">
-      <div style="width:60px; height:1px; background:var(--gold); margin:0 auto 20px;"></div>
-      <div style="font-size:11px; letter-spacing:4px; color:var(--gold);">── 八大明星成分 ──</div>
-    </div>
-
-    <!-- 八大明星成分 -->
-    <div class="ing-grid">
-      <div class="ing-card reveal">
-        <div class="ing-icon">💎</div>
-        <div class="ing-name">鑽石 · 紅寶石 · 藍寶石微晶</div>
-        <div class="ing-benefit">物理煥膚 · 礦物導引</div>
-        <div class="ing-desc">珍貴礦石微粉構成的物理性調理核心，協助喚醒肌膚活力，讓後續保養成分有效滲透。</div>
-      </div>
-      <div class="ing-card reveal">
-        <div class="ing-icon">🧬</div>
-        <div class="ing-name">多達15種功能性胜肽</div>
-        <div class="ing-benefit">緊緻 · 撫紋 · 促膠原</div>
-        <div class="ing-desc">涵蓋類肉毒、消浮腫、促膠原、抗氧化等功能分工的胜肽系統，全面對抗老化。</div>
-      </div>
-      <div class="ing-card reveal">
-        <div class="ing-icon">🌸</div>
-        <div class="ing-name">積雪草苷 Madecassoside</div>
-        <div class="ing-benefit">舒敏 · 屏障修護</div>
-        <div class="ing-desc">積雪草全萃複合物，強效舒緩敏感泛紅，同時促進肌膚自然調理，適合術後及敏感肌。</div>
-      </div>
-      <div class="ing-card reveal">
-        <div class="ing-icon">❄️</div>
-        <div class="ing-name">北極莓 · 雪絨花幹細胞</div>
-        <div class="ing-benefit">抗藍光 · 抗氧化</div>
-        <div class="ing-desc">極地植物在嚴苛環境下進化出的超強抗氧化力，同時提供現代人急需的藍光防護。</div>
-      </div>
-      <div class="ing-card reveal">
-        <div class="ing-icon">🫀</div>
-        <div class="ing-name">水解彈性蛋白</div>
-        <div class="ing-benefit">彈力 · 緊緻</div>
-        <div class="ing-desc">鑽石系列的核心修護成分，深層補充肌膚彈性蛋白，改善鬆弛、提升肌膚張力。</div>
-      </div>
-      <div class="ing-card reveal">
-        <div class="ing-icon">🔵</div>
-        <div class="ing-name">CoQ10 輔酶Q10</div>
-        <div class="ing-benefit">強力抗氧 · 活化細胞</div>
-        <div class="ing-desc">細胞級別的抗氧化成分，對抗環境污染與自由基傷害，讓肌膚煥發自然光澤。</div>
-      </div>
-      <div class="ing-card reveal">
-        <div class="ing-icon">🌿</div>
-        <div class="ing-name">神經醯胺 NP + 磷脂 + 膽固醇</div>
-        <div class="ing-benefit">屏障重建 · 鎖水</div>
-        <div class="ing-desc">黃金比例仿真角質層脂質矩陣，從根本強化皮膚屏障，讓所有保養成分不流失。</div>
-      </div>
-      <div class="ing-card reveal">
-        <div class="ing-icon">🌺</div>
-        <div class="ing-name">谷胱甘肽 Glutathione</div>
-        <div class="ing-benefit">美白 · 全身抗氧</div>
-        <div class="ing-desc">醫美等級的抗氧化美白成分，搭配菸鹼醯胺、維生素C，三重協同淡化斑點，提升整體膚色亮度。</div>
-      </div>
-    </div>
-
+    <div class="prod-grid reveal" id="prod-grid"></div>
   </div>
 </section>
 
-<!-- ══ RITUAL ══ -->
-<section class="ritual" id="ritual">
-  <div class="container">
-    <div class="ritual-title">
-      <div class="section-eyebrow" style="justify-content:center; color:var(--lav-dk);">DAILY RITUAL</div>
-      <h2 class="section-title reveal">每日護膚儀式</h2>
-      <p class="section-sub reveal" style="margin:0 auto; text-align:center;">由韓國專家設計的循序漸進保養步驟，讓每一滴精華都能最大程度滲透吸收。</p>
-    </div>
-
-    <div class="steps reveal">
-      <div class="step">
-        <div class="step-circle">🧼<span class="step-num">1</span></div>
-        <div class="step-name">深層清潔</div>
-        <div class="step-prod">酵素潔面粉<br>溫和去角質</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">🌀<span class="step-num">2</span></div>
-        <div class="step-name">角質調理</div>
-        <div class="step-prod">水凝膜系列<br>（一週1-2次）</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">💎<span class="step-num">3</span></div>
-        <div class="step-name">鑽石導引</div>
-        <div class="step-prod">奇蹟鑽石療程<br>(頻率視個人而定)</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">💧<span class="step-num">4</span></div>
-        <div class="step-name">基礎保養</div>
-        <div class="step-prod">延續療程效果<br>(依膚質不同挑選)</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">✨<span class="step-num">5</span></div>
-        <div class="step-name">特殊加強</div>
-        <div class="step-prod">淡斑/曬後護理<br>植物幹細胞噴霧</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">☀️<span class="step-num">6</span></div>
-        <div class="step-name">日間防護</div>
-        <div class="step-prod">隔絕空汙及塵蹣<br>抗藍光及紫外線</div>
+<!-- product modal -->
+<div class="modal-overlay" id="prodModal" onclick="if(event.target===this)closeProdModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeProdModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-icon-wrap" id="mIconWrap"></div>
+      <div>
+        <div class="modal-title" id="mTitle"></div>
+        <div class="modal-sub" id="mSub"></div>
       </div>
     </div>
+    <div id="mBody"></div>
   </div>
-</section>
+</div>
 
-
-<!-- ══ FINAL CTA ══ -->
-<section class="cta-final" id="contact">
-  <div style="position:relative; z-index:1;">
-    <div class="section-eyebrow" style="justify-content:center; color:var(--gold);">BEGIN YOUR JOURNEY</div>
-    <div class="cta-divider"></div>
-   <p class="cta-quote reveal" style="font-style:normal; font-size:clamp(32px,5vw,56px); letter-spacing:2px;">
-      先給自己<em>一個月</em>
-    </p>
-
-    <p style="font-size:15px; color:rgba(255,255,255,0.7); line-height:2; max-width:480px; margin:0 auto 48px; letter-spacing:1px;">
+<!-- ════════════════════════════════
+  7. FINAL CTA
+════════════════════════════════ -->
+<section class="final-cta" id="cta">
+  <div class="final-cta-inner">
+    <div class="cta-eyebrow reveal">BEGIN YOUR JOURNEY</div>
+    <h2 class="cta-heading serif reveal">先給自己<em>一個月</em></h2>
+    <p class="cta-body reveal">
       肌膚記得它本來的樣子，<br>
       只是需要你給它一個重新開始的機會。
     </p>
-
-    <div class="cta-btns reveal">
-      <a href="#" onclick="openQuiz();return false;" class="btn-gold">立即諮詢體驗</a>
+    <button class="btn-gold reveal" onclick="openQuiz()">立即諮詢體驗</button>
+    <div class="cta-stats reveal">
+      <div>
+        <div class="cta-stat-num">3</div>
+        <div class="cta-stat-label">項國際認證</div>
+      </div>
+      <div>
+        <div class="cta-stat-num">15+</div>
+        <div class="cta-stat-label">種功能性胜肽</div>
+      </div>
+      <div>
+        <div class="cta-stat-num">28</div>
+        <div class="cta-stat-label">天自然代謝週期</div>
+      </div>
+      <div>
+        <div class="cta-stat-num">365</div>
+        <div class="cta-stat-label">天持續調理</div>
+      </div>
     </div>
-
-    <div style="margin-top:64px; display:flex; gap:48px; justify-content:center; flex-wrap:wrap; opacity:0.5;">
-      <div style="text-align:center;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; color:white;">3</div>
-        <div style="font-size:11px; letter-spacing:2px; color:rgba(255,255,255,0.5);">項國際認證</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; color:white;">15+</div>
-        <div style="font-size:11px; letter-spacing:2px; color:rgba(255,255,255,0.5);">種功能胜肽<br>奈米化分子滲透</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; color:white;">365</div>
-        <div style="font-size:11px; letter-spacing:2px; color:rgba(255,255,255,0.5);">天持續調理</div>
-      </div>
-    </div>
+  </div>
 </section>
 
-
-<!-- FOOTER -->
 <footer>
-  <div style="max-width:760px; margin:0 auto;">
-
-    <p style="font-size:13px; letter-spacing:3px; color:rgba(255,255,255,0.6); margin-bottom:24px;">
-      ── 使用前請務必了解 ──
-    </p>
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:left; margin-bottom:36px;">
-
-      <div style="padding:20px; background:rgba(255,255,255,0.05); border-radius:14px; border:1px solid rgba(255,255,255,0.08);">
-        <div style="font-size:14px; color:rgba(212,160,168,0.9); font-weight:700; margin-bottom:10px; letter-spacing:1px;">📋 事前諮詢</div>
-        <p style="font-size:11.5px; color:rgba(255,255,255,0.5); line-height:1.9;">
-          使用前務必經由專人評估，溝通自身過敏史，<strong style="color:rgba(255,255,255,0.7);"> 先進行體驗與局部測試。</strong>
-        </p>
-      </div>
-
-      <div style="padding:20px; background:rgba(255,255,255,0.05); border-radius:14px; border:1px solid rgba(255,255,255,0.08);">
-        <div style="font-size:14px; color:rgba(184,207,202,0.9); font-weight:700; margin-bottom:10px; letter-spacing:1px;">⏱️ 專業操作</div>
-        <p style="font-size:11.5px; color:rgba(255,255,255,0.5); line-height:1.9;">
-          本系列屬高效能調理產品，<strong style="color:rgba(255,255,255,0.7);">請依照建議的使用頻率與停留時間操作</strong>，初次使用建議從低頻率開始，觀察肌膚反應後再調整。
-        </p>
-      </div>
-
-    </div>
-
-    <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:24px;">
-      <p style="font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:2px; line-height:2.2;">
-        本內容為個人成分研究與使用體驗紀錄分享，非醫療建議。每個人膚質不同，建議使用前先諮詢專業人員，或從局部測試開始。<br>
-        © 2026 RENE-CELL 科學筆記 · All content is for reference only · Made in Korea
-      </p>
-    </div>
-
-  </div>
+  <p>本內容為個人成分研究與使用體驗紀錄，非醫療建議。使用前建議先諮詢專業人員或進行局部測試。</p>
+  <p style="margin-top:8px">© 2026 RENE-CELL 科學筆記 · Made in Korea · All content for reference only</p>
 </footer>
 
-
-<!-- ══ QUIZ MODAL ══ -->
-<style>
-.quiz-overlay {
-  display:none; position:fixed; inset:0; z-index:9999;
-  background:rgba(20,10,15,0.75); backdrop-filter:blur(6px);
-  align-items:center; justify-content:center; padding:1rem;
-}
-.quiz-overlay.open { display:flex; }
-.quiz-modal {
-  background:#fff; border-radius:20px;
-  width:100%; max-width:600px; max-height:90vh;
-  overflow-y:auto; padding:2rem 1.75rem;
-  position:relative; animation:quizIn .3s ease;
-}
-@keyframes quizIn { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-.quiz-close {
-  position:absolute; top:1rem; right:1.25rem;
-  background:none; border:none; font-size:22px;
-  cursor:pointer; color:#888; line-height:1;
-}
-.quiz-close:hover { color:#333; }
-.qz-progress { display:flex; align-items:center; gap:10px; margin-bottom:1.75rem; }
-.qz-dots { display:flex; gap:6px; flex:1; }
-.qz-dot { flex:1; height:4px; border-radius:4px; background:#e5e3dc; transition:background .3s; }
-.qz-dot.done { background:#7F77DD; }
-.qz-dot.active { background:#AFA9EC; }
-.qz-lbl { font-size:12px; color:#888; white-space:nowrap; }
-.qz-tag { font-size:11px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7F77DD; margin-bottom:8px; }
-.qz-title { font-size:18px; font-weight:600; line-height:1.45; margin-bottom:6px; color:#1a1a18; }
-.qz-sub { font-size:14px; color:#5f5e5a; margin-bottom:1.25rem; line-height:1.6; }
-.qz-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:1.25rem; }
-.qz-pill { padding:8px 16px; border-radius:999px; border:1px solid #d3d1c7; background:#fff; color:#3d3d3a; font-size:14px; cursor:pointer; transition:all .15s; font-family:inherit; }
-.qz-pill:hover { border-color:#AFA9EC; color:#534AB7; }
-.qz-pill.sel { background:#EEEDFE; border-color:#7F77DD; color:#3C3489; font-weight:600; }
-.qz-cards-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:1.25rem; }
-.qz-cards-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:1rem; }
-@media(max-width:480px){ .qz-cards-3,.qz-cards-2 { grid-template-columns:1fr; } }
-.qz-card { padding:1rem; border-radius:12px; border:1px solid #d3d1c7; background:#fff; cursor:pointer; transition:all .15s; text-align:left; }
-.qz-card:hover { border-color:#AFA9EC; }
-.qz-card.sel { border:2px solid #7F77DD; background:#EEEDFE; }
-.qz-card-icon { font-size:20px; margin-bottom:8px; }
-.qz-card-title { font-size:14px; font-weight:600; color:#1a1a18; margin-bottom:4px; }
-.qz-card-desc { font-size:12px; color:#5f5e5a; line-height:1.5; }
-.qz-card.sel .qz-card-title { color:#3C3489; }
-.qz-card.sel .qz-card-desc { color:#534AB7; }
-.qz-sub-box { background:#f5f4f0; border-radius:12px; padding:1rem; margin-bottom:.75rem; }
-.qz-sub-lbl { font-size:13px; font-weight:600; color:#5f5e5a; margin-bottom:10px; }
-textarea.qz-input { width:100%; padding:10px 14px; border-radius:8px; border:1px solid #d3d1c7; background:#fff; color:#1a1a18; font-size:14px; font-family:inherit; margin-top:8px; resize:none; }
-textarea.qz-input:focus { outline:none; border-color:#7F77DD; }
-.qz-name-row { margin-bottom:1.25rem; }
-.qz-lbl-sm { font-size:13px; color:#5f5e5a; display:block; margin-bottom:6px; font-weight:500; }
-input.qz-input { width:100%; padding:10px 14px; border-radius:8px; border:1px solid #d3d1c7; background:#fff; color:#1a1a18; font-size:14px; font-family:inherit; }
-input.qz-input:focus { outline:none; border-color:#7F77DD; }
-.qz-contact-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:8px 0 1rem; }
-.qz-cc { display:flex; align-items:center; gap:10px; padding:.85rem 1rem; border-radius:12px; border:1px solid #d3d1c7; background:#fff; cursor:pointer; transition:all .15s; }
-.qz-cc:hover { border-color:#AFA9EC; }
-.qz-cc.sel { border:2px solid #7F77DD; background:#EEEDFE; }
-.qz-cc-icon { font-size:18px; }
-.qz-cc-lbl { font-size:14px; font-weight:600; color:#1a1a18; }
-.qz-cc.sel .qz-cc-lbl { color:#3C3489; }
-.qz-contact-in { margin-bottom:1rem; display:none; }
-.qz-privacy { font-size:12px; color:#888; line-height:1.6; margin-top:1rem; }
-.qz-btn-row { display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem; }
-.qz-btn-back { padding:10px 20px; border-radius:8px; border:1px solid #d3d1c7; background:transparent; color:#5f5e5a; font-size:14px; cursor:pointer; font-family:inherit; }
-.qz-btn-back:hover { background:#f5f4f0; }
-.qz-btn-next { padding:10px 28px; border-radius:8px; border:none; background:#7F77DD; color:#EEEDFE; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; }
-.qz-btn-next:hover:not(:disabled) { background:#534AB7; }
-.qz-btn-next:disabled { background:#d3d1c7; color:#888; cursor:not-allowed; }
-.qz-error { margin-top:1rem; padding:10px 14px; border-radius:8px; background:#FCEBEB; border:1px solid #F09595; color:#791F1F; font-size:14px; display:none; }
-.qz-success { display:none; text-align:center; padding:2.5rem 1rem; }
-.qz-success-icon { width:56px; height:56px; border-radius:50%; background:#EEEDFE; color:#534AB7; font-size:28px; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; }
-.qz-success h2 { font-size:20px; font-weight:600; margin-bottom:8px; color:#1a1a18; }
-.qz-success p { font-size:15px; color:#5f5e5a; line-height:1.7; }
-.qz-block { display:none; }
-.qz-block.active { display:block; }
-</style>
-
+<!-- ════════════════════════════════
+  QUIZ MODAL
+════════════════════════════════ -->
 <div class="quiz-overlay" id="quizOverlay">
   <div class="quiz-modal" id="quizModal">
     <button class="quiz-close" onclick="closeQuiz()">✕</button>
@@ -1536,7 +674,7 @@ input.qz-input:focus { outline:none; border-color:#7F77DD; }
     </div>
     <div class="qz-block active" id="qz1">
       <p class="qz-tag">問題 1 — 肌膚困擾</p>
-      <h2 class="qz-title">你目前最困擾的肌膚問題是哪些？</h2>
+      <h2 class="qz-title">你目前最困擾的肌膚問題？</h2>
       <p class="qz-sub">可複選，最多選 3 項</p>
       <div class="qz-pills" id="qzConcerns">
         <button class="qz-pill" data-val="acne">痘痘 / 粉刺</button>
@@ -1546,7 +684,7 @@ input.qz-input:focus { outline:none; border-color:#7F77DD; }
         <button class="qz-pill" data-val="pigment">色素沉澱 / 斑點</button>
         <button class="qz-pill" data-val="wrinkle">細紋 / 鬆弛</button>
         <button class="qz-pill" data-val="dry">乾燥脫皮</button>
-        <button class="qz-pill" data-val="sensitive">泛紅 / 敏感刺激</button>
+        <button class="qz-pill" data-val="sensitive">泛紅 / 敏感</button>
         <button class="qz-pill" data-val="dull">缺乏光澤</button>
         <button class="qz-pill" data-val="dark_circle">黑眼圈 / 眼袋</button>
       </div>
@@ -1556,15 +694,15 @@ input.qz-input:focus { outline:none; border-color:#7F77DD; }
       <h2 class="qz-title">你的膚質最接近哪一種？</h2>
       <p class="qz-sub">選擇最符合的一項</p>
       <div class="qz-cards-3">
-        <div class="qz-card" data-group="skinType" data-val="oily_acne"><div class="qz-card-icon">🫧</div><div class="qz-card-title">油性 / 易長痘</div><div class="qz-card-desc">T 字、全臉容易出油，常有閉口或痘痘</div></div>
-        <div class="qz-card" data-group="skinType" data-val="combo"><div class="qz-card-icon">⚖️</div><div class="qz-card-title">中性 / 混合</div><div class="qz-card-desc">T 字偏油、兩頰正常，季節交替可能乾燥</div></div>
-        <div class="qz-card" data-group="skinType" data-val="dry_sensitive"><div class="qz-card-icon">🌿</div><div class="qz-card-title">乾性 / 敏感</div><div class="qz-card-desc">容易緊繃、脫皮，對新產品容易有反應</div></div>
+        <div class="qz-card" data-group="skinType" data-val="oily"><div class="qz-card-title">油性 / 易長痘</div><div class="qz-card-desc">T 字容易出油，常有閉口或痘痘</div></div>
+        <div class="qz-card" data-group="skinType" data-val="combo"><div class="qz-card-title">中性 / 混合</div><div class="qz-card-desc">T 字偏油、兩頰正常或偏乾</div></div>
+        <div class="qz-card" data-group="skinType" data-val="dry"><div class="qz-card-title">乾性 / 敏感</div><div class="qz-card-desc">容易緊繃脫皮，對新產品易有反應</div></div>
       </div>
     </div>
     <div class="qz-block" id="qz3">
-      <p class="qz-tag">問題 3 — 醫美保養</p>
-      <h2 class="qz-title">你目前或近期有在進行醫美 / 診所療程嗎？</h2>
-      <p class="qz-sub">如有使用，請再勾選療程類型與時間</p>
+      <p class="qz-tag">問題 3 — 醫美療程</p>
+      <h2 class="qz-title">近期有在進行醫美療程嗎？</h2>
+      <p class="qz-sub">如有，請再選擇療程類型</p>
       <div class="qz-cards-2">
         <div class="qz-card" data-group="medChoice" data-val="no"><div class="qz-card-title">沒有</div><div class="qz-card-desc">僅使用日常保養品</div></div>
         <div class="qz-card" data-group="medChoice" data-val="yes"><div class="qz-card-title">有</div><div class="qz-card-desc">目前或近半年內有療程</div></div>
@@ -1574,29 +712,19 @@ input.qz-input:focus { outline:none; border-color:#7F77DD; }
           <p class="qz-sub-lbl">療程類型（可複選）</p>
           <div class="qz-pills" id="qzMedTypes">
             <button class="qz-pill" data-val="laser">雷射 / 光療</button>
-            <button class="qz-pill" data-val="peel">化學換膚 / 果酸</button>
+            <button class="qz-pill" data-val="peel">化學換膚</button>
             <button class="qz-pill" data-val="botox">肉毒桿菌素</button>
             <button class="qz-pill" data-val="filler">玻尿酸填充</button>
             <button class="qz-pill" data-val="rf">電波 / 音波拉提</button>
             <button class="qz-pill" data-val="micro">微針 / 水光針</button>
-            <button class="qz-pill" data-val="other_med">其他</button>
-          </div>
-        </div>
-        <div class="qz-sub-box">
-          <p class="qz-sub-lbl">持續使用時間</p>
-          <div class="qz-pills" id="qzDuration">
-            <button class="qz-pill" data-val="lt6m">未滿 6 個月</button>
-            <button class="qz-pill" data-val="6to12m">6 個月至 1 年</button>
-            <button class="qz-pill" data-val="1to3y">1–3 年</button>
-            <button class="qz-pill" data-val="gt3y">3 年以上</button>
           </div>
         </div>
       </div>
     </div>
     <div class="qz-block" id="qz4">
       <p class="qz-tag">問題 4 — 過敏史</p>
-      <h2 class="qz-title">你是否有已知的過敏成分或過敏狀況？</h2>
-      <p class="qz-sub">幫助我們避開可能刺激你的成分</p>
+      <h2 class="qz-title">是否有已知過敏成分？</h2>
+      <p class="qz-sub">幫助我們避開可能刺激的成分</p>
       <div class="qz-cards-2">
         <div class="qz-card" data-group="allergyChoice" data-val="no"><div class="qz-card-title">無已知過敏</div><div class="qz-card-desc">目前無特別敏感反應</div></div>
         <div class="qz-card" data-group="allergyChoice" data-val="yes"><div class="qz-card-title">有過敏史</div><div class="qz-card-desc">對特定成分或物質有反應</div></div>
@@ -1608,34 +736,33 @@ input.qz-input:focus { outline:none; border-color:#7F77DD; }
             <button class="qz-pill" data-val="fragrance">香精 / 香料</button>
             <button class="qz-pill" data-val="alcohol">酒精</button>
             <button class="qz-pill" data-val="preservative">防腐劑</button>
-            <button class="qz-pill" data-val="retinol">A 醇 / 維他命 A 酸</button>
-            <button class="qz-pill" data-val="aha_bha">果酸 / 水楊酸</button>
+            <button class="qz-pill" data-val="retinol">A 醇</button>
+            <button class="qz-pill" data-val="aha">果酸 / 水楊酸</button>
             <button class="qz-pill" data-val="niacinamide">菸鹼醯胺</button>
             <button class="qz-pill" data-val="sunscreen">防曬劑成分</button>
-            <button class="qz-pill" data-val="other_allergy">其他</button>
           </div>
-          <textarea class="qz-input" id="qzAllergyNote" rows="2" placeholder="補充說明，例如：對蠶絲蛋白過敏…"></textarea>
+          <textarea class="qz-input" id="qzAllergyNote" rows="2" placeholder="補充說明…"></textarea>
         </div>
       </div>
     </div>
     <div class="qz-block" id="qz5">
       <p class="qz-tag">問題 5 — 保養目標</p>
-      <h2 class="qz-title">你希望這次肌膚諮詢的重點是什麼？</h2>
+      <h2 class="qz-title">這次諮詢的主要目標？</h2>
       <p class="qz-sub">選出最主要的 1–2 項</p>
       <div class="qz-pills" id="qzGoals">
-        <button class="qz-pill" data-val="fix_acne">改善痘痘 / 粉刺問題</button>
+        <button class="qz-pill" data-val="fix_acne">改善痘痘 / 粉刺</button>
         <button class="qz-pill" data-val="brighten">提亮膚色 / 淡斑</button>
         <button class="qz-pill" data-val="anti_age">抗老緊緻</button>
         <button class="qz-pill" data-val="hydrate">深層保濕補水</button>
         <button class="qz-pill" data-val="sensitive_care">舒緩敏感泛紅</button>
         <button class="qz-pill" data-val="pore_min">縮小毛孔</button>
-        <button class="qz-pill" data-val="routine">建立完整保養程序</button>
-        <button class="qz-pill" data-val="product_rec">找到適合我的產品</button>
+        <button class="qz-pill" data-val="routine">建立保養程序</button>
+        <button class="qz-pill" data-val="product_rec">找適合我的產品</button>
       </div>
     </div>
     <div class="qz-block" id="qz6">
       <p class="qz-tag">問題 6 — 聯絡方式</p>
-      <h2 class="qz-title">最後，請留下你的姓名與聯絡方式</h2>
+      <h2 class="qz-title">留下姓名與聯絡方式</h2>
       <p class="qz-sub">方便後續提供個人化建議，擇一填寫即可</p>
       <div class="qz-name-row">
         <label class="qz-lbl-sm">姓名</label>
@@ -1643,16 +770,16 @@ input.qz-input:focus { outline:none; border-color:#7F77DD; }
       </div>
       <label class="qz-lbl-sm">聯絡方式（擇一）</label>
       <div class="qz-contact-grid">
-        <div class="qz-cc" data-contact="ig"><span class="qz-cc-icon">📸</span><span class="qz-cc-lbl">Instagram</span></div>
-        <div class="qz-cc" data-contact="line"><span class="qz-cc-icon">💬</span><span class="qz-cc-lbl">Line ID</span></div>
-        <div class="qz-cc" data-contact="phone"><span class="qz-cc-icon">📱</span><span class="qz-cc-lbl">手機號碼</span></div>
-        <div class="qz-cc" data-contact="email"><span class="qz-cc-icon">✉️</span><span class="qz-cc-lbl">Email</span></div>
+        <div class="qz-cc" data-contact="ig"><span>📸</span><span class="qz-cc-lbl">Instagram</span></div>
+        <div class="qz-cc" data-contact="line"><span>💬</span><span class="qz-cc-lbl">Line ID</span></div>
+        <div class="qz-cc" data-contact="phone"><span>📱</span><span class="qz-cc-lbl">手機號碼</span></div>
+        <div class="qz-cc" data-contact="email"><span>✉️</span><span class="qz-cc-lbl">Email</span></div>
       </div>
       <div class="qz-contact-in" id="qzContactIn">
         <label class="qz-lbl-sm" id="qzContactLbl">請輸入</label>
         <input class="qz-input" type="text" id="qzContactVal" placeholder="">
       </div>
-      <p class="qz-privacy">🔒 你的個人資料僅用於本次肌膚諮詢，不會提供給第三方使用。</p>
+      <p class="qz-privacy">🔒 你的個人資料僅用於本次肌膚諮詢，不會提供給第三方。</p>
     </div>
     <div class="qz-error" id="qzError"></div>
     <div class="qz-btn-row" id="qzNav">
@@ -1661,18 +788,584 @@ input.qz-input:focus { outline:none; border-color:#7F77DD; }
     </div>
     <div class="qz-success" id="qzSuccess">
       <div class="qz-success-icon">✓</div>
-      <h2>問卷已送出！</h2>
-      <p>你的肌膚資料已成功記錄，<br>我們將盡快與你聯繫，提供個人化的保養建議。</p>
+      <h2 style="font-size:20px;font-weight:500;margin-bottom:8px;">問卷已送出！</h2>
+      <p style="font-size:15px;color:#5f5e5a;line-height:1.7;">你的肌膚資料已成功記錄，<br>我們將盡快與你聯繫，提供個人化的保養建議。</p>
     </div>
   </div>
 </div>
 
 <script>
+/* ════════════════════════════════
+   SKIN SCIENCE SVG
+════════════════════════════════ */
+(function(){
+  const svg = `<svg width="100%" viewBox="0 0 680 540" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    @keyframes breathe { 0%,100%{opacity:.45} 50%{opacity:.9} }
+    .ss-pulse { animation: breathe 2.8s ease-in-out infinite; }
+  </style>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <linearGradient id="g-brick" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F2D8C8"/><stop offset="100%" stop-color="#E4C0A8"/></linearGradient>
+  <linearGradient id="g-gran" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5E8C0"/><stop offset="100%" stop-color="#EDD898"/></linearGradient>
+  <linearGradient id="g-ss2" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#85B7EB"/><stop offset="60%" stop-color="#AAD0F5"/><stop offset="100%" stop-color="#D0E8FC"/></linearGradient>
+  <linearGradient id="g-base" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8C888"/><stop offset="100%" stop-color="#D4A860"/></linearGradient>
+  <linearGradient id="g-derm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EAD8F0"/><stop offset="100%" stop-color="#CAAAE0"/></linearGradient>
+  <linearGradient id="g-hypo" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D4E8D0"/><stop offset="100%" stop-color="#B0CCA8"/></linearGradient>
+  <filter id="ss-glow" x="-15%" y="-30%" width="130%" height="160%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- Hypodermis -->
+<rect x="36" y="330" width="270" height="78" fill="url(#g-hypo)"/>
+<ellipse cx="65" cy="352" rx="17" ry="11" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.65"/>
+<ellipse cx="65" cy="352" rx="8" ry="5" fill="#A8C8A0" opacity="0.3"/>
+<ellipse cx="108" cy="358" rx="16" ry="10" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.6"/>
+<ellipse cx="152" cy="350" rx="18" ry="11" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.6"/>
+<ellipse cx="196" cy="357" rx="15" ry="10" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.55"/>
+<ellipse cx="237" cy="352" rx="17" ry="11" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.6"/>
+<ellipse cx="278" cy="357" rx="15" ry="9" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.5"/>
+<ellipse cx="90" cy="378" rx="15" ry="9" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.45"/>
+<ellipse cx="140" cy="380" rx="17" ry="9" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.45"/>
+<ellipse cx="190" cy="378" rx="15" ry="9" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.45"/>
+<ellipse cx="238" cy="380" rx="16" ry="9" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.4"/>
+<ellipse cx="285" cy="376" rx="14" ry="8" fill="none" stroke="#88A880" stroke-width="0.7" opacity="0.4"/>
+<!-- Dermis -->
+<rect x="36" y="192" width="270" height="138" fill="url(#g-derm)"/>
+<path d="M46 220 Q86 212 126 220 Q166 228 206 220 Q246 212 286 220" fill="none" stroke="#A080C8" stroke-width="0.65" opacity="0.5"/>
+<path d="M46 242 Q86 234 126 242 Q166 250 206 242 Q246 234 286 242" fill="none" stroke="#A080C8" stroke-width="0.6" opacity="0.4"/>
+<path d="M46 264 Q86 256 126 264 Q166 272 206 264 Q246 256 286 264" fill="none" stroke="#A080C8" stroke-width="0.6" opacity="0.32"/>
+<path d="M46 288 Q86 280 126 288 Q166 296 206 288 Q246 280 286 288" fill="none" stroke="#A080C8" stroke-width="0.55" opacity="0.25"/>
+<path d="M46 312 Q86 304 126 312 Q166 320 206 312 Q246 304 286 312" fill="none" stroke="#A080C8" stroke-width="0.5" opacity="0.2"/>
+<!-- Basale -->
+<rect x="36" y="178" width="270" height="14" fill="url(#g-base)"/>
+<ellipse cx="56" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="82" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="108" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="134" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="160" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="186" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="212" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="238" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="264" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.4"/>
+<ellipse cx="290" cy="185" rx="7" ry="5" fill="#C89840" opacity="0.35"/>
+<!-- Spinosum glow + band — blue -->
+<rect x="28" y="141" width="286" height="38" rx="2" fill="#378ADD" opacity="0.15" class="ss-pulse" filter="url(#ss-glow)"/>
+<rect x="36" y="144" width="270" height="34" fill="url(#g-ss2)" opacity="0.65"/>
+<ellipse cx="60" cy="161" rx="11" ry="8" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.45"/>
+<ellipse cx="96" cy="158" rx="12" ry="7" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.42"/>
+<ellipse cx="136" cy="162" rx="10" ry="7" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.42"/>
+<ellipse cx="174" cy="158" rx="12" ry="8" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.42"/>
+<ellipse cx="214" cy="161" rx="11" ry="7" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.42"/>
+<ellipse cx="252" cy="158" rx="11" ry="7" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.42"/>
+<ellipse cx="290" cy="161" rx="9" ry="6" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.38"/>
+<line x1="71" y1="161" x2="84" y2="160" stroke="#378ADD" stroke-width="0.5" opacity="0.35"/>
+<line x1="108" y1="160" x2="124" y2="161" stroke="#378ADD" stroke-width="0.5" opacity="0.35"/>
+<line x1="148" y1="161" x2="162" y2="160" stroke="#378ADD" stroke-width="0.5" opacity="0.35"/>
+<line x1="186" y1="160" x2="202" y2="161" stroke="#378ADD" stroke-width="0.5" opacity="0.35"/>
+<line x1="225" y1="161" x2="240" y2="160" stroke="#378ADD" stroke-width="0.5" opacity="0.3"/>
+<!-- Granulosum -->
+<rect x="36" y="130" width="270" height="14" fill="url(#g-gran)" opacity="0.7"/>
+<circle cx="60" cy="137" r="2" fill="#B89020" opacity="0.38"/>
+<circle cx="95" cy="137" r="2" fill="#B89020" opacity="0.38"/>
+<circle cx="130" cy="137" r="2" fill="#B89020" opacity="0.38"/>
+<circle cx="165" cy="137" r="2" fill="#B89020" opacity="0.38"/>
+<circle cx="200" cy="137" r="2" fill="#B89020" opacity="0.38"/>
+<circle cx="235" cy="137" r="2" fill="#B89020" opacity="0.38"/>
+<circle cx="270" cy="137" r="2" fill="#B89020" opacity="0.35"/>
+<circle cx="300" cy="137" r="2" fill="#B89020" opacity="0.3"/>
+<!-- Lucidum -->
+<rect x="36" y="126" width="270" height="4" fill="#F8F0D8" opacity="0.55"/>
+<!-- SC 5 brick rows -->
+<rect x="36" y="56" width="270" height="14" fill="url(#g-brick)" opacity="0.92"/>
+<line x1="90" y1="56" x2="90" y2="70" stroke="#C8A890" stroke-width="0.4"/>
+<line x1="144" y1="56" x2="144" y2="70" stroke="#C8A890" stroke-width="0.4"/>
+<line x1="198" y1="56" x2="198" y2="70" stroke="#C8A890" stroke-width="0.4"/>
+<line x1="252" y1="56" x2="252" y2="70" stroke="#C8A890" stroke-width="0.4"/>
+<rect x="36" y="70" width="270" height="14" fill="url(#g-brick)" opacity="0.82"/>
+<line x1="63" y1="70" x2="63" y2="84" stroke="#C0A080" stroke-width="0.4"/>
+<line x1="117" y1="70" x2="117" y2="84" stroke="#C0A080" stroke-width="0.4"/>
+<line x1="171" y1="70" x2="171" y2="84" stroke="#C0A080" stroke-width="0.4"/>
+<line x1="225" y1="70" x2="225" y2="84" stroke="#C0A080" stroke-width="0.4"/>
+<line x1="279" y1="70" x2="279" y2="84" stroke="#C0A080" stroke-width="0.4"/>
+<rect x="36" y="84" width="270" height="14" fill="url(#g-brick)" opacity="0.75"/>
+<line x1="90" y1="84" x2="90" y2="98" stroke="#C0A080" stroke-width="0.4"/>
+<line x1="144" y1="84" x2="144" y2="98" stroke="#C0A080" stroke-width="0.4"/>
+<line x1="198" y1="84" x2="198" y2="98" stroke="#C0A080" stroke-width="0.4"/>
+<line x1="252" y1="84" x2="252" y2="98" stroke="#C0A080" stroke-width="0.4"/>
+<rect x="36" y="98" width="270" height="14" fill="url(#g-brick)" opacity="0.68"/>
+<line x1="63" y1="98" x2="63" y2="112" stroke="#B89870" stroke-width="0.4"/>
+<line x1="117" y1="98" x2="117" y2="112" stroke="#B89870" stroke-width="0.4"/>
+<line x1="171" y1="98" x2="171" y2="112" stroke="#B89870" stroke-width="0.4"/>
+<line x1="225" y1="98" x2="225" y2="112" stroke="#B89870" stroke-width="0.4"/>
+<line x1="279" y1="98" x2="279" y2="112" stroke="#B89870" stroke-width="0.4"/>
+<rect x="36" y="112" width="270" height="14" fill="url(#g-brick)" opacity="0.62"/>
+<line x1="90" y1="112" x2="90" y2="126" stroke="#B89870" stroke-width="0.4"/>
+<line x1="144" y1="112" x2="144" y2="126" stroke="#B89870" stroke-width="0.4"/>
+<line x1="198" y1="112" x2="198" y2="126" stroke="#B89870" stroke-width="0.4"/>
+<line x1="252" y1="112" x2="252" y2="126" stroke="#B89870" stroke-width="0.4"/>
+<!-- Surface -->
+<line x1="36" y1="56" x2="306" y2="56" stroke="#C0A080" stroke-width="1.2"/>
+<rect x="36" y="40" width="270" height="16" fill="#F5E8D8" opacity="0.3"/>
+<text font-size="9" fill="#A08060" opacity="0.65" x="171" y="50" text-anchor="middle" font-family="sans-serif">— 皮膚表面 —</text>
+<rect x="36" y="56" width="270" height="352" fill="none" stroke="#C0A880" stroke-width="0.7" opacity="0.3"/>
+<!-- Layer labels -->
+<line x1="308" y1="56" x2="320" y2="56" stroke="#B09070" stroke-width="0.6"/>
+<line x1="320" y1="56" x2="320" y2="126" stroke="#B09070" stroke-width="0.6"/>
+<line x1="308" y1="126" x2="320" y2="126" stroke="#B09070" stroke-width="0.6"/>
+<text font-size="10" fill="#8A6848" x="324" y="86" dominant-baseline="central" font-family="sans-serif">角質層</text>
+<text font-size="9" fill="#A08060" x="324" y="98" dominant-baseline="central" font-family="sans-serif">防水屏障 / 死亡細胞</text>
+<line x1="308" y1="130" x2="318" y2="130" stroke="#C09840" stroke-width="0.4" opacity="0.5"/>
+<text font-size="8.5" fill="#A08030" x="322" y="135" dominant-baseline="central" font-family="sans-serif">顆粒層 / 透明層</text>
+<!-- SS label blue -->
+<line x1="308" y1="144" x2="326" y2="144" stroke="#378ADD" stroke-width="0.9"/>
+<line x1="326" y1="144" x2="326" y2="178" stroke="#378ADD" stroke-width="0.9"/>
+<line x1="308" y1="178" x2="326" y2="178" stroke="#378ADD" stroke-width="0.9"/>
+<rect x="328" y="148" width="76" height="20" rx="4" fill="#E6F1FB"/>
+<text font-size="10" font-weight="500" fill="#185FA5" x="366" y="158" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">棘狀層 ★</text>
+<text font-size="8.5" fill="#378ADD" x="328" y="176" dominant-baseline="central" font-family="sans-serif">活性增殖核心層</text>
+<line x1="308" y1="178" x2="318" y2="178" stroke="#C09840" stroke-width="0.4" opacity="0.5"/>
+<line x1="308" y1="192" x2="318" y2="192" stroke="#C09840" stroke-width="0.4" opacity="0.5"/>
+<text font-size="8.5" fill="#A08030" x="322" y="185" dominant-baseline="central" font-family="sans-serif">基底層</text>
+<line x1="308" y1="192" x2="320" y2="192" stroke="#9068B8" stroke-width="0.6"/>
+<line x1="320" y1="192" x2="320" y2="330" stroke="#9068B8" stroke-width="0.6"/>
+<line x1="308" y1="330" x2="320" y2="330" stroke="#9068B8" stroke-width="0.6"/>
+<text font-size="10" fill="#6840A0" x="324" y="254" dominant-baseline="central" font-family="sans-serif">真皮層</text>
+<text font-size="9" fill="#8858B8" x="324" y="266" dominant-baseline="central" font-family="sans-serif">膠原 / 彈力蛋白</text>
+<text font-size="9" fill="#8858B8" x="324" y="278" dominant-baseline="central" font-family="sans-serif">血管 / 神經</text>
+<line x1="308" y1="330" x2="320" y2="330" stroke="#5A9050" stroke-width="0.6"/>
+<line x1="320" y1="330" x2="320" y2="408" stroke="#5A9050" stroke-width="0.6"/>
+<line x1="308" y1="408" x2="320" y2="408" stroke="#5A9050" stroke-width="0.6"/>
+<text font-size="10" fill="#3A7030" x="324" y="368" dominant-baseline="central" font-family="sans-serif">皮下組織</text>
+<!-- Penetration headers -->
+<text font-size="11" font-weight="500" fill="#888780" x="462" y="40" text-anchor="middle" font-family="sans-serif">一般保養品</text>
+<text font-size="11" font-weight="500" fill="#185FA5" x="548" y="40" text-anchor="middle" font-family="sans-serif">RENE-CELL</text>
+<text font-size="11" font-weight="500" fill="#9A5828" x="632" y="40" text-anchor="middle" font-family="sans-serif">高強度能量療程</text>
+<!-- Guide lines -->
+<line x1="408" y1="56" x2="660" y2="56" stroke="#C0A880" stroke-width="0.7" opacity="0.35"/>
+<line x1="408" y1="126" x2="660" y2="126" stroke="#B09070" stroke-width="0.4" stroke-dasharray="3 3" opacity="0.25"/>
+<line x1="408" y1="144" x2="660" y2="144" stroke="#378ADD" stroke-width="0.7" stroke-dasharray="4 3" opacity="0.4"/>
+<line x1="408" y1="192" x2="660" y2="192" stroke="#9068B8" stroke-width="0.4" stroke-dasharray="3 3" opacity="0.25"/>
+<line x1="408" y1="330" x2="660" y2="330" stroke="#5A9050" stroke-width="0.4" stroke-dasharray="3 3" opacity="0.18"/>
+<!-- Col 1: gray -->
+<line x1="462" y1="56" x2="462" y2="112" stroke="#B4B2A9" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="438" y="112" width="48" height="16" rx="4" fill="#ECEAE4"/>
+<text font-size="10" fill="#5F5E5A" x="462" y="120" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">角質層止</text>
+<!-- Col 2: blue -->
+<line x1="548" y1="56" x2="548" y2="156" stroke="#378ADD" stroke-width="3" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="512" y="142" width="72" height="20" rx="5" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.8"/>
+<text font-size="10" font-weight="500" fill="#185FA5" x="548" y="152" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">棘狀層 ★ 到達</text>
+<!-- Col 3: tan dashed -->
+<line x1="632" y1="56" x2="632" y2="275" stroke="#C07040" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 3" marker-end="url(#arr)"/>
+<rect x="604" y="273" width="56" height="16" rx="4" fill="#FBF0E4"/>
+<text font-size="10" fill="#9A5828" x="632" y="281" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">真皮層到達</text>
+<!-- Legend -->
+<rect x="36" y="422" width="624" height="100" rx="8" fill="#FDFAF6" stroke="#E0D0B8" stroke-width="0.6"/>
+<text font-size="11" font-weight="500" fill="#604820" x="56" y="443" font-family="sans-serif">為什麼棘狀層是關鍵？</text>
+<rect x="56" y="457" width="7" height="7" rx="1.5" fill="#B4B2A9"/>
+<text font-size="10" fill="#6A6860" x="70" y="464" dominant-baseline="central" font-family="sans-serif">一般保養品  多數大分子成分停在角質層表面，難以觸及活性細胞區</text>
+<rect x="56" y="474" width="7" height="7" rx="1.5" fill="#378ADD"/>
+<text font-size="10" fill="#6A6860" x="70" y="481" dominant-baseline="central" font-family="sans-serif">RENE-CELL  鑽石微晶疏通角質通道，協助活性成分抵達棘狀層（皮膚自我更新的核心）</text>
+<rect x="56" y="491" width="7" height="7" rx="1.5" fill="#C07040"/>
+<text font-size="10" fill="#6A6860" x="70" y="498" dominant-baseline="central" font-family="sans-serif">高強度能量療程  受控破壞直達真皮，效果強但需恢復期，屬於醫療等級介入</text>
+<text font-size="9" fill="#A09078" x="56" y="514" dominant-baseline="central" font-family="sans-serif">* 棘狀層（Stratum Spinosum）為表皮中最厚的活性細胞層，是皮膚角蛋白合成與自然更新的發源地</text>
+</svg>`;
+  document.getElementById('skin-svg-container').innerHTML = svg;
+})();
+
+/* ════════════════════════════════
+   COMPARISON TABLE
+════════════════════════════════ */
+(function(){
+  const html = `
+<table class="cmp-tbl">
+<thead>
+<tr>
+  <th class="cmp-attr" style="width:100px;border-radius:12px 0 0 0;"></th>
+  <th class="cmp-dc" style="text-align:left;font-weight:400;background:#FBF5EE;">
+    <div style="font-size:12px;font-weight:500;color:#9A5828;margin-bottom:2px;">高強度能量療程</div>
+    <div style="font-size:10px;color:#B07840;">雷射 · 電波 · 磨皮換膚</div>
+  </th>
+  <th class="cmp-dc" style="text-align:left;font-weight:400;background:#EEF4FB;border-right:none;border-radius:0 12px 0 0;">
+    <div style="font-size:12px;font-weight:500;color:#185FA5;margin-bottom:2px;">RENE-CELL</div>
+    <div style="font-size:10px;color:#378ADD;">居家 · 365天持續調理</div>
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr class="cmp-sec"><td></td><td colspan="2">基本比較</td></tr>
+<tr>
+  <td class="cmp-attr">效果速度</td>
+  <td class="cmp-dc"><span class="hi-t">1–2 週</span>可見明顯改善，膠原反應持續約 3–6 個月</td>
+  <td class="cmp-dc"><span class="hi-b">4–6 週</span>漸進改善，需持續使用累積效果</td>
+</tr>
+<tr>
+  <td class="cmp-attr">恢復期</td>
+  <td class="cmp-dc"><span class="hi-t">輕度 3–5 天，深度 2–4 週</span><br>紅腫脫皮，期間需特別護理</td>
+  <td class="cmp-dc"><span class="hi-b">零恢復期</span>，使用後即可正常生活</td>
+</tr>
+<tr>
+  <td class="cmp-attr">費用</td>
+  <td class="cmp-dc"><span class="hi-t">單次 NT$3,000–30,000+</span>，需定期回診</td>
+  <td class="cmp-dc">一次購入持續使用，<span class="hi-b">長期成本遠低於診所</span></td>
+</tr>
+<tr class="cmp-sec"><td></td><td colspan="2">風險</td></tr>
+<tr>
+  <td class="cmp-attr">操作風險</td>
+  <td class="cmp-dc"><span class="hi-t">破壞皮膚屏障，術後易感染</span><br>深膚色有色素沉澱風險<br>不當操作可能留疤</td>
+  <td class="cmp-dc">有過敏史者須經諮詢後進行局部測試<br>高活性成分，建議從低頻率開始觀察膚況</td>
+</tr>
+<tr>
+  <td class="cmp-attr">長期代價</td>
+  <td class="cmp-dc"><span class="hi-t">屏障反覆穿孔，修復週期漸長</span><br>肌膚對外力刺激依賴性增加<br>停療後自然機能難以恢復</td>
+  <td class="cmp-dc">須給肌膚至少 28 天的自然代謝週期<br>重回健康循環<br>深度損傷（如嚴重痘疤）仍需配合醫療</td>
+</tr>
+<tr class="cmp-sec"><td></td><td colspan="2">長期效益</td></tr>
+<tr>
+  <td class="cmp-attr">長期效益</td>
+  <td class="cmp-dc">單次結果可維持約 2–3 年<br><span style="font-size:11px;color:#A09080;">個體差異大，需配合日常防曬保養</span></td>
+  <td class="cmp-dc" style="border-right:none;"><span class="hi-b">重啟肌膚自癒機制</span>，每天持續作用<br>每日高滲透活性成分，持續滋養棘狀層<br><span class="hi-b">屏障越用越健康，停用不反彈</span><br>365天溫和累積，效果複利式增長</td>
+</tr>
+</tbody>
+</table>
+<div class="cmp-verdict">
+  <div class="cv-l"><div class="cv-tag">最適合</div><div class="cv-body">深度痘疤、顯著老化、能接受恢復期、追求單次明顯改變</div></div>
+  <div class="cv-r"><div class="cv-tag">最適合</div><div class="cv-body">日常保養、療程空窗維持、敏感肌、想讓肌膚自己越來越好</div></div>
+</div>
+<div class="cmp-syn">兩者並非對立 — RENE-CELL 與診所療程搭配效果更佳：療程後鞏固屏障、延長成果，讓下次回診間距自然拉長。</div>`;
+  document.getElementById('cmp-container').innerHTML = html;
+})();
+
+/* ════════════════════════════════
+   AUDIENCE CARDS
+════════════════════════════════ */
+const AUDIENCE = [
+  {
+    ac:'#7ab4d8', acLt:'#ecf6fd', acDk:'#3d7aac',
+    tag:'螢幕肌',
+    headline:'每天盯著螢幕 8 小時以上，藍光、壓力、熬夜輪番傷害——<strong>肌膚來不及修復就已經在老化</strong>',
+    traits:['膚色暗沉、毛孔越來越明顯','壓力大時特別容易冒痘、出油','沒時間做複雜保養，但不想放棄效果'],
+    rec:'💡 入門建議：酵素潔面粉 + 多肽化妝水 + 透明質酸精華'
+  },
+  {
+    ac:'#d48fa0', acLt:'#fdf0f3', acDk:'#a8506a',
+    tag:'玻璃肌',
+    headline:'用什麼都怕、換季就崩潰、一不小心就泛紅脫皮——<strong>肌膚屏障正在求救</strong>',
+    traits:['肌膚容易泛紅、乾燥緊繃反覆出現','被酸類或過度去角質傷過','想修護但又怕選錯成分越補越糟'],
+    rec:'💡 入門建議：酵素潔面粉 + 透明質酸 + Q肌底面霜'
+  },
+  {
+    ac:'#9880b8', acLt:'#f4effe', acDk:'#6d4fa8',
+    tag:'抗老焦慮肌',
+    headline:'照鏡子開始數細紋，摸臉感覺彈力不如以前——<strong>想介入但不知道從哪裡開始</strong>',
+    traits:['法令紋、眼尾紋漸漸明顯','膚色暗沉、失去光澤與彈力','重視成分與品質，不想亂買'],
+    rec:'💡 入門建議：鑽石面膜 + 鑽石精華 + 多肽霜'
+  },
+  {
+    ac:'#c9a96e', acLt:'#fdf7ee', acDk:'#a87040',
+    tag:'醫美疲憊肌',
+    headline:'做了幾年療程，皮膚反而越來越薄越敏感——<strong>開始懷疑一直刺激是對的嗎？</strong>',
+    traits:['雷射、換膚做完恢復期越來越長','療程間空窗期肌膚忽好忽壞','花了大錢效果卻越來越難維持'],
+    rec:'💡 入門建議：水凝膜2號 + 鑽石精華 + 奇蹟鑽石修護霜'
+  }
+];
+
+(function(){
+  const grid = document.getElementById('aud-grid');
+  grid.innerHTML = AUDIENCE.map(a => `
+    <div class="aud-card reveal" style="--ac:${a.ac};--ac-lt:${a.acLt};--ac-dk:${a.acDk}">
+      <div class="aud-tag">${a.tag}</div>
+      <p class="aud-headline">${a.headline}</p>
+      <ul class="aud-traits">${a.traits.map(t=>`<li>${t}</li>`).join('')}</ul>
+      <div class="aud-rec">${a.rec}</div>
+    </div>
+  `).join('');
+})();
+
+/* ════════════════════════════════
+   PRODUCTS DATA + SVG PLACEHOLDERS
+════════════════════════════════ */
+const PRODUCTS = [
+  {
+    id:'enzyme-cleanser', cat:'清潔', name:'酵素潔面粉',
+    tagline:'溫和酵素去角質，洗後不緊繃',
+    color:'#E8D8C8', icon:'🧼',
+    desc:'含蛋白酶、脂肪酶等活性酵素，溫和分解老廢角質與皮脂，讓清潔同時進行角質代謝。',
+    usage:['取少量加水搓出細泡','輕柔按摩全臉 30–60 秒','清水沖洗乾淨，避免殘留'],
+    sections:[
+      {title:'核心功效成分',color:'#1D9E75',items:[{n:'蛋白酶',d:'分解死皮蛋白質'},{n:'脂肪酶',d:'溶解多餘皮脂'},{n:'澱粉酶',d:'清潔毛孔污垢'}]},
+      {title:'屏障保護成分',color:'#378ADD',items:[{n:'玻尿酸',d:'洗後即補水'},{n:'甘油',d:'維持保濕平衡'}]}
+    ]
+  },
+  {
+    id:'peptide-toner', cat:'化妝水', name:'多肽化妝水',
+    tagline:'12種胜肽導入 · 抗藍光配方',
+    color:'#D8E8F5', icon:'💧',
+    desc:'超薄導入型化妝水，搭載12種功能性胜肽，使用後立即感受皮膚吸收力提升，抗藍光成分適合螢幕族。',
+    usage:['潔顏後立即使用','化妝棉輕拍或手掌輕壓導入','可疊用 2–3 層加強補水'],
+    sections:[
+      {title:'抗老胜肽群',color:'#7F77DD',items:[{n:'類肉毒胜肽',d:'放鬆動態紋'},{n:'促膠原胜肽',d:'刺激膠原合成'},{n:'GHK-Cu',d:'銅胜肽促修護'},{n:'緊緻胜肽',d:'改善彈力'}]},
+      {title:'抗藍光 & 保濕',color:'#1D9E75',items:[{n:'雪絨花幹細胞',d:'抗藍光、抗氧化'},{n:'北極莓萃取',d:'極地抗氧化'},{n:'多分子玻尿酸',d:'多層次補水'}]}
+    ]
+  },
+  {
+    id:'hyaluronic-serum', cat:'精華液', name:'透明質酸精華',
+    tagline:'三分子玻尿酸 · 15種胜肽',
+    color:'#C8E0F0', icon:'🔬',
+    desc:'三種不同分子量玻尿酸（大/中/小）分層補水，搭載15種功能性胜肽，從表皮到深層全面保濕鎖水。',
+    usage:['化妝水後使用','取 2–3 滴輕壓全臉','可搭配後續面霜加強鎖水'],
+    sections:[
+      {title:'三分子玻尿酸系統',color:'#378ADD',items:[{n:'大分子 HA',d:'表皮膜式鎖水'},{n:'中分子 HA',d:'中層持續補水'},{n:'小分子 HA',d:'深層吸收導入'}]},
+      {title:'功能性胜肽 ×15',color:'#7F77DD',items:[{n:'抗老胜肽群',d:'緊緻 / 撫紋'},{n:'消浮腫胜肽',d:'改善眼周水腫'},{n:'亮白胜肽',d:'均勻膚色'}]}
+    ]
+  },
+  {
+    id:'diamond-mask', cat:'鑽石系列', name:'奇蹟鑽石面膜',
+    tagline:'鑽石微晶導引 · 喚醒代謝節律',
+    color:'#E8E0F0', icon:'💎',
+    desc:'含鑽石粉、紅寶石、藍寶石微細晶體的核心面膜，物理性協助角質疏通與成分導入，週期性使用逐步重建肌膚活力。',
+    usage:['清潔後直接塗抹均勻','靜置 15–20 分鐘','輕柔按摩吸收，無需清洗'],
+    sections:[
+      {title:'礦物導引核心',color:'#9880b8',items:[{n:'鑽石微晶',d:'物理調理通道'},{n:'紅寶石粉末',d:'活化礦物能量'},{n:'藍寶石微粒',d:'鎮靜協調功效'}]},
+      {title:'活化修護成分',color:'#378ADD',items:[{n:'水解彈性蛋白',d:'補充肌膚彈力'},{n:'CoQ10',d:'抗氧化活化'},{n:'積雪草苷',d:'舒敏修護'},{n:'多重胜肽×8',d:'多維度抗老'}]}
+    ]
+  },
+  {
+    id:'diamond-serum', cat:'鑽石系列', name:'鑽石精華液',
+    tagline:'高濃度鑽石微晶 · 密集修護',
+    color:'#D8D0E8', icon:'✨',
+    desc:'鑽石系列精華精粹，高濃度礦物微晶配合多重胜肽，密集修護課程的核心步驟。',
+    usage:['面膜後或單獨使用','取適量輕拍全臉','早晚均可，晚間效果更佳'],
+    sections:[
+      {title:'礦物精華',color:'#9880b8',items:[{n:'鑽石微晶',d:'高濃度版本'},{n:'紅寶石粉末',d:'活化能量'},{n:'藍寶石',d:'舒緩調理'}]},
+      {title:'修護胜肽群',color:'#7F77DD',items:[{n:'促膠原胜肽',d:'刺激膠原新生'},{n:'緊緻胜肽',d:'提升彈力'},{n:'修護胜肽',d:'細胞層級修復'}]}
+    ]
+  },
+  {
+    id:'diamond-cream', cat:'鑽石系列', name:'奇蹟鑽石修護霜',
+    tagline:'深度修護 · 鎖住每天進步',
+    color:'#E0D8F0', icon:'🪬',
+    desc:'鑽石系列收官面霜，神經醯胺屏障矩陣搭配礦物微晶，鎖住精華步驟的所有努力。',
+    usage:['精華液後最後一步','取蠶豆大小溫和推開','早晚均可使用'],
+    sections:[
+      {title:'屏障修護核心',color:'#9880b8',items:[{n:'神經醯胺 NP',d:'仿真角質層脂質'},{n:'磷脂',d:'黃金比例屏障'},{n:'鑽石微晶',d:'持續通道維護'}]},
+      {title:'抗老活化',color:'#7F77DD',items:[{n:'水解彈性蛋白',d:'深層彈力補充'},{n:'CoQ10',d:'細胞抗氧化'},{n:'多肽複合物',d:'全面修護'}]}
+    ]
+  },
+  {
+    id:'water-gel-1', cat:'水凝膜', name:'水凝膜1號 去角質',
+    tagline:'AHA + PHA 雙酸代謝 · 週1–2次',
+    color:'#D0EAE0', icon:'🌀',
+    desc:'AHA（乙醇酸）搭配PHA（乳糖酸）雙酸協同，深層喚醒角質代謝，每週1-2次使用讓後續保養吸收率大幅提升。',
+    usage:['潔顏後取適量塗全臉（避開眼周）','停留 5–10 分鐘（初次請先 3 分鐘測試）','清水沖淨，勿過夜使用'],
+    sections:[
+      {title:'雙酸去角質系統',color:'#1D9E75',items:[{n:'乙醇酸 AHA',d:'喚醒角質代謝'},{n:'乳糖酸 PHA',d:'溫和適合敏感肌'}]},
+      {title:'同步修護配方',color:'#378ADD',items:[{n:'積雪草',d:'酸後舒緩修護'},{n:'神經醯胺',d:'維持屏障完整'},{n:'蘆薈萃取',d:'鎮定降敏'}]}
+    ]
+  },
+  {
+    id:'water-gel-2', cat:'水凝膜', name:'水凝膜2號 水潤滋養',
+    tagline:'神經醯胺屏障 · 11種胜肽滋養',
+    color:'#C8E8E0', icon:'🌸',
+    desc:'神經醯胺屏障配方搭載11種胜肽，專為乾敏肌、術後修護設計，使用後立即感受水潤與舒緩。',
+    usage:['潔顏後塗抹全臉','靜置 15 分鐘','輕柔按摩吸收，無需清洗'],
+    sections:[
+      {title:'屏障修護系統',color:'#1D9E75',items:[{n:'神經醯胺',d:'仿真角質層脂質'},{n:'磷脂',d:'屏障強化'},{n:'角鯊烷',d:'深層滋潤'}]},
+      {title:'胜肽修護群 ×11',color:'#7F77DD',items:[{n:'修護胜肽',d:'促進細胞再生'},{n:'抗炎胜肽',d:'舒緩泛紅'},{n:'保濕胜肽',d:'鎖水功效'}]}
+    ]
+  },
+  {
+    id:'q-cream', cat:'面霜', name:'Q肌底面霜',
+    tagline:'益生菌屏障強化 · 8種胜肽修護',
+    color:'#F0E8D8', icon:'🫐',
+    desc:'益生菌發酵萃取強化肌膚微生態屏障，8種胜肽持續修護，特別適合乾敏肌、術後修護與日常打底。',
+    usage:['精華液後使用作為最後一步','取蠶豆大小溫和推開','早晚皆可，夜間加量使用修護效果更佳'],
+    sections:[
+      {title:'益生菌屏障系統',color:'#C9A96E',items:[{n:'乳酸桿菌發酵液',d:'強化微生態屏障'},{n:'神經醯胺 NP',d:'仿真角質層脂質'},{n:'磷脂',d:'黃金比例屏障矩陣'}]},
+      {title:'胜肽修護群 ×8',color:'#7F77DD',items:[{n:'修護胜肽',d:'促進細胞再生'},{n:'抗炎胜肽',d:'舒緩泛紅'},{n:'Matrixyl 3000',d:'膠原再生訊號'}]}
+    ]
+  },
+  {
+    id:'multi-peptide-cream', cat:'面霜', name:'多肽修護霜',
+    tagline:'高濃度多肽 · 全面抗老',
+    color:'#E8D8E8', icon:'⚗️',
+    desc:'搭載高濃度抗老胜肽複合物，針對細紋、鬆弛、暗沉三大老化問題全面出擊。',
+    usage:['精華液或面膜後使用','取適量溫和推開全臉','建議夜間使用效果更佳'],
+    sections:[
+      {title:'抗老胜肽複合物',color:'#9880b8',items:[{n:'類肉毒胜肽',d:'動態紋放鬆'},{n:'促膠原胜肽',d:'真皮膠原合成'},{n:'緊緻胜肽',d:'輪廓提拉'}]},
+      {title:'保濕鎖水',color:'#378ADD',items:[{n:'玻尿酸複合物',d:'多層次補水'},{n:'神經醯胺',d:'屏障鎖水'}]}
+    ]
+  },
+  {
+    id:'miracle-cream', cat:'面霜', name:'奇蹟修護霜',
+    tagline:'植物幹細胞 · 全效修護',
+    color:'#E8F0D8', icon:'🌿',
+    desc:'番茄、北極莓、雪絨花等珍稀植物幹細胞萃取，賦予肌膚自然再生能量，適合各種膚質的全效修護。',
+    usage:['作為日常保養最後一步','取適量均勻推開','早晚皆可使用'],
+    sections:[
+      {title:'植物幹細胞能量網絡',color:'#1D9E75',items:[{n:'番茄幹細胞',d:'抗氧化再生'},{n:'北極莓',d:'極地抗氧化'},{n:'雪絨花',d:'抗藍光防護'}]},
+      {title:'修護活化',color:'#C9A96E',items:[{n:'CoQ10',d:'細胞活化'},{n:'積雪草苷',d:'舒敏修護'},{n:'角鯊烷',d:'深層潤澤'}]}
+    ]
+  },
+  {
+    id:'radiance-spray', cat:'噴霧', name:'活顏噴霧',
+    tagline:'植物幹細胞抗衰 · 隨時補濕提亮',
+    color:'#D8E8F8', icon:'🌬️',
+    desc:'隨身攜帶的即時補濕利器，植物幹細胞萃取搭配保濕成分，定妝後噴霧補水、隨時提亮膚色。',
+    usage:['距臉部 20–30cm 均勻噴灑','輕拍幫助吸收','上妝前後均可使用，隨時補濕'],
+    sections:[
+      {title:'植物幹細胞活化',color:'#378ADD',items:[{n:'北極莓幹細胞',d:'抗氧化活化'},{n:'雪絨花萃取',d:'抗藍光防護'},{n:'蓮花幹細胞',d:'淨化提亮'}]},
+      {title:'即時保濕',color:'#1D9E75',items:[{n:'玻尿酸',d:'快速補水'},{n:'甘油',d:'保濕鎖水'},{n:'蘆薈',d:'舒緩鎮靜'}]}
+    ]
+  },
+  {
+    id:'whitening-serum', cat:'精華液', name:'美白亮采精華',
+    tagline:'谷胱甘肽 · 三重協同淡斑',
+    color:'#F5F0D8', icon:'☀️',
+    desc:'谷胱甘肽配合菸鹼醯胺、維生素C三重協同，淡化斑點、均勻膚色，提升整體膚色亮度。',
+    usage:['化妝水後使用','取 2–3 滴輕壓全臉，重點部位加強','早晨使用後請搭配防曬'],
+    sections:[
+      {title:'三重亮白協同',color:'#C9A96E',items:[{n:'谷胱甘肽',d:'醫美等級抗氧化美白'},{n:'菸鹼醯胺',d:'抑制黑色素轉移'},{n:'維生素C',d:'亮白抗氧化'}]},
+      {title:'輔助成分',color:'#378ADD',items:[{n:'熊果素',d:'淡斑美白'},{n:'傳明酸',d:'頑固斑點淡化'},{n:'玻尿酸',d:'保濕底料'}]}
+    ]
+  },
+  {
+    id:'eye-care', cat:'眼部護理', name:'眼部精華',
+    tagline:'消浮腫胜肽 · 黑眼圈修護',
+    color:'#E8EAF0', icon:'👁️',
+    desc:'針對眼周肌膚設計的輕薄精華，消浮腫胜肽搭配眼周專用修護成分，改善黑眼圈、眼袋與細紋。',
+    usage:['取少量點在眼周','無名指輕拍導入，勿拉扯','早晚使用，搭配輕柔按摩'],
+    sections:[
+      {title:'眼周專用胜肽',color:'#9880b8',items:[{n:'消浮腫胜肽',d:'改善眼袋水腫'},{n:'眼周緊緻胜肽',d:'細紋撫平'},{n:'黑眼圈胜肽',d:'促進循環'}]},
+      {title:'溫和修護',color:'#378ADD',items:[{n:'玻尿酸',d:'眼周深層補水'},{n:'積雪草',d:'舒緩敏感眼周'},{n:'咖啡因',d:'促進循環消腫'}]}
+    ]
+  },
+  {
+    id:'sunscreen', cat:'防護', name:'防曬隔離霜 SPF50',
+    tagline:'抗藍光防護 · 輕透不悶',
+    color:'#FFF0D8', icon:'🌞',
+    desc:'抗藍光防曬配方，生物類黃酮與雪絨花幹細胞協同防護，輕透不泛白，適合日常與螢幕工作族。',
+    usage:['早晨保養最後一步','取適量均勻推開全臉','每 2–3 小時補塗一次'],
+    sections:[
+      {title:'防曬防護系統',color:'#C9A96E',items:[{n:'SPF50 PA++++',d:'高效紫外線防護'},{n:'生物類黃酮',d:'抗藍光防護'},{n:'雪絨花幹細胞',d:'額外抗氧化'}]},
+      {title:'輕透成膜',color:'#1D9E75',items:[{n:'矽靈聚合物',d:'輕透不悶'},{n:'玻尿酸',d:'防曬同時補水'},{n:'Ectoin',d:'環境壓力防護'}]}
+    ]
+  },
+  {
+    id:'cleanser-foam', cat:'清潔', name:'胺基酸潔顏慕斯',
+    tagline:'胺基酸界面活性劑 · 溫和弱酸性',
+    color:'#F0E8E0', icon:'🫧',
+    desc:'弱酸性胺基酸配方，洗後 pH 維持在肌膚適合的弱酸環境，不破壞屏障，適合每日早晚使用。',
+    usage:['沾水後擠出適量泡沫','輕柔按摩全臉 30 秒','清水沖洗乾淨'],
+    sections:[
+      {title:'溫和潔淨',color:'#C4857A',items:[{n:'月桂醯谷氨酸',d:'胺基酸界面活性劑'},{n:'椰油醯甘氨酸',d:'溫和起泡清潔'},{n:'甜菜鹼',d:'保濕型潔淨'}]},
+      {title:'洗後修護',color:'#1D9E75',items:[{n:'泛醇',d:'修護潔後屏障'},{n:'積雪草',d:'舒緩清潔後肌膚'},{n:'玻尿酸',d:'洗後即補水'}]}
+    ]
+  },
+  {
+    id:'body-lotion', cat:'身體護理', name:'全效身體乳',
+    tagline:'全身適用 · 保濕緊緻',
+    color:'#E8F0E0', icon:'🧴',
+    desc:'臉部核心胜肽技術延伸至全身護理，輕透快吸收，保濕同時提供胜肽抗老功效。',
+    usage:['沐浴後肌膚微濕時使用','取適量均勻推開全身','重點乾燥部位可加量'],
+    sections:[
+      {title:'核心保濕成分',color:'#1D9E75',items:[{n:'玻尿酸複合物',d:'多層次補水'},{n:'乳木果油',d:'深層滋潤'},{n:'神經醯胺',d:'屏障修護'}]},
+      {title:'胜肽抗老',color:'#7F77DD',items:[{n:'緊緻胜肽',d:'全身肌膚緊緻'},{n:'保濕胜肽',d:'持久鎖水'},{n:'修護胜肽',d:'肌膚再生'}]}
+    ]
+  },
+  {
+    id:'essence-mask', cat:'面膜', name:'奢華精華面膜',
+    tagline:'高濃度精華 · 一片頂多片',
+    color:'#E0E8F0', icon:'💆',
+    desc:'高濃度精華液浸泡的薄型蠶絲面膜，一片相當於數倍精華量，週期性使用快速密集補給。',
+    usage:['潔顏後敷上面膜','靜置 15–20 分鐘','取下後輕拍吸收剩餘精華，無需清洗'],
+    sections:[
+      {title:'面膜精華成分',color:'#378ADD',items:[{n:'三分子玻尿酸',d:'深層強效補水'},{n:'功能性胜肽×10',d:'多維度修護'},{n:'植物幹細胞',d:'活化再生'}]},
+      {title:'蠶絲面膜載體',color:'#C4857A',items:[{n:'蠶絲蛋白',d:'服貼導入'},{n:'生物纖維素',d:'緊密服貼'},{n:'甘油',d:'鎖住精華'}]}
+    ]
+  },
+  {
+    id:'neck-cream', cat:'頸部護理', name:'頸部緊緻霜',
+    tagline:'頸紋改善 · 提升緊緻度',
+    color:'#E8E0D8', icon:'🦢',
+    desc:'針對頸部肌膚特性設計，高濃度緊緻胜肽搭配提拉成分，改善頸紋與頸部鬆弛。',
+    usage:['臉部保養後延伸至頸部','由下往上輕拍推開','早晚均可，晚間效果更佳'],
+    sections:[
+      {title:'頸部緊緻配方',color:'#9880b8',items:[{n:'緊緻胜肽',d:'抗鬆弛提拉'},{n:'DMAE',d:'即時緊緻效果'},{n:'類視黃醇',d:'加速代謝更新'}]},
+      {title:'深層修護',color:'#C9A96E',items:[{n:'玻尿酸',d:'深層補水'},{n:'乳木果油',d:'滋潤修護'},{n:'維生素E',d:'抗氧化保護'}]}
+    ]
+  }
+];
+
+/* ── SVG product placeholder generator ── */
+function makeSvgPlaceholder(color, icon, name) {
+  const words = name.split(' ');
+  const line1 = words.slice(0,2).join(' ');
+  const line2 = words.slice(2).join(' ');
+  return `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <rect width="120" height="120" fill="${color}" rx="0"/>
+    <rect x="35" y="20" width="50" height="70" rx="8" fill="rgba(255,255,255,0.55)" stroke="rgba(255,255,255,0.8)" stroke-width="1"/>
+    <rect x="45" y="18" width="30" height="8" rx="4" fill="rgba(255,255,255,0.75)"/>
+    <text x="60" y="52" text-anchor="middle" font-size="20" font-family="sans-serif">${icon}</text>
+    <text x="60" y="75" text-anchor="middle" font-size="7" fill="rgba(40,30,20,0.6)" font-family="sans-serif">${line1}</text>
+    ${line2 ? `<text x="60" y="84" text-anchor="middle" font-size="7" fill="rgba(40,30,20,0.6)" font-family="sans-serif">${line2}</text>` : ''}
+  </svg>`;
+}
+
+/* ── Render product grid ── */
+(function(){
+  const grid = document.getElementById('prod-grid');
+  grid.innerHTML = PRODUCTS.map(p => `
+    <div class="prod-card" onclick="openProdModal('${p.id}')">
+      <div class="prod-img-wrap">${makeSvgPlaceholder(p.color, p.icon, p.name)}</div>
+      <div class="prod-body">
+        <div class="prod-cat">${p.cat}</div>
+        <div class="prod-name">${p.name}</div>
+        <div class="prod-tagline">${p.tagline}</div>
+        <div class="prod-more">查看成分 →</div>
+      </div>
+    </div>
+  `).join('');
+})();
+
+/* ── Product modal ── */
+function openProdModal(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('mIconWrap').innerHTML = makeSvgPlaceholder(p.color, p.icon, p.name);
+  document.getElementById('mTitle').textContent = p.name;
+  document.getElementById('mSub').textContent = p.desc;
+  let html = '';
+  p.sections.forEach(sec => {
+    html += `<div class="ing-section">
+      <div class="ing-section-title">${sec.title}</div>
+      <div class="ing-chips">${sec.items.map(it =>
+        `<div class="ing-chip"><span class="dot" style="background:${sec.color}"></span><span>${it.n}</span></div>`
+      ).join('')}</div>
+      <div class="ing-desc-list">${sec.items.map(it => `<strong>${it.n}</strong>：${it.d}`).join(' ／ ')}</div>
+    </div>`;
+  });
+  html += `<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(30,26,23,.08);">
+    <div class="ing-section-title">使用步驟</div>
+    <div class="use-steps">${p.usage.map((u,i) =>
+      `<div class="use-step"><div class="use-num">${i+1}</div><div>${u}</div></div>`
+    ).join('')}</div>
+  </div>`;
+  document.getElementById('mBody').innerHTML = html;
+  document.getElementById('prodModal').classList.add('open');
+}
+function closeProdModal() {
+  document.getElementById('prodModal').classList.remove('open');
+}
+
+/* ════════════════════════════════
+   QUIZ LOGIC
+════════════════════════════════ */
 const QZ_WORKER = "https://skin-quiz-proxy.bold-meadow-cc98.workers.dev/submit";
 const TOTAL = 6;
 let qzStep = 1;
 const qzState = {
-  concerns:[],skinType:null,medChoice:null,medTypes:[],duration:null,
+  concerns:[],skinType:null,medChoice:null,medTypes:[],
   allergyChoice:null,allergyTypes:[],allergyNote:"",
   goals:[],name:"",contactMethod:null,contactValue:""
 };
@@ -1682,12 +1375,13 @@ const CC_META = {
   phone:{label:"請輸入手機號碼",ph:"09XX-XXX-XXX",type:"tel"},
   email:{label:"請輸入 Email",ph:"your@email.com",type:"email"},
 };
+
 function openQuiz() {
   qzStep=1;
-  Object.assign(qzState,{concerns:[],skinType:null,medChoice:null,medTypes:[],duration:null,allergyChoice:null,allergyTypes:[],allergyNote:"",goals:[],name:"",contactMethod:null,contactValue:""});
+  Object.assign(qzState,{concerns:[],skinType:null,medChoice:null,medTypes:[],allergyChoice:null,allergyTypes:[],allergyNote:"",goals:[],name:"",contactMethod:null,contactValue:""});
   document.querySelectorAll(".qz-pill.sel,.qz-card.sel,.qz-cc.sel").forEach(el=>el.classList.remove("sel"));
-  ["qzName","qzContactVal","qzAllergyNote"].forEach(id=>document.getElementById(id).value="");
-  ["qzMedDetails","qzAllergyDetails","qzContactIn"].forEach(id=>document.getElementById(id).style.display="none");
+  ["qzName","qzContactVal","qzAllergyNote"].forEach(id=>{const el=document.getElementById(id);if(el)el.value="";});
+  ["qzMedDetails","qzAllergyDetails","qzContactIn"].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display="none";});
   document.getElementById("qzError").style.display="none";
   document.getElementById("qzSuccess").style.display="none";
   document.getElementById("qzNav").style.display="flex";
@@ -1704,7 +1398,9 @@ function closeQuiz() {
   document.body.style.overflow="";
 }
 document.getElementById("quizOverlay").addEventListener("click",function(e){if(e.target===this)closeQuiz();});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeQuiz();});
+document.getElementById("prodModal").addEventListener("click",function(e){if(e.target===this)closeProdModal();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeQuiz();closeProdModal();}});
+
 function qzRenderDots() {
   const c=document.getElementById("qzDots"); c.innerHTML="";
   for(let i=1;i<=TOTAL;i++){const d=document.createElement("div");d.className="qz-dot"+(i<qzStep?" done":i===qzStep?" active":"");c.appendChild(d);}
@@ -1720,17 +1416,15 @@ function qzShowStep(n) {
 }
 function qzValidate() {
   let ok=false;
-  switch(qzStep){
-    case 1:ok=qzState.concerns.length>0;break;
-    case 2:ok=!!qzState.skinType;break;
-    case 3:ok=!!qzState.medChoice;break;
-    case 4:ok=!!qzState.allergyChoice;break;
-    case 5:ok=qzState.goals.length>0;break;
-    case 6:ok=qzState.name.trim().length>0&&!!qzState.contactMethod&&qzState.contactValue.trim().length>0;break;
-  }
+  if(qzStep===1)ok=qzState.concerns.length>0;
+  else if(qzStep===2)ok=!!qzState.skinType;
+  else if(qzStep===3)ok=!!qzState.medChoice;
+  else if(qzStep===4)ok=!!qzState.allergyChoice;
+  else if(qzStep===5)ok=qzState.goals.length>0;
+  else if(qzStep===6)ok=qzState.name.trim().length>0&&!!qzState.contactMethod&&qzState.contactValue.trim().length>0;
   document.getElementById("qzNext").disabled=!ok;
 }
-function setupQzMultiPills(id,key,max){
+function setupMultiPills(id,key,max){
   document.querySelectorAll("#"+id+" .qz-pill").forEach(btn=>{
     btn.addEventListener("click",()=>{
       const v=btn.dataset.val;
@@ -1740,27 +1434,25 @@ function setupQzMultiPills(id,key,max){
     });
   });
 }
-function setupQzSinglePills(id,key){
-  document.querySelectorAll("#"+id+" .qz-pill").forEach(btn=>{
-    btn.addEventListener("click",()=>{document.querySelectorAll("#"+id+" .qz-pill").forEach(b=>b.classList.remove("sel"));btn.classList.add("sel");qzState[key]=btn.dataset.val;qzValidate();});
-  });
-}
-function setupQzCards(group,key,cb){
+function setupCards(group,key,cb){
   document.querySelectorAll(`.qz-card[data-group="${group}"]`).forEach(c=>{
-    c.addEventListener("click",()=>{document.querySelectorAll(`.qz-card[data-group="${group}"]`).forEach(x=>x.classList.remove("sel"));c.classList.add("sel");qzState[key]=c.dataset.val;if(cb)cb(c.dataset.val);qzValidate();});
+    c.addEventListener("click",()=>{
+      document.querySelectorAll(`.qz-card[data-group="${group}"]`).forEach(x=>x.classList.remove("sel"));
+      c.classList.add("sel"); qzState[key]=c.dataset.val;
+      if(cb)cb(c.dataset.val); qzValidate();
+    });
   });
 }
-setupQzMultiPills("qzConcerns","concerns",3);
-setupQzMultiPills("qzMedTypes","medTypes",null);
-setupQzSinglePills("qzDuration","duration");
-setupQzMultiPills("qzAllergyTypes","allergyTypes",null);
-setupQzMultiPills("qzGoals","goals",2);
-setupQzCards("skinType","skinType");
-setupQzCards("medChoice","medChoice",v=>{document.getElementById("qzMedDetails").style.display=v==="yes"?"block":"none";if(v==="no"){qzState.medTypes=[];qzState.duration=null;}});
-setupQzCards("allergyChoice","allergyChoice",v=>{document.getElementById("qzAllergyDetails").style.display=v==="yes"?"block":"none";if(v==="no")qzState.allergyTypes=[];});
+setupMultiPills("qzConcerns","concerns",3);
+setupMultiPills("qzMedTypes","medTypes",null);
+setupMultiPills("qzAllergyTypes","allergyTypes",null);
+setupMultiPills("qzGoals","goals",2);
+setupCards("skinType","skinType");
+setupCards("medChoice","medChoice",v=>{document.getElementById("qzMedDetails").style.display=v==="yes"?"block":"none";if(v==="no")qzState.medTypes=[];});
+setupCards("allergyChoice","allergyChoice",v=>{const el=document.getElementById("qzAllergyDetails");if(el)el.style.display=v==="yes"?"block":"none";if(v==="no")qzState.allergyTypes=[];});
 document.querySelectorAll(".qz-cc").forEach(cc=>{
   cc.addEventListener("click",()=>{
-    document.querySelectorAll(".qz-cc").forEach(x=>x.classList.remove("sel"));cc.classList.add("sel");
+    document.querySelectorAll(".qz-cc").forEach(x=>x.classList.remove("sel")); cc.classList.add("sel");
     const m=cc.dataset.contact; qzState.contactMethod=m;
     const meta=CC_META[m]; const inp=document.getElementById("qzContactVal");
     document.getElementById("qzContactLbl").textContent=meta.label;
@@ -1774,7 +1466,8 @@ document.getElementById("qzNext").addEventListener("click",async()=>{
   if(qzStep<TOTAL){qzShowStep(qzStep+1);return;}
   qzState.name=document.getElementById("qzName").value.trim();
   qzState.contactValue=document.getElementById("qzContactVal").value.trim();
-  qzState.allergyNote=document.getElementById("qzAllergyNote").value.trim();
+  const noteEl=document.getElementById("qzAllergyNote");
+  if(noteEl)qzState.allergyNote=noteEl.value.trim();
   const btn=document.getElementById("qzNext"); const err=document.getElementById("qzError");
   btn.disabled=true; btn.textContent="送出中…"; err.style.display="none";
   try {
@@ -1791,27 +1484,26 @@ document.getElementById("qzNext").addEventListener("click",async()=>{
   }
 });
 document.getElementById("qzBack").addEventListener("click",()=>{if(qzStep>1)qzShowStep(qzStep-1);});
-</script>
 
-<script>
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
+/* ════════════════════════════════
+   SCROLL REVEAL
+════════════════════════════════ */
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, (entry.target.dataset.delay || 0) * 100);
-      observer.unobserve(entry.target);
+      setTimeout(() => entry.target.classList.add('visible'), (entry.target.dataset.delay||0)*80);
+      revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
-reveals.forEach((el, i) => {
-  el.dataset.delay = i % 4;
-  observer.observe(el);
-});
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.dataset.delay = i % 5;
+    revealObserver.observe(el);
+  });
+}
+initReveal();
 </script>
-
 </body>
 </html>
