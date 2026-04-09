@@ -1306,7 +1306,14 @@ const PRODUCTS = [
   }
 ];
 
-/* ── SVG product placeholder generator ── */
+/* ── Product image helper ── */
+const DIAMOND_IDS = ['diamond-mask','diamond-serum','diamond-cream','diamond-cb-cream'];
+function prodImg(id, color, icon) {
+  const file = DIAMOND_IDS.includes(id) ? 'diamond-set' : id;
+  return `<img src="images/${file}.jpg" alt="${id}" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';var d=document.createElement('div');d.style.cssText='width:100%;height:100%;background:${color};display:flex;align-items:center;justify-content:center;font-size:32px';d.textContent='${icon}';this.parentNode.appendChild(d);">`;
+}
+
+/* ── LEGACY: keep for safety ── */
 function makeSvgPlaceholder(color, icon, name) {
   const words = name.split(' ');
   const line1 = words.slice(0,2).join(' ');
@@ -1326,7 +1333,7 @@ function makeSvgPlaceholder(color, icon, name) {
   const grid = document.getElementById('prod-grid');
   grid.innerHTML = PRODUCTS.map(p => `
     <div class="prod-card" onclick="openProdModal('${p.id}')">
-      <div class="prod-img-wrap">${makeSvgPlaceholder(p.color, p.icon, p.name)}</div>
+      <div class="prod-img-wrap">${prodImg(p.id, p.color, p.icon)}</div>
       <div class="prod-body">
         <div class="prod-cat">${p.cat}</div>
         <div class="prod-name">${p.name}</div>
@@ -1341,7 +1348,7 @@ function makeSvgPlaceholder(color, icon, name) {
 function openProdModal(id) {
   const p = PRODUCTS.find(x => x.id === id);
   if (!p) return;
-  document.getElementById('mIconWrap').innerHTML = makeSvgPlaceholder(p.color, p.icon, p.name);
+  document.getElementById('mIconWrap').innerHTML = prodImg(p.id, p.color, p.icon);
   document.getElementById('mTitle').textContent = p.name;
   document.getElementById('mSub').textContent = p.desc;
   let html = '';
