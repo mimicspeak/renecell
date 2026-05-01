@@ -276,7 +276,7 @@ const P=[
 ];
 const DI=['diamond-mask','diamond-serum','diamond-cream','diamond-cb-cream'];
 const DN='鑽石系列的角色：胜肽分子量偏大（500-2000 Da），部分超過角質層滲透閾值（約 500 Da）。鑽石套組先重整角質排列、開啟通道，讓後續奈米化胜肽在皮膚準備好的狀態下進入基底層。';
-const FN={'q-cream':'Q cream'};
+const FN={'q-cream':'Q-cream'};
 function pi(id,c,ic){const f=DI.includes(id)?'diamond-set':(FN[id]||id);return`<img src="images/${f}.jpg" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="prod-img-fb" style="display:none;background:${c}">${ic}</div>`}
 document.getElementById('prodGrid').innerHTML=P.map(p=>`<div class="prod-card" onclick="openPM('${p.id}')"><div class="prod-img-wrap">${pi(p.id,p.cl,p.ic)}</div><div class="prod-body"><div class="prod-cat">${p.cat}</div><div class="prod-name">${p.nm}</div><div class="prod-tl">${p.tl}</div><div class="prod-more">查看成分 →</div>${p.dm?`<div class="prod-dn">💎 鑽石系列 — 物理開通 + 深層導入</div>`:''}</div></div>`).join('');
 function openPM(id){const p=P.find(x=>x.id===id);if(!p)return;const f=DI.includes(id)?'diamond-set':(FN[id]||id);
