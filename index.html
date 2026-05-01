@@ -239,15 +239,15 @@ ${[56,70,84,98,112].map((y,i)=>`<rect x="36" y="${y}" width="270" height="14" fi
 <text font-size="8.5" fill="#8A70B0" x="680" y="303" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">修復期較長</text>
 <!-- bottom note replacing legend -->
 <rect x="36" y="420" width="684" height="36" rx="4" fill="#F5F0E8" stroke="#D8D0C0" stroke-width=".6"/>
-<text font-size="10" fill="#6A5838" x="378" y="440" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">胜肽分子量偏大（500-2000 Da），部分超過角質層滲透閾值（約 500 Da）。鑽石系列先重整角質排列、開啟通道，讓奈米化胜肽進入棘狀層。</text>
+<text font-size="10" fill="#6A5838" x="378" y="440" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">皮膚只收 500 Da 以下的小分子，體型偏大的胜肽，若沒技術幫忙只能停在表皮。鑽石系列先重整角質排列、開啟通道，讓奈米化胜肽順利進入棘狀層。</text>
 </svg>`;
 
 /* ═══ SKIN TYPES ═══ */
 const SK=[
-{tag:'螢幕肌',sc:'#4a9eff',sl:'rgba(74,158,255,.08)',sd:'#1a5fa0',hl:'每天盯著螢幕 8 小時以上，藍光、壓力、熬夜輪番傷害——<strong>肌膚來不及修復就已經在老化</strong>',tr:['膚色暗沉、毛孔越來越明顯','壓力大時特別容易冒痘、出油','沒時間做複雜保養，但不想放棄效果'],rc:'酵素潔面粉 + 多肽化妝水 + 透明質酸精華'},
-{tag:'玻璃肌',sc:'#d4827a',sl:'rgba(212,130,122,.08)',sd:'#a05048',hl:'用什麼都怕、換季就崩潰、一不小心就泛紅脫皮——<strong>肌膚屏障正在求救</strong>',tr:['肌膚容易泛紅、乾燥緊繃反覆出現','被酸類或過度去角質傷過','想修護但又怕選錯成分越補越糟'],rc:'酵素潔面粉 + 透明質酸 + Q肌底面霜'},
-{tag:'抗老焦慮肌',sc:'#9880b8',sl:'rgba(152,128,184,.08)',sd:'#6848a0',hl:'照鏡子開始數細紋，摸臉感覺彈力不如以前——<strong>想介入但不知道從哪裡開始</strong>',tr:['法令紋、眼尾紋漸漸明顯','膚色暗沉、失去光澤與彈力','重視成分與品質，不想亂買'],rc:'鑽石面膜 + 鑽石精華 + 多肽霜'},
-{tag:'醫美疲憊肌',sc:'#c9a96e',sl:'rgba(201,169,110,.08)',sd:'#8a6830',hl:'做了幾年療程，皮膚反而越來越薄越敏感——<strong>開始懷疑一直刺激是對的嗎？</strong>',tr:['雷射、換膚做完恢復期越來越長','療程間空窗期肌膚忽好忽壞','花了大錢效果卻越來越難維持'],rc:'水凝膜2號 + 鑽石精華 + 奇蹟鑽石修護霜'}
+{tag:'螢幕肌',sc:'#4a9eff',sl:'rgba(74,158,255,.08)',sd:'#1a5fa0',hl:'每天盯著螢幕 8 小時以上，藍光、壓力、熬夜輪番傷害——<strong>肌膚來不及修復就已經在老化</strong>',tr:['膚色暗沉、毛孔越來越明顯','壓力大時特別容易冒痘、出油','沒時間做複雜保養，但不想放棄效果'],rc:'鑽石套組 + 活顏噴霧 + 精華系列'},
+{tag:'玻璃肌',sc:'#d4827a',sl:'rgba(212,130,122,.08)',sd:'#a05048',hl:'用什麼都怕、換季就崩潰、一不小心就泛紅脫皮——<strong>肌膚屏障正在求救</strong>',tr:['肌膚容易泛紅、乾燥緊繃反覆出現','被酸類或過度去角質傷過','想修護但又怕選錯成分越補越糟'],rc:'鑽石套組 + 精華系列 + Q肌底面霜'},
+{tag:'抗老焦慮肌',sc:'#9880b8',sl:'rgba(152,128,184,.08)',sd:'#6848a0',hl:'照鏡子開始數細紋，摸臉感覺彈力不如以前——<strong>想介入但不知道從哪裡開始</strong>',tr:['法令紋、眼尾紋漸漸明顯','膚色暗沉、失去光澤與彈力','重視成分與品質，不想亂買'],rc:'鑽石套組 + Q安瓶 + 精華系列 + 多肽霜'},
+{tag:'醫美疲憊肌',sc:'#c9a96e',sl:'rgba(201,169,110,.08)',sd:'#8a6830',hl:'做了幾年療程，皮膚反而越來越薄越敏感——<strong>開始懷疑一直刺激是對的嗎？</strong>',tr:['雷射、換膚做完恢復期越來越長','療程間空窗期肌膚忽好忽壞','花了大錢效果卻越來越難維持'],rc:'水凝膜系列 + 精華系列 + Q安瓶 + Q肌底面霜'}
 ];
 document.getElementById('skinGrid').innerHTML=SK.map(s=>`<div class="skin-card-w reveal" style="--sc:${s.sc};--sc-lt:${s.sl};--sc-dk:${s.sd}"><div class="skin-tag-w">${s.tag}</div><p class="skin-headline-w">${s.hl}</p><ul class="skin-traits-w">${s.tr.map(t=>`<li>${t}</li>`).join('')}</ul><div class="skin-rec-w"><span class="skin-rec-w-label"><span class="rec-icon">💡</span> 入門建議：${s.rc}</span></div></div>`).join('');
 
