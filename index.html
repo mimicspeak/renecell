@@ -10,7 +10,7 @@
 :root{--bg:#0e0e0f;--bg2:#141416;--bg3:#1a1a1d;--surface:#1e1e22;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#e8e2d9;--muted:#8a8478;--gold:#c9a96e;--gold-lt:#e8d5a8;--blue:#4a9eff;--green:#5fbf8a;--rose:#d4827a;--purple:#9880b8;--mono:'DM Mono',monospace;--serif:'Cormorant Garamond',serif}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}@keyframes breathe{0%,100%{opacity:.45}50%{opacity:.9}}@keyframes borderGlow{0%,100%{box-shadow:0 0 0 1px rgba(201,169,110,.2)}50%{box-shadow:0 0 20px rgba(201,169,110,.15),0 0 0 1px rgba(201,169,110,.4)}}
 .fade-up{animation:fadeUp .9s ease both}.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(14,14,15,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.nav-logo{font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--gold)}.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{font-size:10px;letter-spacing:2px;color:var(--muted);transition:color .2s;text-transform:uppercase}.nav-links a:hover{color:var(--text)}.nav-cta-btn{font-family:var(--mono);font-size:10px;letter-spacing:2px;border:1px solid var(--gold);color:var(--gold);padding:7px 18px;background:none;cursor:pointer;transition:all .3s}.nav-cta-btn:hover{background:var(--gold);color:#0e0e0f}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(14,14,15,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.nav-logo{font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--gold)}.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{font-size:10px;letter-spacing:2px;color:var(--muted);transition:color .2s;text-transform:uppercase}.nav-links a:hover{color:var(--text)}.nav-cta-btn{font-family:var(--mono);font-size:10px;letter-spacing:2px;border:1px solid var(--gold);color:#0e0e0f;padding:7px 18px;background:var(--gold);cursor:pointer;transition:all .3s}.nav-cta-btn:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
 @media(max-width:900px){.nav-links{display:none}nav{padding:14px 20px}}
 section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 24px}
 .section-label{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px}.section-label::before{content:'';width:24px;height:1px;background:var(--gold);opacity:.5}
@@ -116,9 +116,9 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 </style>
 </head>
 <body>
-<nav><div class="nav-logo">RENE·CELL / 成分筆記</div><ul class="nav-links"><li><a href="#origin">核心技術</a></li><li><a href="#science">皮膚科學</a></li><li><a href="#products">產品成分</a></li><li><a href="#skintype">入門建議</a></li></ul><button class="nav-cta-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">免費體驗</button></nav>
+<nav><div class="nav-logo">RENE·CELL / 成分筆記</div><ul class="nav-links"><li><a href="#origin">核心技術</a></li><li><a href="#science">皮膚科學</a></li><li><a href="#products">產品系列</a></li><li><a href="#skintype">你是哪種</a></li></ul><button class="nav-cta-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">立即諮詢</button></nav>
 
-<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-glow"></div><div class="hero-content"><div class="hero-eyebrow fade-up">成分研究筆記 vol.1</div><h1 class="hero-title fade-up" style="animation-delay:.1s"><span style="font-family:var(--serif)">RENE CELL</span> <em>從醫療修復到居家護膚</em></h1><p class="hero-body fade-up" style="animation-delay:.2s">源自韓國生醫實驗室——醫療級傷口修復的細胞滲透理論，經配方工程化後轉化為每天可在家使用的保養系統。</p><div class="hero-cta-row fade-up" style="animation-delay:.35s"><a href="#products" class="hero-btn hero-btn-primary">成分介紹 →</a><button class="hero-btn hero-btn-ghost" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">個人化諮詢</button></div><div class="hero-disclaimer fade-up" style="animation-delay:.6s">本內容為個人體驗與成分研究紀錄，非品牌官方內容，非醫療建議。</div></div></section>
+<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-glow"></div><div class="hero-content"><div class="hero-eyebrow fade-up">成分研究筆記 vol.1</div><h1 class="hero-title fade-up" style="animation-delay:.1s"><span style="font-family:var(--serif)">RENE CELL</span> <em>從醫療修復到居家護膚</em></h1><p class="hero-body fade-up" style="animation-delay:.2s">源自韓國生醫實驗室——醫療級傷口修復的細胞滲透理論，經配方工程化後轉化為每天可在家使用的保養系統。</p><div class="hero-cta-row fade-up" style="animation-delay:.35s"><a href="#products" class="hero-btn hero-btn-primary">探索產品成分 →</a><button class="hero-btn hero-btn-ghost" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">免費體驗諮詢</button></div><div class="hero-disclaimer fade-up" style="animation-delay:.6s">本內容為個人體驗與成分研究紀錄，非品牌官方內容，非醫療建議。</div></div></section>
 
 <!-- PAGE 1 -->
 <section class="origin-section" id="origin"><div class="container">
@@ -150,7 +150,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <!-- PAGE 2 -->
 <section class="skin-science" id="science"><div class="container">
 <div class="section-label reveal">SKIN SCIENCE</div>
-<h2 class="section-title reveal" style="max-width:700px">滲透深度 是保養是否有感的<em>終極關鍵</em></h2>
+<h2 class="section-title reveal" style="max-width:700px;white-space:nowrap;font-size:clamp(22px,3.2vw,38px)">滲透深度 是保養是否有感的<em>終極關鍵</em></h2>
 <p class="section-sub reveal">同樣塗抹於肌膚，停留在角質層僅是「表面濕潤」，而抵達棘狀層則是觸發「細胞再生」。</p>
 <div class="skin-svg-wrap reveal" id="skinSvg"></div>
 </div></section>
