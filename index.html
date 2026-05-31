@@ -68,7 +68,7 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 /* ── ORIGIN / TECH SECTION ── */
 .origin-section{background:var(--bg2)}
 .tech-rows{display:flex;flex-direction:column}
-.tech-row{display:grid;grid-template-columns:56px 1fr 176px;align-items:stretch;border-bottom:1px solid rgba(255,255,255,.07);padding:40px 0}
+.tech-row{display:grid;grid-template-columns:56px 1fr 224px;align-items:stretch;border-bottom:1px solid rgba(255,255,255,.07);padding:40px 0}
 .tech-row:last-child{border-bottom:none}
 .t-icon{display:flex;flex-direction:column;align-items:center;padding-right:28px;padding-top:4px}
 .t-icon-circle{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
@@ -83,19 +83,19 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .row1 .t-icon-circle{background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.2)}
 .row2 .t-icon-circle{background:rgba(74,158,255,.06);border:1px solid rgba(74,158,255,.18)}
 .row3 .t-icon-circle{background:rgba(95,191,138,.06);border:1px solid rgba(95,191,138,.18)}
-.flow{display:flex;flex-direction:column;gap:4px}
-.flow-step{display:flex;align-items:center;gap:8px;font-size:12px;color:#c8c0b4}
-.flow-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
-.flow-arr{font-family:var(--mono);font-size:13px;color:rgba(201,169,110,.3);padding-left:13px;line-height:1}
-.stat-num{font-family:var(--serif);font-size:38px;font-weight:300;color:var(--text);line-height:1}
-.stat-unit{font-family:var(--mono);font-size:13px;color:var(--gold);margin-left:3px}
-.stat-label{font-family:var(--mono);font-size:10px;color:#6a6458;letter-spacing:1px;margin-top:6px}
-.stat-note{margin-top:10px;font-size:11px;color:#6a6458;line-height:1.8}
-.certs{display:flex;flex-direction:column;gap:10px}
-.cert{display:flex;align-items:center;gap:8px}
+.flow{display:flex;flex-direction:column;gap:6px}
+.flow-step{display:flex;align-items:center;gap:9px;font-size:13.5px;color:#c8c0b4;white-space:nowrap}
+.flow-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.flow-arr{font-family:var(--mono);font-size:14px;color:rgba(201,169,110,.35);padding-left:15px;line-height:1.2}
+.stat-num{font-family:var(--serif);font-size:40px;font-weight:300;color:var(--text);line-height:1}
+.stat-unit{font-family:var(--mono);font-size:14px;color:var(--gold);margin-left:3px}
+.stat-label{font-family:var(--mono);font-size:10.5px;color:#6a6458;letter-spacing:1px;margin-top:7px}
+.stat-note{margin-top:8px;font-size:12.5px;color:#8a8070;line-height:1.7;white-space:nowrap}
+.certs{display:flex;flex-direction:column;gap:12px}
+.cert{display:flex;align-items:center;gap:9px;white-space:nowrap}
 .cert-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;animation:pulse 2s ease infinite}
-.cert-code{font-family:var(--mono);font-size:10px;color:var(--gold);letter-spacing:2px;min-width:68px}
-.cert-name{font-size:11px;color:#6a6458}
+.cert-code{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:1.5px;min-width:72px}
+.cert-name{font-size:12.5px;color:#8a8070}
 
 /* PAGE 2: SKIN SCIENCE */
 .skin-science{background:#faf6f0;color:#2e2820;padding:100px 24px}
@@ -170,11 +170,12 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <nav><div class="nav-logo">RENE·CELL / 成分筆記</div><ul class="nav-links"><li><a href="#products">成分介紹</a></li><li><a href="#skintype">入門建議</a></li><li><a href="#cta">個人化諮詢</a></li></ul><button class="nav-cta-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">免費體驗</button></nav>
 
 <!-- HERO -->
-<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-glow"></div><div class="hero-content"><div class="hero-eyebrow fade-up"></div><h1 class="hero-title fade-up" style="animation-delay:.1s"><span style="font-family:var(--serif)">RENE CELL</span> <em>從醫療修復到居家護膚</em></h1><p class="hero-body fade-up" style="animation-delay:.2s">嗨！我是 Renecell 台灣的獨立業務夥伴。Renecell 的韓國母公司擁有燒燙傷皮膚再生的醫療專利，將醫療級細胞修復技術轉化成每天可在家使用的保養系統——以下是我用成分科學角度做的研究記錄。</p><div class="hero-disclaimer fade-up" style="animation-delay:.4s">本內容為個人體驗與成分研究紀錄，非品牌官方內容，非醫療建議。</div></div></section>
+<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-glow"></div><div class="hero-content"><div class="hero-eyebrow fade-up">成分研究筆記 vol.1</div><h1 class="hero-title fade-up" style="animation-delay:.1s"><span style="font-family:var(--serif)">RENE CELL</span> <em>從醫療修復到居家護膚</em></h1><p class="hero-body fade-up" style="animation-delay:.2s">嗨！我是 Renecell 台灣的獨立業務夥伴。Renecell 的韓國母公司擁有燒燙傷皮膚再生的醫療專利，將醫療級細胞修復技術轉化成每天可在家使用的保養系統——以下是我用成分科學角度做的研究記錄。</p><div class="hero-disclaimer fade-up" style="animation-delay:.4s">本內容為個人體驗與成分研究紀錄，非品牌官方內容，非醫療建議。</div></div></section>
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
   <div class="about-inner">
+    <div class="about-eyebrow reveal">About this page</div>
     <div class="about-headline reveal">你的保養品，<em>從未到達它該去的地方</em></div>
     <div class="about-sub reveal">Most skincare never makes it past the surface — the real work happens deeper than that.</div>
     <div class="about-rule reveal"></div>
@@ -251,7 +252,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
       <div class="t-right">
         <div class="stat-num">500<span class="stat-unit">Da</span></div>
         <div class="stat-label">角質層滲透閾值</div>
-        <div class="stat-note">奈米化後<br>恰好穿越</div>
+        <div class="stat-note">奈米化後恰好穿越</div>
       </div>
     </div>
 
@@ -288,7 +289,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <section class="products-section" id="products"><div class="container">
 <div class="section-label reveal">PRODUCT LINE</div>
 <h2 class="section-title reveal">完整產品系列</h2>
-<p class="section-sub reveal">點擊任一產品，查看成分與對應的抗老化作用。全系列產品無香料添加，並可直接使用於眼周。</p>
+<p class="section-sub reveal">點擊任一產品，查看成分與對應的抗老化作用。</p>
 <div class="prod-grid reveal" id="prodGrid"></div>
 </div></section>
 <div class="modal-overlay" id="prodModal"><div class="modal-box"><button class="modal-close" onclick="closePM()">✕</button><div class="modal-header"><div class="modal-icon-wrap" id="mIco"></div><div><div class="modal-title" id="mT"></div><div class="modal-sub" id="mS"></div></div></div><div id="mB"></div></div></div>
@@ -391,10 +392,10 @@ const P=[
 {id:'water-gel-1',cat:'清潔',nm:'水凝膜1號 去角質面膜',tl:'AHA+PHA雙酸 · 10種胜肽',cl:'#C8E8D8',ic:'🌀',dm:0,ds:'乙醇酸＋乳糖酸深層喚醒角質代謝，10種胜肽修護同步。',us:['正常肌一週一次','薄敷3-5分鐘後洗掉','避開眼角和嘴角'],sc:[{t:'去角質核心',c:'#6bbfaa',i:[{n:'乙醇酸 AHA',d:'深層角質代謝'},{n:'乳糖酸 PHA',d:'溫和敏感肌適用'},{n:'纖維素',d:'與角質結合可見脫落'}]},{t:'修護亮白',c:'#378ADD',i:[{n:'尿囊素＋積雪草苷',d:'去角質後舒緩'},{n:'熊果素',d:'淡斑提亮'},{n:'10種胜肽',d:'抗老修護同步'}]}],ag:['角質代謝遲緩','色素不均']},
 {id:'water-gel-2',cat:'清潔',nm:'水凝膜2號 水潤滋養面膜',tl:'神經醯胺屏障 · 11種胜肽',cl:'#B8E0D0',ic:'🌸',dm:0,ds:'神經醯胺NP強化角質層；CoQ10提亮；11種胜肽緊緻亮白。',us:['均勻塗抹全臉','10-15分鐘後按摩','海綿擦拭或清水洗淨'],sc:[{t:'屏障強化',c:'#6bbfaa',i:[{n:'神經醯胺-3',d:'角質層脂質'},{n:'磷脂＋膽固醇',d:'屏障重建'}]},{t:'亮白胜肽',c:'#9880b8',i:[{n:'CoQ10',d:'抗氧提亮'},{n:'11種胜肽',d:'撫紋緊緻'}]}],ag:['屏障功能下降','膠原流失']},
 {id:'peptide-toner',cat:'基礎保養',nm:'多肽化妝水',tl:'12種胜肽 · 抗藍光',cl:'#D8EEF8',ic:'💧',dm:0,ds:'12種胜肽抗老緊緻；雪絨花幹細胞抗藍光。',us:['保養前直噴導入','所有步驟起點','隨時補噴'],sc:[{t:'12種胜肽',c:'#378ADD',i:[{n:'三胜肽＋六胜肽',d:'抗老緊緻'},{n:'類肉毒胜肽',d:'放鬆動態紋'}]},{t:'抗藍光',c:'#7F77DD',i:[{n:'雪絨花幹細胞',d:'抗藍光'},{n:'Ectoin',d:'屏障穩定'}]}],ag:['藍光損傷','表情肌收縮']},
-{id:'diamond-mask',cat:'鑽石套組',nm:'奇蹟鑽石面膜',tl:'礦石煥膚 · 蜂毒 · 蜘蛛胜肽',cl:'#E8E0F8',ic:'💎',dm:1,ds:'鑽石粉、紅藍寶石物理煥膚；蜘蛛胜肽、蜂毒緊緻撫紋。',us:['避開眼口均勻塗抹','按摩5分鐘','海綿擦去殘留'],sc:[{t:'礦石煥膚',c:'#9880b8',i:[{n:'鑽石粉',d:'物理去角質'},{n:'紅藍寶石粉',d:'礦物能量'},{n:'膨潤土',d:'淨化毛孔'}]},{t:'抗老胜肽',c:'#7F77DD',i:[{n:'蜂毒',d:'緊緻撫紋'},{n:'蜘蛛胜肽-1',d:'修護彈力'},{n:'乙醯六胜肽-8',d:'類肉毒放鬆'}]}],ag:['角質通道阻塞','表情紋','彈力下降']},
-{id:'diamond-serum',cat:'鑽石套組',nm:'奇蹟鑽石精華',tl:'彈性蛋白 · 神經醯胺屏障',cl:'#DDD4F5',ic:'✨',dm:1,ds:'水解彈性蛋白修護彈力；神經醯胺NP修復角質層。',us:['鑽石面膜後','順紋理輕輕塗抹','輕拍至吸收'],sc:[{t:'深層修護',c:'#9880b8',i:[{n:'水解彈性蛋白',d:'彈力補充'},{n:'神經醯胺NP',d:'結構修復'},{n:'積雪草苷',d:'舒敏修護'}]},{t:'抗氧化',c:'#7F77DD',i:[{n:'CoQ10',d:'細胞抗氧化'},{n:'蜂毒',d:'緊緻消水腫'}]}],ag:['彈力蛋白流失','屏障受損']},
-{id:'diamond-cream',cat:'鑽石套組',nm:'奇蹟鑽石滋養霜',tl:'彈性蛋白 · 三重抗氧',cl:'#D4CCF0',ic:'🪬',dm:1,ds:'水解彈性蛋白深層修護；CoQ10＋維E＋維C三重抗氧。',us:['鑽石精華後','順紋理輕柔塗抹','充分吸收'],sc:[{t:'屏障修護',c:'#9880b8',i:[{n:'水解彈性蛋白',d:'彈力修護'},{n:'神經醯胺NP',d:'屏障重建'}]},{t:'抗氧化',c:'#7F77DD',i:[{n:'CoQ10+維E+維C',d:'三重抗氧'},{n:'蜂毒',d:'全效緊緻'}]}],ag:['膠原流失','脂質缺損','自由基']},
-{id:'diamond-cb-cream',cat:'鑽石套組',nm:'奇蹟鑽石修護霜（CB霜）',tl:'積雪草舒敏 · 礦物防護',cl:'#C8C0E8',ic:'🛡️',dm:1,ds:'積雪草強效舒敏；物理防護；谷胱甘肽抗氧美白。',us:['鑽石滋養霜後','順紋理塗抹','最後一步防護'],sc:[{t:'舒敏防護',c:'#9880b8',i:[{n:'積雪草苷',d:'強效舒敏'},{n:'二氧化鈦+氧化鋅',d:'物理防護'}]},{t:'美白',c:'#7F77DD',i:[{n:'谷胱甘肽',d:'抗氧美白'},{n:'蜂毒',d:'消眼腫緊緻'}]}],ag:['色素沉澱','炎症損傷','光老化']},
+{id:'diamond-mask',cat:'鑽石套組',nm:'奇蹟鑽石面膜',tl:'礦石煥膚 · 蜂萃緊緻因子 · 仿蛛絲修護胜肽',cl:'#E8E0F8',ic:'💎',dm:1,ds:'鑽石粉、紅藍寶石物理煥膚；仿蛛絲修護胜肽、蜂萃緊緻因子緊緻撫紋。',us:['避開眼口均勻塗抹','按摩5分鐘','海綿擦去殘留'],sc:[{t:'礦石煥膚',c:'#9880b8',i:[{n:'鑽石粉',d:'物理去角質'},{n:'紅藍寶石粉',d:'礦物能量'},{n:'膨潤土',d:'淨化毛孔'}]},{t:'抗老胜肽',c:'#7F77DD',i:[{n:'蜂萃緊緻因子',d:'緊緻撫紋'},{n:'仿蛛絲修護胜肽',d:'修護彈力'},{n:'乙醯六胜肽-8',d:'類肉毒放鬆'}]}],ag:['角質通道阻塞','表情紋','彈力下降']},
+{id:'diamond-serum',cat:'鑽石套組',nm:'奇蹟鑽石精華',tl:'彈性蛋白 · 神經醯胺屏障',cl:'#DDD4F5',ic:'✨',dm:1,ds:'水解彈性蛋白修護彈力；神經醯胺NP修復角質層。',us:['鑽石面膜後','順紋理輕輕塗抹','輕拍至吸收'],sc:[{t:'深層修護',c:'#9880b8',i:[{n:'水解彈性蛋白',d:'彈力補充'},{n:'神經醯胺NP',d:'結構修復'},{n:'積雪草苷',d:'舒敏修護'}]},{t:'抗氧化',c:'#7F77DD',i:[{n:'CoQ10',d:'細胞抗氧化'},{n:'蜂萃緊緻因子',d:'緊緻消水腫'}]}],ag:['彈力蛋白流失','屏障受損']},
+{id:'diamond-cream',cat:'鑽石套組',nm:'奇蹟鑽石滋養霜',tl:'彈性蛋白 · 三重抗氧',cl:'#D4CCF0',ic:'🪬',dm:1,ds:'水解彈性蛋白深層修護；CoQ10＋維E＋維C三重抗氧。',us:['鑽石精華後','順紋理輕柔塗抹','充分吸收'],sc:[{t:'屏障修護',c:'#9880b8',i:[{n:'水解彈性蛋白',d:'彈力修護'},{n:'神經醯胺NP',d:'屏障重建'}]},{t:'抗氧化',c:'#7F77DD',i:[{n:'CoQ10+維E+維C',d:'三重抗氧'},{n:'蜂萃緊緻因子',d:'全效緊緻'}]}],ag:['膠原流失','脂質缺損','自由基']},
+{id:'diamond-cb-cream',cat:'鑽石套組',nm:'奇蹟鑽石修護霜（CB霜）',tl:'積雪草舒敏 · 礦物防護',cl:'#C8C0E8',ic:'🛡️',dm:1,ds:'積雪草強效舒敏；物理防護；谷胱甘肽抗氧美白。',us:['鑽石滋養霜後','順紋理塗抹','最後一步防護'],sc:[{t:'舒敏防護',c:'#9880b8',i:[{n:'積雪草苷',d:'強效舒敏'},{n:'二氧化鈦+氧化鋅',d:'物理防護'}]},{t:'美白',c:'#7F77DD',i:[{n:'谷胱甘肽',d:'抗氧美白'},{n:'蜂萃緊緻因子',d:'消眼腫緊緻'}]}],ag:['色素沉澱','炎症損傷','光老化']},
 {id:'q-ampoule',cat:'基礎保養',nm:'Q肌底精華（安瓶）',tl:'彈性蛋白 · 菸鹼醯胺美白',cl:'#C8E0F0',ic:'💉',dm:0,ds:'大豆胚芽彈性支撐；菸鹼醯胺＋熊果葉美白。',us:['多肽化妝水後','按壓2-3下打圈','剩餘擦全臉'],sc:[{t:'彈性修護',c:'#378ADD',i:[{n:'大豆胚芽',d:'彈性支撐'},{n:'水解豌豆蛋白',d:'促彈力'}]},{t:'美白',c:'#7F77DD',i:[{n:'菸鹼醯胺',d:'美白均色'},{n:'12種胜肽',d:'撫紋緊緻'}]}],ag:['彈力下降','色素不均']},
 {id:'q-cream',cat:'基礎保養',nm:'Q肌底面霜',tl:'彈性蛋白鎖水 · 屏障修護 · 12種胜肽',cl:'#B8D4E8',ic:'🫧',dm:0,ds:'大豆胚芽＋水解豌豆蛋白彈性鎖水；神經醯胺屏障修護；菸鹼醯胺亮白；12種胜肽撫紋緊緻。',us:['Q肌底精華後使用','取適量順紋理塗抹全臉','早晚皆可使用'],sc:[{t:'彈性鎖水',c:'#378ADD',i:[{n:'大豆胚芽萃取',d:'彈性支撐鎖水'},{n:'水解豌豆蛋白',d:'促彈力恢復'},{n:'神經醯胺NP',d:'屏障修護'}]},{t:'亮白胜肽',c:'#7F77DD',i:[{n:'菸鹼醯胺',d:'美白均色'},{n:'熊果葉萃取',d:'淡斑提亮'},{n:'12種胜肽',d:'撫紋緊緻抗老'}]}],ag:['彈力鬆弛','屏障脂質流失','色素不均']},
 {id:'hyaluronic-serum',cat:'基礎保養',nm:'透明質酸精華',tl:'三分子玻尿酸 · 15種胜肽',cl:'#B8D8F0',ic:'🔬',dm:0,ds:'大中小分子玻尿酸全覆蓋補水；15種胜肽抗老。',us:['按壓2-6下','全臉輕柔塗抹','可搭配後續精華'],sc:[{t:'三分子玻尿酸',c:'#378ADD',i:[{n:'小分子→深層',d:''},{n:'中分子→補水',d:''},{n:'大分子→鎖水',d:''}]},{t:'亮白抗老',c:'#9880b8',i:[{n:'穀胱甘肽',d:'抗氧美白'},{n:'15種胜肽',d:'多維度抗老'}]}],ag:['肌膚脫水','黑色素異常']},
