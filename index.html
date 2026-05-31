@@ -175,6 +175,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <!-- ABOUT -->
 <section class="about-section" id="about">
   <div class="about-inner">
+    <div class="about-eyebrow reveal">About this page</div>
     <div class="about-headline reveal">你的保養品，<em>從未到達它該去的地方</em></div>
     <div class="about-sub reveal">Most skincare never makes it past the surface — the real work happens deeper than that.</div>
     <div class="about-rule reveal"></div>
@@ -211,6 +212,14 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 </section>
 
 <!-- ORIGIN / TECH -->
+<!-- PAGE 2 -->
+<section class="skin-science" id="science"><div class="container">
+<div class="section-label reveal">SKIN SCIENCE</div>
+<h2 class="section-title reveal" style="max-width:700px;white-space:nowrap;font-size:clamp(22px,3.2vw,38px)">滲透深度 是保養是否有感的<em>終極關鍵</em></h2>
+<p class="section-sub reveal">同樣塗抹於肌膚，停留在角質層僅是「表面濕潤」，而抵達棘狀層則是觸發「細胞再生」。</p>
+<div class="skin-svg-wrap reveal" id="skinSvg"></div>
+</div></section>
+
 <section class="origin-section" id="origin"><div class="container">
   <div class="section-label reveal">CORE TECHNOLOGY</div>
   <h2 class="section-title reveal">專利技術與<em>國際認證</em></h2>
@@ -276,19 +285,11 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
   </div>
 </div></section>
 
-<!-- PAGE 2 -->
-<section class="skin-science" id="science"><div class="container">
-<div class="section-label reveal">SKIN SCIENCE</div>
-<h2 class="section-title reveal" style="max-width:700px;white-space:nowrap;font-size:clamp(22px,3.2vw,38px)">滲透深度 是保養是否有感的<em>終極關鍵</em></h2>
-<p class="section-sub reveal">同樣塗抹於肌膚，停留在角質層僅是「表面濕潤」，而抵達棘狀層則是觸發「細胞再生」。</p>
-<div class="skin-svg-wrap reveal" id="skinSvg"></div>
-</div></section>
-
 <!-- PAGE 3 -->
 <section class="products-section" id="products"><div class="container">
 <div class="section-label reveal">PRODUCT LINE</div>
 <h2 class="section-title reveal">完整產品系列</h2>
-<p class="section-sub reveal">全系列產品都能使用於眼周，無香料添加劑。點擊任一產品，查看成分與對應的抗老化作用。</p>
+<p class="section-sub reveal">點擊任一產品，查看成分與對應的抗老化作用。</p>
 <div class="prod-grid reveal" id="prodGrid"></div>
 </div></section>
 <div class="modal-overlay" id="prodModal"><div class="modal-box"><button class="modal-close" onclick="closePM()">✕</button><div class="modal-header"><div class="modal-icon-wrap" id="mIco"></div><div><div class="modal-title" id="mT"></div><div class="modal-sub" id="mS"></div></div></div><div id="mB"></div></div></div>
@@ -368,7 +369,6 @@ ${[56,70,84,98,112].map((y,i)=>`<rect x="36" y="${y}" width="270" height="14" fi
 <line x1="585" y1="56" x2="585" y2="138" stroke="#378ADD" stroke-width="3" stroke-linecap="round" marker-end="url(#a)"/>
 <rect x="536" y="150" width="98" height="22" rx="5" fill="#D0E4F8" stroke="#185FA5" stroke-width="1"/>
 <text font-size="10" font-weight="600" fill="#185FA5" x="585" y="161" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">真正重啟細胞修復</text>
-<text font-size="8.5" fill="#8A70B0" x="680" y="303" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">每日營養補充 無修復期</text>
 <line x1="680" y1="56" x2="680" y2="275" stroke="#9070C0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 3" marker-end="url(#a)"/>
 <rect x="636" y="280" width="88" height="30" rx="4" fill="#EDE0F8"/>
 <text font-size="9.5" fill="#7050A0" x="680" y="291" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">破壞再生</text>
@@ -452,7 +452,7 @@ document.getElementById('cfBtn').addEventListener('click',async function(){
 });
 
 const rv=document.querySelectorAll('.reveal');const io=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),(parseInt(e.target.dataset.delay)||0)*80);io.unobserve(e.target)}})},{threshold:.1});rv.forEach((el,i)=>{el.dataset.delay=i%5;io.observe(el)});
-const ss=document.querySelectorAll('section[id]'),nl=document.querySelectorAll('.nav-links a');window.addEventListener('scroll',()=>{let c='';ss.forEach(s=>{if(scrollY>=s.offsetTop-200)c=s.id});nl.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--text)':''})});
+const ss=document.querySelectorAll('section[id]'),nl=document.querySelectorAll('.nav-links a');window.addEventListener('scroll',()=>{let c='';ss.forEach(s=>{if(scrollY>=s.offsetTop-200)c=s.id});nl.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'#ffffff':'#f0ece4'})});
 </script>
 </body>
 </html>
