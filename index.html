@@ -19,9 +19,8 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 48px 100px;position:relative;overflow:hidden}.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,169,110,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,110,.06) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 80% 85% at 62% 45%,black 15%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse 80% 85% at 62% 45%,black 15%,transparent 78%)}.hero-dot-bg{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,169,110,.22) 1px,transparent 1px);background-size:48px 48px;background-position:24px 24px;mask-image:radial-gradient(ellipse 45% 55% at 72% 38%,black 8%,transparent 68%);-webkit-mask-image:radial-gradient(ellipse 45% 55% at 72% 38%,black 8%,transparent 68%)}.hero-mol-bg{position:absolute;inset:0;opacity:.12;pointer-events:none}.hero-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.05) 0%,transparent 65%);top:-80px;right:-50px;pointer-events:none}.hero-content{position:relative;z-index:1;max-width:1080px;margin:0 auto;width:100%}.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:4px;color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:16px}.hero-eyebrow::after{content:'';flex:0 0 40px;height:1px;background:var(--border2)}
-.hero-title{font-family:var(--serif);font-size:clamp(28px,4.2vw,56px);font-weight:300;line-height:1.12;margin-bottom:28px;white-space:nowrap;color:var(--gold-It)}
-.hero-title em{font-style:italic;color:var(--gold)}
-.hero-body{font-size:26px;color:var(--muted);line-height:1.6;max-width:700px;margin-bottom:44px;letter-spacing:.5px;font-weight:300}
+.hero-title{font-family:var(--serif);font-size:clamp(28px,4.2vw,56px);font-weight:300;line-height:1.12;margin-bottom:28px;white-space:nowrap;color:var(--gold-lt)}.hero-title em{font-style:italic;color:var(--gold)}
+.hero-body{font-size:18px;color:#d4cec8;line-height:2;max-width:640px;margin-bottom:44px;font-weight:300}
 .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap}.hero-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;font-family:var(--mono);font-size:11px;letter-spacing:3px;transition:all .3s;text-transform:uppercase;cursor:pointer;border:none}.hero-btn-primary{background:var(--gold);color:#0e0e0f;font-weight:500}.hero-btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px)}.hero-btn-ghost{background:none;border:1px solid var(--border2);color:var(--text)}.hero-btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 .hero-disclaimer{margin-top:60px;font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.4;letter-spacing:1px;border-left:1px solid var(--border);padding-left:16px;max-width:500px}
 
@@ -37,31 +36,31 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 
 /* contrast cards */
 .about-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
-.ab-card{border-radius:4px;padding:32px 30px;display:flex;flex-direction:column}
+.ab-card{border-radius:4px;padding:24px 26px;display:flex;flex-direction:column}
 .ab-bad{background:#18181b;border:1px solid rgba(255,255,255,.13)}
-.ab-good{background:#0f1a2e;border:1px solid rgba(74,158,255,.35)}
+.ab-good{background:#1e1c14;border:1px solid rgba(201,169,110,.3)}
 .ab-card-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08)}
-.ab-good .ab-card-head{border-bottom-color:rgba(74,158,255,.2)}
+.ab-good .ab-card-head{border-bottom-color:rgba(201,169,110,.15)}
 .ab-sym{font-family:var(--mono);font-size:17px}
-.ab-bad .ab-sym{color:rgba(240,236,230,.8)}
-.ab-good .ab-sym{color:#4a9eff}
+.ab-bad .ab-sym{color:rgba(255,255,255,.28)}
+.ab-good .ab-sym{color:var(--gold)}
 .ab-lbl{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase}
-.ab-bad .ab-lbl{color:rgba(240,236,230,.85)}
-.ab-good .ab-lbl{color:#4a9eff;font-size:14px;letter-spacing:.5px;font-family:inherit}
-.ab-steps{display:flex;flex-direction:column;gap:16px;flex:1;margin-bottom:20px}
+.ab-bad .ab-lbl{color:rgba(255,255,255,.32)}
+.ab-good .ab-lbl{color:var(--gold)}
+.ab-steps{display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:16px}
 .ab-step{display:flex;align-items:flex-start;gap:10px}
 .ab-num{font-family:var(--mono);font-size:10px;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px}
 .ab-bad .ab-num{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.38)}
-.ab-good .ab-num{background:rgba(74,158,255,.1);border:1px solid rgba(74,158,255,.3);color:#4a9eff}
+.ab-good .ab-num{background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.3);color:var(--gold)}
 .ab-step-txt{font-size:12.5px;line-height:1.7}
 .ab-bad .ab-step-txt{color:#9a9490}
-.ab-good .ab-step-txt{color:#b8d4f0}
+.ab-good .ab-step-txt{color:#c8c0b4}
 .ab-bad .ab-step-txt strong{color:#d0cac4;font-weight:500}
-.ab-good .ab-step-txt strong{color:#a8d4ff;font-weight:500}
+.ab-good .ab-step-txt strong{color:var(--gold-lt);font-weight:500}
 .ab-result{padding:12px 15px;border-radius:3px;font-size:14px;font-weight:500;line-height:1.4;margin-top:auto}
-.ab-bad .ab-result{background:rgba(255,255,255,.03);border:1.5px solid rgba(210,210,215,.3);color:rgba(240,236,230,.85)}
-.ab-good .ab-result{background:rgba(74,158,255,.1);border:1.5px solid #4a9eff;color:#4a9eff;font-size:14px;box-shadow:0 0 12px rgba(74,158,255,.15)}
-  
+.ab-bad .ab-result{background:rgba(255,255,255,.03);border:1.5px solid rgba(200,192,180,.32);color:rgba(220,214,206,.65)}
+.ab-good .ab-result{background:rgba(201,169,110,.09);border:1.5px solid var(--gold);color:var(--gold-lt);box-shadow:0 0 12px rgba(201,169,110,.12)}
+
 .about-bio{font-size:13.5px;line-height:2.1;color:#c8c0b4;max-width:700px;margin-bottom:10px}
 .about-bio strong{color:var(--text);font-weight:500}
 .about-disclaimer{font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.4;letter-spacing:1px;border-left:1px solid var(--border);padding-left:14px;margin-top:18px;line-height:1.9}
@@ -126,7 +125,19 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .skin-rec-w-label .rec-icon{margin-right:4px}
 .skin-disclaimer-w{margin-top:40px;text-align:center;font-family:var(--mono);font-size:10px;color:#9a8a78;letter-spacing:1.5px;border-top:1px solid rgba(0,0,0,.08);padding-top:20px}
 
-/* PRODUCTS */
+/* SOCIAL PROOF */
+.proof-section{background:#111113;padding:100px 24px;border-top:1px solid rgba(255,255,255,.07)}
+.proof-card{background:#1a1a1e;border:1px solid rgba(255,255,255,.08);padding:32px;max-width:760px;margin:0 auto}
+.proof-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;position:relative}
+.proof-sep{position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(255,255,255,.1);transform:translateX(-50%);z-index:2}
+.proof-arr{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;width:26px;height:26px;background:#111113;border:1px solid rgba(201,169,110,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold)}
+.proof-photo{position:relative;overflow:hidden}
+.proof-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block}
+.proof-photo-lbl{position:absolute;bottom:0;left:0;right:0;padding:9px 12px;background:linear-gradient(transparent,rgba(0,0,0,.75));font-family:var(--mono);font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.75)}
+.proof-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.proof-tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;padding:4px 10px;border:1px solid rgba(255,255,255,.1);color:var(--muted);border-radius:2px}
+.proof-quote{font-size:14px;color:#c8c0b4;line-height:2;border-left:2px solid rgba(201,169,110,.4);padding-left:16px;margin-bottom:12px}
+.proof-prod{font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.55;line-height:1.9}
 .products-section{background:var(--bg)}
 .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
 .prod-card{border:1px solid var(--border);cursor:pointer;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;background:var(--surface)}.prod-card:hover{transform:translateY(-4px);border-color:rgba(201,169,110,.35);box-shadow:0 12px 36px rgba(0,0,0,.3)}
@@ -154,14 +165,8 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .contact-form{max-width:420px;margin:0 auto;text-align:left}.form-row{margin-bottom:16px}.form-label{display:block;font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:2px;margin-bottom:6px}.form-input{width:100%;padding:12px 16px;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-size:14px;transition:border-color .3s}.form-input:focus{outline:none;border-color:var(--gold)}.form-input::placeholder{color:rgba(138,132,120,.5)}.form-select{width:100%;padding:12px 16px;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-size:14px;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238a8478'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}.form-select:focus{outline:none;border-color:var(--gold)}textarea.form-input{resize:none}
 .form-submit{width:100%;padding:16px;background:var(--gold);color:#0e0e0f;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:3px;border:none;cursor:pointer;transition:all .3s;text-transform:uppercase;margin-top:8px}.form-submit:hover{background:var(--gold-lt);transform:translateY(-2px)}.form-submit:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .form-privacy{font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.5;margin-top:12px;text-align:center}.form-success{display:none;text-align:center;padding:32px 0}.form-success-icon{width:56px;height:56px;border-radius:50%;background:rgba(95,191,138,.12);border:1px solid rgba(95,191,138,.3);color:var(--green);font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-.chip-group{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.chip{font-family:var(--mono);font-size:14px;letter-spacing:.5px;padding:10px 18px;border:1px solid rgba(255,255,255,.2);color:#c8c0b4;background:transparent;cursor:pointer;transition:all .25s;user-select:none;border-radius:2px}
-.chip:hover{border-color:var(--gold);color:var(--text)}
-.chip.active{background:rgba(201,169,110,.18);border-color:var(--gold);color:var(--gold-lt)}
-.chip-single .chip.active{background:var(--gold);color:#0e0e0f}
-.form-section{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
-.form-section:last-of-type{border-bottom:none;margin-bottom:16px;padding-bottom:0}
-.form-section-num{font-family:var(--mono);font-size:9px;color:var(--gold);letter-spacing:2px;opacity:.5;margin-bottom:2px}
+.dd-wrap{position:relative}.dd-btn{width:100%;padding:11px 16px;background:var(--surface);border:1px solid var(--border2);color:var(--muted);font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:border-color .2s;outline:none}.dd-btn:hover,.dd-btn.open{border-color:rgba(201,169,110,.5)}.dd-btn.has-value{color:var(--text)}.dd-arrow{font-size:10px;color:var(--muted);transition:transform .2s;flex-shrink:0;margin-left:8px}.dd-btn.open .dd-arrow{transform:rotate(180deg)}.dd-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--surface);border:1px solid rgba(201,169,110,.3);z-index:50;max-height:220px;overflow-y:auto}.dd-menu.show{display:block}.dd-item{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;transition:background .15s;font-size:13px;color:#c8c0b4}.dd-item:hover{background:rgba(201,169,110,.08)}.dd-item.selected{color:var(--gold-lt);background:rgba(201,169,110,.06)}.dd-check{width:14px;height:14px;border:1px solid rgba(255,255,255,.2);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all .15s}.dd-item.selected .dd-check{background:var(--gold);border-color:var(--gold);color:#0e0e0f}
+.form-section{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}.form-section:last-of-type{border-bottom:none;margin-bottom:16px;padding-bottom:0}.form-section-num{font-family:var(--mono);font-size:9px;color:var(--gold);letter-spacing:2px;opacity:.5;margin-bottom:2px}
 footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.footer-inner{max-width:720px;margin:0 auto}.footer-al{font-family:var(--mono);font-size:10px;color:var(--gold);letter-spacing:3px;margin-bottom:16px}.footer-ab{font-size:13px;color:rgba(138,132,120,.4);line-height:2;margin-bottom:28px}.footer-refs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}.footer-ref{font-family:var(--mono);font-size:10px;color:var(--muted);border:1px solid var(--border);padding:5px 12px;transition:color .2s,border-color .2s}.footer-ref:hover{color:var(--gold);border-color:var(--gold)}.footer-bot{font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.4;letter-spacing:2px;text-align:center;line-height:2.2;border-top:1px solid var(--border);padding-top:24px}
 @media(max-width:900px){.about-cards{grid-template-columns:1fr}.tech-row{grid-template-columns:56px 1fr}.t-right{display:none}.skin-grid-4{grid-template-columns:repeat(2,1fr)!important}.prod-grid{grid-template-columns:repeat(3,1fr)}section{padding:72px 20px}}
 @media(max-width:640px){.hero{padding:120px 24px 80px}.skin-grid-4{grid-template-columns:1fr!important}.prod-grid{grid-template-columns:repeat(2,1fr)}.footer-refs{flex-direction:column}}
@@ -171,14 +176,13 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <nav><div class="nav-logo">RENE·CELL / 成分筆記</div><ul class="nav-links"><li><a href="#products">成分介紹</a></li><li><a href="#skintype">入門建議</a></li><li><a href="#cta">個人化諮詢</a></li></ul><button class="nav-cta-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">免費體驗</button></nav>
 
 <!-- HERO -->
-<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-dot-bg"></div><div class="hero-glow"></div><svg class="hero-mol-bg" viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><style>.bond{stroke:#c9a96e;stroke-width:1.1;fill:none}.atom{fill:none;stroke:#c9a96e;stroke-width:.9}.atom-dot{fill:#c9a96e}.helix{stroke:#4a9eff;stroke-width:.9;fill:none;stroke-dasharray:5 3}.hex{fill:none;stroke:#c9a96e;stroke-width:.8}</style></defs><g transform="translate(980,30)" opacity=".9"><polygon class="hex" points="30,0 60,17 60,52 30,69 0,52 0,17"/><polygon class="hex" points="90,0 120,17 120,52 90,69 60,52 60,17"/><polygon class="hex" points="150,0 180,17 180,52 150,69 120,52 120,17"/><polygon class="hex" points="60,52 90,69 90,104 60,121 30,104 30,69"/><polygon class="hex" points="120,52 150,69 150,104 120,121 90,104 90,69"/><polygon class="hex" points="30,104 60,121 60,156 30,173 0,156 0,121" opacity=".5"/></g><g transform="translate(520,100)"><path class="helix" d="M0,0 C20,32 40,32 60,0 S100,-32 120,0 S160,32 180,0 S220,-32 240,0 S280,32 300,0"/><path class="helix" d="M0,44 C20,12 40,12 60,44 S100,76 120,44 S160,12 180,44 S220,76 240,44 S280,12 300,44"/><line class="bond" x1="15" y1="16" x2="15" y2="28" stroke-width=".7"/><line class="bond" x1="45" y1="6" x2="45" y2="38" stroke-width=".7"/><line class="bond" x1="75" y1="16" x2="75" y2="28" stroke-width=".7"/><line class="bond" x1="105" y1="6" x2="105" y2="38" stroke-width=".7"/><line class="bond" x1="135" y1="16" x2="135" y2="28" stroke-width=".7"/><line class="bond" x1="165" y1="6" x2="165" y2="38" stroke-width=".7"/><line class="bond" x1="195" y1="16" x2="195" y2="28" stroke-width=".7"/><line class="bond" x1="225" y1="6" x2="225" y2="38" stroke-width=".7"/><line class="bond" x1="255" y1="16" x2="255" y2="28" stroke-width=".7"/><line class="bond" x1="285" y1="6" x2="285" y2="38" stroke-width=".7"/></g><g transform="translate(820,300)"><circle class="atom" cx="0" cy="50" r="9"/><circle class="atom" cx="55" cy="15" r="7"/><circle class="atom" cx="110" cy="50" r="9"/><circle class="atom" cx="165" cy="15" r="7"/><circle class="atom" cx="220" cy="50" r="9"/><circle class="atom" cx="55" cy="85" r="7"/><circle class="atom" cx="165" cy="85" r="7"/><line class="bond" x1="9" y1="47" x2="48" y2="19"/><line class="bond" x1="62" y1="15" x2="103" y2="47"/><line class="bond" x1="119" y1="47" x2="158" y2="19"/><line class="bond" x1="172" y1="15" x2="211" y2="47"/><line class="bond" x1="9" y1="53" x2="48" y2="81"/><line class="bond" x1="62" y1="85" x2="158" y2="85"/><line class="bond" x1="172" y1="81" x2="211" y2="53"/><circle class="atom-dot" cx="0" cy="50" r="2.5"/><circle class="atom-dot" cx="110" cy="50" r="2.5"/><circle class="atom-dot" cx="220" cy="50" r="2.5"/></g><circle fill="#c9a96e" cx="420" cy="280" r="2" opacity=".5"/><circle fill="#c9a96e" cx="780" cy="400" r="2.5" opacity=".4"/><circle fill="#4a9eff" cx="1050" cy="240" r="2" opacity=".45"/><circle fill="#4a9eff" cx="300" cy="380" r="2" opacity=".35"/><circle fill="#c9a96e" cx="1280" cy="180" r="2" opacity=".4"/></svg><div class="hero-content"><h1 class="hero-title fade-up"><span style="font-family:var(--serif)">RENE CELL</span> <em>從醫療修復到居家護膚</em></h1><p class="hero-body fade-up" style="animation-delay:.15s">嗨！我是 Renecell 台灣的獨立業務夥伴。Renecell 的韓國母公司擁有燒燙傷皮膚再生的醫療專利，將醫療級細胞修復技術轉化成每天可在家使用的保養系統——以下是我用成分科學角度做的研究記錄。</p><div class="hero-disclaimer fade-up" style="animation-delay:.35s">本內容為個人體驗與成分研究紀錄，非品牌官方內容，非醫療建議。</div></div></section>
+<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-dot-bg"></div><div class="hero-glow"></div><svg class="hero-mol-bg" viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><g transform="translate(980,30)" opacity=".9"><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="30,0 60,17 60,52 30,69 0,52 0,17"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="90,0 120,17 120,52 90,69 60,52 60,17"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="150,0 180,17 180,52 150,69 120,52 120,17"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="60,52 90,69 90,104 60,121 30,104 30,69"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="120,52 150,69 150,104 120,121 90,104 90,69"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="30,104 60,121 60,156 30,173 0,156 0,121" opacity=".5"/></g><g transform="translate(520,100)"><path stroke="#4a9eff" stroke-width=".9" fill="none" stroke-dasharray="5 3" d="M0,0 C20,32 40,32 60,0 S100,-32 120,0 S160,32 180,0 S220,-32 240,0 S280,32 300,0"/><path stroke="#4a9eff" stroke-width=".9" fill="none" stroke-dasharray="5 3" d="M0,44 C20,12 40,12 60,44 S100,76 120,44 S160,12 180,44 S220,76 240,44 S280,12 300,44"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="15" y1="16" x2="15" y2="28"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="45" y1="6" x2="45" y2="38"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="75" y1="16" x2="75" y2="28"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="105" y1="6" x2="105" y2="38"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="135" y1="16" x2="135" y2="28"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="165" y1="6" x2="165" y2="38"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="195" y1="16" x2="195" y2="28"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="225" y1="6" x2="225" y2="38"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="255" y1="16" x2="255" y2="28"/><line stroke="#c9a96e" stroke-width=".7" fill="none" x1="285" y1="6" x2="285" y2="38"/></g><g transform="translate(820,300)"><circle fill="none" stroke="#c9a96e" stroke-width=".9" cx="0" cy="50" r="9"/><circle fill="none" stroke="#c9a96e" stroke-width=".9" cx="55" cy="15" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width=".9" cx="110" cy="50" r="9"/><circle fill="none" stroke="#c9a96e" stroke-width=".9" cx="165" cy="15" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width=".9" cx="220" cy="50" r="9"/><circle fill="none" stroke="#c9a96e" stroke-width=".9" cx="55" cy="85" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width=".9" cx="165" cy="85" r="7"/><line stroke="#c9a96e" stroke-width="1.1" fill="none" x1="9" y1="47" x2="48" y2="19"/><line stroke="#c9a96e" stroke-width="1.1" fill="none" x1="62" y1="15" x2="103" y2="47"/><line stroke="#c9a96e" stroke-width="1.1" fill="none" x1="119" y1="47" x2="158" y2="19"/><line stroke="#c9a96e" stroke-width="1.1" fill="none" x1="172" y1="15" x2="211" y2="47"/><line stroke="#c9a96e" stroke-width="1.1" fill="none" x1="9" y1="53" x2="48" y2="81"/><line stroke="#c9a96e" stroke-width="1.1" fill="none" x1="62" y1="85" x2="158" y2="85"/><line stroke="#c9a96e" stroke-width="1.1" fill="none" x1="172" y1="81" x2="211" y2="53"/><circle fill="#c9a96e" cx="0" cy="50" r="2.5"/><circle fill="#c9a96e" cx="110" cy="50" r="2.5"/><circle fill="#c9a96e" cx="220" cy="50" r="2.5"/></g><circle fill="#c9a96e" cx="420" cy="280" r="2" opacity=".5"/><circle fill="#c9a96e" cx="780" cy="400" r="2.5" opacity=".4"/><circle fill="#4a9eff" cx="1050" cy="240" r="2" opacity=".45"/><circle fill="#4a9eff" cx="300" cy="380" r="2" opacity=".35"/><circle fill="#c9a96e" cx="1280" cy="180" r="2" opacity=".4"/></svg><div class="hero-content"><h1 class="hero-title fade-up"><span style="font-family:var(--serif)">RENE CELL</span> <em>從醫療修復到居家護膚</em></h1><p class="hero-body fade-up" style="animation-delay:.15s;margin-bottom:8px">嗨！我是 Renecell 台灣的獨立業務夥伴。</p><p class="hero-body fade-up" style="animation-delay:.25s;margin-top:0">Renecell 的韓國母公司擁有燒燙傷皮膚再生的醫療專利，將醫療級細胞修復技術轉化成每天可在家使用的保養系統——以下整理的科學筆記讓你能快速了解產品邏輯跟成分。</p><div class="hero-disclaimer fade-up" style="animation-delay:.35s">本內容為個人體驗與成分研究紀錄，非品牌官方內容，非醫療建議。</div></div></section>
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
   <div class="about-inner">
-    <div class="about-headline reveal">你的保養品  <em>從未到達它該去的地方</em></div>
-    <div class="about-sub reveal">Most skincare never makes it past the surface — the real work happens deeper than that.</div>
-    <div class="about-rule reveal"></div>
+    <div class="about-eyebrow reveal">About this page</div>
+    <div class="about-headline reveal">你的保養品，<em>從未到達它該去的地方</em></div>
 
     <div class="about-cards reveal">
       <div class="ab-card ab-bad">
@@ -191,7 +195,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
           <div class="ab-step"><div class="ab-num">2</div><div class="ab-step-txt">成分停在角質層表面</div></div>
           <div class="ab-step"><div class="ab-num">3</div><div class="ab-step-txt">細胞更新層從未被觸及</div></div>
         </div>
-        <div class="ab-result">表面濕潤，僅止於此</div>
+        <div class="ab-result" style="font-size:18px;font-weight:600;padding:20px 18px">表面濕潤，僅止於此</div>
       </div>
 
       <div class="ab-card ab-good">
@@ -202,9 +206,9 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
         <div class="ab-steps">
           <div class="ab-step"><div class="ab-num">1</div><div class="ab-step-txt">物理疏通角質通道，為成分開路</div></div>
           <div class="ab-step"><div class="ab-num">2</div><div class="ab-step-txt">奈米化胜肽完整穿越角質層</div></div>
-          <div class="ab-step"><div class="ab-num">3</div><div class="ab-step-txt">抵達<strong>棘皮層</strong>，觸發細胞更新</div></div>
+          <div class="ab-step"><div class="ab-num">3</div><div class="ab-step-txt">抵達棘皮層，觸發細胞更新</div></div>
         </div>
-        <div class="ab-result">真正啟動皮膚自我更新</div>
+        <div class="ab-result" style="font-size:18px;font-weight:600;padding:20px 18px">真正啟動皮膚自我更新</div>
       </div>
     </div>
 
@@ -233,17 +237,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
       </div>
       <div class="t-body">
         <div class="t-num">01 · 鑽石系列</div>
-        <div class="t-title">先為成分開路，再讓成分進去</div>
-        <div class="t-desc">以<strong>鑽石微晶物理疏通角質層</strong>，重整角質排列，打開皮膚通道——是整套系統能真正滲透的前提。</div>
-      </div>
-      <div class="t-right">
-        <div class="flow">
-          <div class="flow-step"><span class="flow-dot" style="background:var(--gold)"></span>鑽石微晶疏通</div>
-          <div class="flow-arr">↓</div>
-          <div class="flow-step"><span class="flow-dot" style="background:var(--gold)"></span>通道開啟</div>
-          <div class="flow-arr">↓</div>
-          <div class="flow-step"><span class="flow-dot" style="background:var(--green)"></span>成分滲透</div>
-        </div>
+        <div class="t-desc" style="font-size:14px;color:#c8c0b4">物理疏通角質通道，讓後續成分真正滲入。</div>
       </div>
     </div>
 
@@ -254,13 +248,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
       </div>
       <div class="t-body">
         <div class="t-num">02 · 專利技術</div>
-        <div class="t-title">EXA PEPTASOME™ 奈米導入系統</div>
-        <div class="t-desc">將胜肽<strong>奈米囊化</strong>，配合已開通的角質通道，完整穿越角質層，<strong>抵達棘皮層</strong>觸發細胞更新。</div>
-      </div>
-      <div class="t-right">
-        <div class="stat-num">500<span class="stat-unit">Da</span></div>
-        <div class="stat-label">角質層滲透閾值</div>
-        <div class="stat-note">奈米化後恰好穿越</div>
+        <div class="t-desc" style="font-size:14px;color:#c8c0b4">EXA PEPTASOME™ 奈米囊化胜肽，穿越角質層抵達棘皮層。</div>
       </div>
     </div>
 
@@ -270,14 +258,11 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
       </div>
       <div class="t-body">
         <div class="t-num">03 · 國際認證</div>
-        <div class="t-title">三項國際製造品質認證</div>
-        <div class="t-desc">符合<strong>韓國 MFDS</strong> 及歐盟同等標準，從原料到成品每年接受外部稽核。</div>
-      </div>
-      <div class="t-right">
-        <div class="certs">
-          <div class="cert"><div class="cert-dot"></div><div class="cert-code">CGMP</div><div class="cert-name">優良製造規範</div></div>
-          <div class="cert"><div class="cert-dot"></div><div class="cert-code">ISO 9001</div><div class="cert-name">國際品質管理</div></div>
-          <div class="cert"><div class="cert-dot"></div><div class="cert-code">ISO 22716</div><div class="cert-name">化妝品 GMP</div></div>
+        <div class="t-desc" style="font-size:14px;color:#c8c0b4">符合韓國 MFDS 及歐盟同等標準，每年外部稽核。</div>
+        <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap">
+          <span style="font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--gold);border:1px solid rgba(201,169,110,.3);padding:4px 10px">CGMP</span>
+          <span style="font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--gold);border:1px solid rgba(201,169,110,.3);padding:4px 10px">ISO 9001</span>
+          <span style="font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--gold);border:1px solid rgba(201,169,110,.3);padding:4px 10px">ISO 22716</span>
         </div>
       </div>
     </div>
@@ -285,12 +270,54 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
   </div>
 </div></section>
 
+<!-- SOCIAL PROOF -->
+<section class="proof-section" id="results"><div class="container">
+  <div class="section-label reveal">REAL RESULTS</div>
+  <h2 class="section-title reveal">真實使用者回饋，<em>未修圖</em></h2>
+  <p class="section-sub reveal" style="margin-bottom:36px">完成第一個鑽石療程後的真實記錄。</p>
+  <div class="proof-card reveal">
+    <div class="proof-photos">
+      <div class="proof-sep"></div>
+      <div class="proof-arr">→</div>
+      <div class="proof-photo">
+        <img src="images/before_mosaic.jpg" alt="使用前" onerror="this.style.background='#222'">
+        <div class="proof-photo-lbl">BEFORE · 2026.03.22</div>
+      </div>
+      <div class="proof-photo">
+        <img src="images/after_mosaic.jpg" alt="使用後" onerror="this.style.background='#222'">
+        <div class="proof-photo-lbl">AFTER · 2026.04.02</div>
+      </div>
+    </div>
+    <div class="proof-tags">
+      <span class="proof-tag">60+ 歲</span>
+      <span class="proof-tag">乾燥敏感肌</span>
+    </div>
+    <p class="proof-quote">眼下的飽潤感大大改善，整體膚況健康透亮。</p>
+    <p class="proof-prod">全系列產品 · 10 天<br>使用產品：鑽石系列 ＋ 保養全系列 ＋ 防護全系列</p>
+  </div>
+</div></section>
+
+<!-- PERSONAL REVIEW -->
+<section style="background:#0e0e0f;padding:80px 24px;border-top:1px solid rgba(255,255,255,.07)"><div class="container" style="max-width:720px">
+  <div class="section-label reveal" style="margin-bottom:24px">MY EXPERIENCE</div>
+  <div class="reveal" style="border-left:2px solid rgba(201,169,110,.3);padding-left:28px">
+    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#d4cec8;line-height:2;margin-bottom:20px">作為 SK-II、肌膚之鑰、Paula's Choice 的長期使用者，我對保養品的標準不低。</p>
+    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#d4cec8;line-height:2;margin-bottom:20px">2026 年 2 月透過朋友介紹開始用 Renecell，最初只是單純汰換，沒有特別期待。但兩個差異讓我注意到：全系列無香料，這點一開始不習慣，上臉之後反而更放心；另一個是擦完的感覺——不是停在表面的滋潤，是真的被吸收進去的感覺。</p>
+    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#d4cec8;line-height:2;margin-bottom:20px">兩週後我開始做鑽石療程。從第一顆到現在第三顆（每月一顆），每次做完都感覺保養品的吸收效率又提升一層。這跟鑽石系列的設計邏輯一致：先把角質通道疏通，後續的成分才有辦法真正進去。</p>
+    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#d4cec8;line-height:2;margin-bottom:20px">中間有段時間想把舊品牌剩下的用完，拿起來才察覺：香味好重，擦完像是停在表面。不是以前沒注意到，是有了對照之後才感覺出來差距。</p>
+    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#e8d5a8;line-height:2;font-style:italic">這麼多品牌用下來，在保養吸收效率這件事上，Renecell 是目前讓我感受最明顯的一套——原因不是成分表最長或品牌最貴，而是皮膚準備好了才吸收，這件事從邏輯到實感都說得通。</p>
+  </div>
+</div></section>
+
 <!-- PAGE 3 -->
 <section class="products-section" id="products"><div class="container">
 <div class="section-label reveal">PRODUCT LINE</div>
-<h2 class="section-title reveal">完整產品系列</h2>
-<p class="section-sub reveal">全系列產品皆無香料添加，高滲透率可安全使用於眼周。<br>點擊任一產品，查看成分與對應的抗老化作用。</p>
+<h2 class="section-title reveal" style="font-family:'Noto Sans TC',sans-serif;font-weight:500">Renecell 全系列高滲透率產品</h2>
+<p class="section-sub reveal">全系列產品皆無香料添加，可安全使用於眼周。<br>點擊任一產品，查看成分與對應的抗老化作用。</p>
 <div class="prod-grid reveal" id="prodGrid"></div>
+<div class="reveal" style="text-align:center;margin-top:48px">
+  <a href="#skintype" onclick="event.preventDefault();document.getElementById('skintype').scrollIntoView({behavior:'smooth'})" style="display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(201,169,110,.35);padding:14px 32px;text-decoration:none;transition:all .25s" onmouseover="this.style.background='rgba(201,169,110,.08)'" onmouseout="this.style.background='transparent'">不知道從哪開始？→ 讓我幫你找</a>
+</div>
 </div></section>
 <div class="modal-overlay" id="prodModal"><div class="modal-box"><button class="modal-close" onclick="closePM()">✕</button><div class="modal-header"><div class="modal-icon-wrap" id="mIco"></div><div><div class="modal-title" id="mT"></div><div class="modal-sub" id="mS"></div></div></div><div id="mB"></div></div></div>
 
@@ -307,11 +334,11 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <section class="cta-section" id="cta"><div class="cta-inner"><div class="cta-label reveal">BEGIN YOUR JOURNEY</div><h2 class="cta-title reveal">不確定自己是哪種狀態？</h2><p class="cta-sub reveal">花 30 秒填寫，讓我們幫您找到最適合的組合。</p>
 <div class="contact-form reveal" id="contactForm" style="max-width:480px">
 <div class="form-section"><div class="form-section-num">01</div><label class="form-label">姓名</label><input class="form-input" type="text" id="cfName" placeholder="你的姓名或暱稱"></div>
-<div class="form-section"><div class="form-section-num">02</div><label class="form-label">聯絡方式</label><select class="form-select" id="cfMethod"><option value="">選擇聯絡管道</option><option value="ig">Instagram</option><option value="line">Line ID</option><option value="phone">手機號碼</option></select><div id="cfVR" style="display:none;margin-top:10px"><label class="form-label" id="cfVL">請輸入</label><input class="form-input" type="text" id="cfV" placeholder=""></div></div>
-<div class="form-section"><div class="form-section-num">03</div><label class="form-label">肌膚困擾（可複選）</label><div class="chip-group" data-field="concerns"><div class="chip" data-val="暗沉蠟黃">暗沉蠟黃</div><div class="chip" data-val="毛孔粗大">毛孔粗大</div><div class="chip" data-val="泛紅敏感">泛紅敏感</div><div class="chip" data-val="乾燥脫皮">乾燥脫皮</div><div class="chip" data-val="細紋皺紋">細紋皺紋</div><div class="chip" data-val="鬆弛下垂">鬆弛下垂</div><div class="chip" data-val="痘痘粉刺">痘痘粉刺</div><div class="chip" data-val="斑點色素">斑點色素</div><div class="chip" data-val="出油不平衡">出油不平衡</div><div class="chip" data-val="屏障受損">屏障受損</div></div></div>
-<div class="form-section"><div class="form-section-num">04</div><label class="form-label">保養目標（可複選）</label><div class="chip-group" data-field="goals"><div class="chip" data-val="抗老緊緻">抗老緊緻</div><div class="chip" data-val="美白淡斑">美白淡斑</div><div class="chip" data-val="保濕修護">保濕修護</div><div class="chip" data-val="控油抗痘">控油抗痘</div><div class="chip" data-val="修復屏障">修復屏障</div><div class="chip" data-val="縮毛孔">縮毛孔</div><div class="chip" data-val="提亮膚色">提亮膚色</div><div class="chip" data-val="醫美後修護">醫美後修護</div></div></div>
-<div class="form-section"><div class="form-section-num">05</div><label class="form-label">過敏史</label><div class="chip-group" data-field="allergies"><div class="chip" data-val="無">無</div><div class="chip" data-val="酒精">酒精</div><div class="chip" data-val="香精">香精</div><div class="chip" data-val="酸類">酸類</div><div class="chip" data-val="塵蟎">塵蟎</div></div><input class="form-input" type="text" id="cfAllergyOther" placeholder="其他過敏原（選填）" style="margin-top:10px"></div>
-<div class="form-section"><div class="form-section-num">06</div><label class="form-label">有無做過醫美</label><div class="chip-group chip-single" data-field="medaes"><div class="chip" data-val="沒有做過">沒有做過</div><div class="chip" data-val="偶爾做">偶爾做</div><div class="chip" data-val="定期做">定期做</div><div class="chip" data-val="已停止">曾做過，已停止</div></div></div>
+<div class="form-section"><div class="form-section-num">02</div><label class="form-label">聯絡方式</label><select class="form-select" id="cfMethod"><option value="">選擇聯絡管道</option><option value="ig">Instagram</option><option value="line">Line ID</option><option value="phone">手機號碼</option></select><div id="cfVR" style="display:none;margin-top:8px"><label class="form-label" id="cfVL">請輸入</label><input class="form-input" type="text" id="cfV" placeholder=""></div></div>
+<div class="form-section"><div class="form-section-num">03</div><label class="form-label">肌膚困擾（可複選）</label><div class="dd-wrap"><button class="dd-btn" onclick="toggleDD(this)" type="button"><span class="dd-text">選擇困擾</span><span class="dd-arrow">▼</span></button><div class="dd-menu" data-field="concerns"><div class="dd-item" onclick="toggleItem(this)" data-val="暗沉蠟黃"><div class="dd-check"></div>暗沉蠟黃</div><div class="dd-item" onclick="toggleItem(this)" data-val="毛孔粗大"><div class="dd-check"></div>毛孔粗大</div><div class="dd-item" onclick="toggleItem(this)" data-val="泛紅敏感"><div class="dd-check"></div>泛紅敏感</div><div class="dd-item" onclick="toggleItem(this)" data-val="乾燥脫皮"><div class="dd-check"></div>乾燥脫皮</div><div class="dd-item" onclick="toggleItem(this)" data-val="細紋皺紋"><div class="dd-check"></div>細紋皺紋</div><div class="dd-item" onclick="toggleItem(this)" data-val="鬆弛下垂"><div class="dd-check"></div>鬆弛下垂</div><div class="dd-item" onclick="toggleItem(this)" data-val="痘痘粉刺"><div class="dd-check"></div>痘痘粉刺</div><div class="dd-item" onclick="toggleItem(this)" data-val="斑點色素"><div class="dd-check"></div>斑點色素</div><div class="dd-item" onclick="toggleItem(this)" data-val="出油不平衡"><div class="dd-check"></div>出油不平衡</div><div class="dd-item" onclick="toggleItem(this)" data-val="屏障受損"><div class="dd-check"></div>屏障受損</div></div></div></div>
+<div class="form-section"><div class="form-section-num">04</div><label class="form-label">保養目標（可複選）</label><div class="dd-wrap"><button class="dd-btn" onclick="toggleDD(this)" type="button"><span class="dd-text">選擇目標</span><span class="dd-arrow">▼</span></button><div class="dd-menu" data-field="goals"><div class="dd-item" onclick="toggleItem(this)" data-val="抗老緊緻"><div class="dd-check"></div>抗老緊緻</div><div class="dd-item" onclick="toggleItem(this)" data-val="美白淡斑"><div class="dd-check"></div>美白淡斑</div><div class="dd-item" onclick="toggleItem(this)" data-val="保濕修護"><div class="dd-check"></div>保濕修護</div><div class="dd-item" onclick="toggleItem(this)" data-val="控油抗痘"><div class="dd-check"></div>控油抗痘</div><div class="dd-item" onclick="toggleItem(this)" data-val="修復屏障"><div class="dd-check"></div>修復屏障</div><div class="dd-item" onclick="toggleItem(this)" data-val="縮毛孔"><div class="dd-check"></div>縮毛孔</div><div class="dd-item" onclick="toggleItem(this)" data-val="提亮膚色"><div class="dd-check"></div>提亮膚色</div><div class="dd-item" onclick="toggleItem(this)" data-val="醫美後修護"><div class="dd-check"></div>醫美後修護</div></div></div></div>
+<div class="form-section"><div class="form-section-num">05</div><label class="form-label">過敏史（可複選）</label><div class="dd-wrap"><button class="dd-btn" onclick="toggleDD(this)" type="button"><span class="dd-text">選擇過敏原</span><span class="dd-arrow">▼</span></button><div class="dd-menu" data-field="allergies"><div class="dd-item" onclick="toggleItem(this)" data-val="無"><div class="dd-check"></div>無</div><div class="dd-item" onclick="toggleItem(this)" data-val="酒精"><div class="dd-check"></div>酒精</div><div class="dd-item" onclick="toggleItem(this)" data-val="香精"><div class="dd-check"></div>香精</div><div class="dd-item" onclick="toggleItem(this)" data-val="酸類"><div class="dd-check"></div>酸類</div><div class="dd-item" onclick="toggleItem(this)" data-val="塵蟎"><div class="dd-check"></div>塵蟎</div></div></div><input class="form-input" type="text" id="cfAllergyOther" placeholder="其他過敏原（選填）" style="margin-top:8px"></div>
+<div class="form-section"><div class="form-section-num">06</div><label class="form-label">有無做過醫美</label><select class="form-select" id="cfMedaes"><option value="">請選擇</option><option value="沒有做過">沒有做過</option><option value="偶爾做">偶爾做</option><option value="定期做">定期做</option><option value="已停止">曾做過，已停止</option></select></div>
 <button class="form-submit" id="cfBtn" disabled>免費諮詢體驗</button>
 <p class="form-privacy">🔒 你的資料僅用於肌膚諮詢，不會提供給第三方</p>
 </div>
@@ -387,10 +414,10 @@ document.getElementById('skinSvg').innerHTML=`<svg width="100%" viewBox="0 0 720
 
 /* ═══ SKIN TYPES ═══ */
 const SK=[
-{tag:'螢幕肌',sc:'#4a9eff',sl:'rgba(74,158,255,.08)',sd:'#1a5fa0',hl:'每天盯著螢幕 8 小時以上，藍光、壓力、熬夜輪番傷害——<strong>肌膚來不及修復就已經在老化</strong>',tr:['膚色暗沉、毛孔越來越明顯','壓力大時特別容易冒痘、出油','沒時間做複雜保養，但不想放棄效果'],rc:'鑽石套組 + 精華系列 + 活顏噴霧'},
-{tag:'玻璃肌',sc:'#d4827a',sl:'rgba(212,130,122,.08)',sd:'#a05048',hl:'用什麼都怕、換季就崩潰、一不小心就泛紅脫皮——<strong>肌膚屏障正在求救</strong>',tr:['肌膚容易泛紅、乾燥緊繃反覆出現','被酸類或過度去角質傷過','想修護但又怕選錯成分越補越糟'],rc:'鑽石套組 + 精華系列 + Q肌底面霜'},
-{tag:'抗老焦慮肌',sc:'#9880b8',sl:'rgba(152,128,184,.08)',sd:'#6848a0',hl:'照鏡子開始數細紋，摸臉感覺彈力不如以前——<strong>想介入但不知道從哪裡開始</strong>',tr:['法令紋、眼尾紋漸漸明顯','膚色暗沉、失去光澤與彈力','重視成分與品質，不想亂買'],rc:'鑽石套組 + 精華系列 + Q安瓶系列 + 多肽霜'},
-{tag:'醫美疲憊肌',sc:'#c9a96e',sl:'rgba(201,169,110,.08)',sd:'#8a6830',hl:'做了幾年療程，皮膚反而越來越薄越敏感——<strong>開始懷疑一直刺激是對的嗎？</strong>',tr:['雷射、換膚做完恢復期越來越長','療程間空窗期肌膚忽好忽壞','花了大錢效果卻越來越難維持'],rc:'水凝膜系列 + 精華系列 + Q安瓶系列'}
+{tag:'暗沉乾燥肌',sc:'#4a9eff',sl:'rgba(74,158,255,.08)',sd:'#1a5fa0',hl:'臉色蠟黃、乾到緊繃——\u003cstrong\u003e保養品根本滲不進去\u003c/strong\u003e',tr:['補水後幾小時又乾','膚色黯淡、毛孔越來越明顯','塗了像沒塗，缺乏光澤'],rc:'鑽石套組 + 多肽化妝水 + Q肌底面霜'},
+{tag:'敏感泛紅肌',sc:'#d4827a',sl:'rgba(212,130,122,.08)',sd:'#a05048',hl:'換季就炸、用什麼都怕——\u003cstrong\u003e屏障早就在求救了\u003c/strong\u003e',tr:['容易泛紅、緊繃、乾癢','被酸類或過度清潔傷過','想修護但怕選錯越補越糟'],rc:'鑽石套組 + 水凝膜2號 + Q肌底面霜'},
+{tag:'鬆弛抗老肌',sc:'#9880b8',sl:'rgba(152,128,184,.08)',sd:'#6848a0',hl:'法令紋、眼尾紋開始明顯——\u003cstrong\u003e想介入但不知從哪開始\u003c/strong\u003e',tr:['彈力肉眼可見下滑','膚色暗沉、輪廓開始鬆垮','重視成分與效果，不想亂買'],rc:'鑽石套組 + Q安瓶系列 + 多肽霜'},
+{tag:'醫美後修護肌',sc:'#c9a96e',sl:'rgba(201,169,110,.08)',sd:'#8a6830',hl:'療程後修復越來越慢——\u003cstrong\u003e皮膚可能正在透支\u003c/strong\u003e',tr:['恢復期變長、空窗期容易崩','療程效果越來越難維持','需要日常保養搭配療程穩定膚況'],rc:'水凝膜系列 + Q安瓶系列 + 鑽石套組'}
 ];
 document.getElementById('skinGrid').innerHTML=SK.map(s=>`<div class="skin-card-w reveal" style="--sc:${s.sc};--sc-lt:${s.sl};--sc-dk:${s.sd}"><div class="skin-tag-w">${s.tag}</div><p class="skin-headline-w">${s.hl}</p><ul class="skin-traits-w">${s.tr.map(t=>`<li>${t}</li>`).join('')}</ul><div class="skin-rec-w"><span class="skin-rec-w-label"><span class="rec-icon">💡</span> 入門建議：${s.rc}</span></div></div>`).join('');
 
@@ -440,21 +467,17 @@ const CM={ig:{l:"請輸入 Instagram 帳號",p:"@你的IG帳號",t:"text"},line:
 document.getElementById('cfMethod').addEventListener('change',function(){const m=this.value,r=document.getElementById('cfVR');if(m&&CM[m]){const c=CM[m];document.getElementById('cfVL').textContent=c.l;const i=document.getElementById('cfV');i.placeholder=c.p;i.type=c.t;i.value='';r.style.display='block'}else{r.style.display='none'}vf()});
 document.getElementById('cfName').addEventListener('input',vf);
 document.getElementById('cfV').addEventListener('input',vf);
-document.querySelectorAll('.chip-group').forEach(g=>{
-  const isSingle=g.classList.contains('chip-single');
-  g.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
-    if(isSingle) g.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
-    c.classList.toggle('active');vf();
-  }));
-});
-function getChips(field){return[...document.querySelectorAll(`.chip-group[data-field="${field}"] .chip.active`)].map(c=>c.dataset.val)}
+function toggleDD(btn){const menu=btn.nextElementSibling;const isOpen=menu.classList.contains('show');document.querySelectorAll('.dd-menu.show').forEach(m=>{m.classList.remove('show');m.previousElementSibling.classList.remove('open')});if(!isOpen){menu.classList.add('show');btn.classList.add('open')}}
+function toggleItem(el){el.classList.toggle('selected');el.querySelector('.dd-check').textContent=el.classList.contains('selected')?'✓':'';const menu=el.closest('.dd-menu');const btn=menu.previousElementSibling;const selected=menu.querySelectorAll('.dd-item.selected');const txt=btn.querySelector('.dd-text');if(selected.length===0){txt.textContent=btn.dataset.placeholder||'選擇';btn.classList.remove('has-value')}else{txt.textContent=[...selected].map(s=>s.dataset.val).join('、');btn.classList.add('has-value')}}
+document.addEventListener('click',e=>{if(!e.target.closest('.dd-wrap')){document.querySelectorAll('.dd-menu.show').forEach(m=>{m.classList.remove('show');m.previousElementSibling.classList.remove('open')})}});
+function getDDVals(field){return[...document.querySelectorAll(`.dd-menu[data-field="${field}"] .dd-item.selected`)].map(i=>i.dataset.val)}
 function vf(){const name=document.getElementById('cfName').value.trim();const method=document.getElementById('cfMethod').value;const value=document.getElementById('cfV').value.trim();document.getElementById('cfBtn').disabled=!(name&&method&&value)}
 document.getElementById('cfBtn').addEventListener('click',async function(){
   const b=this;
   const allergyOther=document.getElementById('cfAllergyOther').value.trim();
-  const allergies=getChips('allergies');
+  const allergies=getDDVals('allergies');
   if(allergyOther) allergies.push(allergyOther);
-  const d={name:document.getElementById('cfName').value.trim(),contactMethod:document.getElementById('cfMethod').value,contactValue:document.getElementById('cfV').value.trim(),concerns:getChips('concerns'),goals:getChips('goals'),allergies:allergies,medicalAesthetics:getChips('medaes')[0]||''};
+  const d={name:document.getElementById('cfName').value.trim(),contactMethod:document.getElementById('cfMethod').value,contactValue:document.getElementById('cfV').value.trim(),concerns:getDDVals('concerns'),goals:getDDVals('goals'),allergies:allergies,medicalAesthetics:document.getElementById('cfMedaes').value||''};
   b.disabled=true;b.textContent='送出中…';
   try{const r=await fetch(CW,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});const j=await r.json();if(!r.ok||!j.success)throw new Error(j.error||'送出失敗');if(NW){try{await fetch(NW,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})}catch(e){}}document.getElementById('contactForm').style.display='none';document.getElementById('cfOK').style.display='block'}catch(e){alert('❌ '+e.message);b.disabled=false;b.textContent='免費諮詢體驗'}
 });
