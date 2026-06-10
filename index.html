@@ -14,23 +14,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @media(max-width:900px){.nav-links{display:none}nav{padding:14px 20px}}
 section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 24px}
 .section-label{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px}.section-label::before{content:'';width:24px;height:1px;background:var(--gold);opacity:.5}
-.section-title{font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:300;line-height:1.2;margin-bottom:16px}.section-title em{font-style:italic;color:var(--gold)}
+.section-title{font-family:'Noto Sans TC',sans-serif;font-size:clamp(24px,3.2vw,36px);font-weight:600;line-height:1.2;margin-bottom:16px}.section-title em{font-style:normal;color:var(--gold)}
 .section-sub{font-size:14px;color:var(--muted);line-height:2;max-width:640px}
 
 /* HERO */
 .hero{display:flex;flex-direction:column;justify-content:center;padding:100px 48px 72px;position:relative;overflow:hidden}.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,169,110,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,110,.06) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 80% 85% at 62% 45%,black 15%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse 80% 85% at 62% 45%,black 15%,transparent 78%)}.hero-dot-bg{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,169,110,.22) 1px,transparent 1px);background-size:48px 48px;background-position:24px 24px;mask-image:radial-gradient(ellipse 45% 55% at 72% 38%,black 8%,transparent 68%);-webkit-mask-image:radial-gradient(ellipse 45% 55% at 72% 38%,black 8%,transparent 68%)}.hero-mol-bg{position:absolute;inset:0;opacity:.12;pointer-events:none}.hero-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.05) 0%,transparent 65%);top:-80px;right:-50px;pointer-events:none}.hero-content{position:relative;z-index:1;max-width:1080px;margin:0 auto;width:100%}.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:4px;color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:16px}.hero-eyebrow::after{content:'';flex:0 0 40px;height:1px;background:var(--border2)}
-.hero-title{font-family:var(--serif);font-size:clamp(28px,4.2vw,56px);font-weight:300;line-height:1.12;margin-bottom:28px;white-space:nowrap;color:var(--gold-lt)}.hero-title em{font-style:italic;color:var(--gold)}
+.hero-title-sub{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);opacity:.7;margin-bottom:10px}
+.hero-title{font-family:var(--serif);font-size:clamp(30px,5vw,56px);font-weight:400;line-height:1.15;margin-bottom:28px;color:#e8e2d9}.hero-title em{font-style:italic;color:var(--gold)}
 .hero-body{font-size:18px;color:#d4cec8;line-height:2;max-width:640px;margin-bottom:44px;font-weight:300}
 .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap}.hero-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;font-family:var(--mono);font-size:11px;letter-spacing:3px;transition:all .3s;text-transform:uppercase;cursor:pointer;border:none}.hero-btn-primary{background:var(--gold);color:#0e0e0f;font-weight:500}.hero-btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px)}.hero-btn-ghost{background:none;border:1px solid var(--border2);color:var(--text)}.hero-btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 .hero-disclaimer{margin-top:60px;font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.4;letter-spacing:1px;border-left:1px solid var(--border);padding-left:16px;max-width:500px}
 
 /* ── ABOUT SECTION ── */
-.about-section{background:#f2ede6;padding:72px 24px;border-bottom:1px solid rgba(0,0,0,.08)}
+.about-section{background:#1e1c1a;padding:72px 24px;border-bottom:1px solid rgba(255,255,255,.06)}
 .about-inner{max-width:900px;margin:0 auto}
 .about-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px}
 .about-eyebrow::before{content:'';width:20px;height:1px;background:var(--muted);opacity:.5}
-.about-headline{font-family:var(--serif);font-size:clamp(26px,3.8vw,40px);font-weight:300;line-height:1.2;color:#1a1614;margin-bottom:6px}
-.about-headline em{font-style:italic;color:var(--gold)}
+.about-headline{font-family:'Noto Sans TC',sans-serif;font-size:clamp(24px,3.2vw,36px);font-weight:600;line-height:1.2;color:#e8e2d9;margin-bottom:6px}
+.about-headline em{font-style:normal;color:var(--gold)}
 .about-sub{font-family:var(--serif);font-size:clamp(13px,1.6vw,17px);font-weight:300;font-style:italic;color:#5a5450;line-height:1.6;margin-bottom:36px}
 .about-rule{width:1px;height:44px;background:rgba(201,169,110,.2);margin:0 0 32px 2px}
 
@@ -98,10 +99,10 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .cert-name{font-size:12.5px;color:#8a8070}
 
 /* PAGE 2: SKIN SCIENCE */
-.skin-science{background:#1c1914;color:#e8e2d9;padding:100px 24px}
-.skin-science .section-label{color:var(--gold)}
-.skin-science .section-title{color:#e8e2d9}.skin-science .section-title em{color:var(--gold)}
-.skin-science .section-sub{color:#8a8478}
+.skin-science{background:#faf6f0;color:#2e2820;padding:100px 24px}
+.skin-science .section-label{color:#9a7840}.skin-science .section-label::before{background:#9a7840}
+.skin-science .section-title{color:#2e2820}.skin-science .section-title em{color:#185FA5}
+.skin-science .section-sub{color:#7a6e60}
 .skin-svg-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:40px}
 
 /* PAGE 3: SKIN TYPES */
@@ -197,7 +198,7 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 /* CTA */
 .cta-section{background:var(--bg2);text-align:center;padding:120px 24px;position:relative;overflow:hidden}.cta-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:40px 40px}.cta-inner{position:relative;z-index:1}
 .cta-label{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;justify-content:center;gap:16px}.cta-label::before,.cta-label::after{content:'';flex:0 0 40px;height:1px;background:rgba(201,169,110,.3)}
-.cta-title{font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:300;line-height:1.3;margin-bottom:12px}.cta-sub{font-size:14px;color:var(--muted);line-height:2;max-width:460px;margin:0 auto 40px}
+.cta-title{font-family:'Noto Sans TC',sans-serif;font-size:clamp(24px,3.2vw,36px);font-weight:600;line-height:1.3;margin-bottom:12px}.cta-sub{font-size:14px;color:var(--muted);line-height:2;max-width:460px;margin:0 auto 40px}
 .contact-form{max-width:420px;margin:0 auto;text-align:left}.form-row{margin-bottom:16px}.form-label{display:block;font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:2px;margin-bottom:6px}.form-input{width:100%;padding:12px 16px;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-size:14px;transition:border-color .3s}.form-input:focus{outline:none;border-color:var(--gold)}.form-input::placeholder{color:rgba(138,132,120,.5)}.form-select{width:100%;padding:12px 16px;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-size:14px;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238a8478'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}.form-select:focus{outline:none;border-color:var(--gold)}textarea.form-input{resize:none}
 .form-submit{width:100%;padding:16px;background:var(--gold);color:#0e0e0f;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:3px;border:none;cursor:pointer;transition:all .3s;text-transform:uppercase;margin-top:8px}.form-submit:hover{background:var(--gold-lt);transform:translateY(-2px)}.form-submit:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .form-privacy{font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.5;margin-top:12px;text-align:center}.form-success{display:none;text-align:center;padding:32px 0}.form-success-icon{width:56px;height:56px;border-radius:50%;background:rgba(95,191,138,.12);border:1px solid rgba(95,191,138,.3);color:var(--green);font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
@@ -212,7 +213,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <nav><div class="nav-logo">RENE·CELL / 成分筆記</div><ul class="nav-links"><li><a href="#products">成分介紹</a></li><li><a href="#skintype">入門建議</a></li><li><a href="#cta">個人化諮詢</a></li></ul><button class="nav-cta-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">免費體驗</button></nav>
 
 <!-- HERO -->
-<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-dot-bg"></div><div class="hero-glow"></div><svg class="hero-mol-bg" viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><g transform="translate(820,20)" opacity=".9"><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="40,0 80,23 80,69 40,92 0,69 0,23"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="120,0 160,23 160,69 120,92 80,69 80,23"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="200,0 240,23 240,69 200,92 160,69 160,23"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="280,0 320,23 320,69 280,92 240,69 240,23"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="80,69 120,92 120,138 80,161 40,138 40,92"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="160,69 200,92 200,138 160,161 120,138 120,92"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="240,69 280,92 280,138 240,161 200,138 200,92"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="40,138 80,161 80,207 40,230 0,207 0,161" opacity=".5"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="120,138 160,161 160,207 120,230 80,207 80,161" opacity=".5"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="200,138 240,161 240,207 200,230 160,207 160,161" opacity=".4"/><circle fill="#c9a96e" cx="40" cy="0" r="2.5"/><circle fill="#c9a96e" cx="120" cy="0" r="2.5"/><circle fill="#c9a96e" cx="200" cy="0" r="2.5"/><circle fill="#c9a96e" cx="80" cy="69" r="2.5"/><circle fill="#c9a96e" cx="160" cy="69" r="2.5"/><circle fill="#c9a96e" cx="240" cy="69" r="2.5"/><circle fill="#4a9eff" cx="120" cy="92" r="3"/><circle fill="#4a9eff" cx="200" cy="92" r="3"/><circle fill="#4a9eff" cx="160" cy="161" r="3"/></g><g transform="translate(60,280)" opacity=".7"><line stroke="#c9a96e" stroke-width="1" x1="0" y1="60" x2="50" y2="30"/><line stroke="#c9a96e" stroke-width="1" x1="50" y1="30" x2="100" y2="60"/><line stroke="#c9a96e" stroke-width="1" x1="100" y1="60" x2="150" y2="30"/><line stroke="#c9a96e" stroke-width="1" x1="150" y1="30" x2="200" y2="60"/><line stroke="#c9a96e" stroke-width="1" x1="200" y1="60" x2="250" y2="30"/><line stroke="#c9a96e" stroke-width=".7" x1="50" y1="30" x2="50" y2="0"/><line stroke="#c9a96e" stroke-width=".7" x1="150" y1="30" x2="150" y2="0"/><line stroke="#4a9eff" stroke-width=".7" x1="100" y1="60" x2="100" y2="100"/><line stroke="#4a9eff" stroke-width=".7" x1="200" y1="60" x2="200" y2="100"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="0" cy="60" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="50" cy="30" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="100" cy="60" r="9"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="150" cy="30" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="200" cy="60" r="9"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="250" cy="30" r="7"/><circle fill="#c9a96e" cx="0" cy="60" r="2.5"/><circle fill="#c9a96e" cx="100" cy="60" r="3"/><circle fill="#c9a96e" cx="200" cy="60" r="3"/><circle fill="#4a9eff" cx="50" cy="0" r="2.5"/><circle fill="#4a9eff" cx="150" cy="0" r="2.5"/></g><circle fill="#c9a96e" cx="600" cy="80" r="2" opacity=".4"/><circle fill="#c9a96e" cx="750" cy="380" r="2.5" opacity=".35"/><circle fill="#4a9eff" cx="500" cy="220" r="2" opacity=".3"/><circle fill="#4a9eff" cx="1300" cy="300" r="2" opacity=".35"/><line stroke="#c9a96e" stroke-width=".5" x1="600" y1="80" x2="750" y2="380" opacity=".15"/></svg><div class="hero-content"><h1 class="hero-title fade-up"><span style="font-family:var(--serif)">RENE CELL</span> <em>從醫療修復到居家護膚</em></h1><p class="hero-body fade-up" style="animation-delay:.15s;margin-bottom:8px">嗨！我是 Renecell 台灣的獨立業務夥伴。</p><p class="hero-body fade-up" style="animation-delay:.25s;margin-top:0">Renecell 的韓國母公司擁有燒燙傷皮膚再生的醫療專利，將醫療級細胞修復技術轉化成每天可在家使用的保養系統——以下整理的科學筆記讓你能快速了解產品邏輯跟成分。</p></div></section>
+<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-dot-bg"></div><div class="hero-glow"></div><svg class="hero-mol-bg" viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><g transform="translate(820,20)" opacity=".9"><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="40,0 80,23 80,69 40,92 0,69 0,23"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="120,0 160,23 160,69 120,92 80,69 80,23"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="200,0 240,23 240,69 200,92 160,69 160,23"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="280,0 320,23 320,69 280,92 240,69 240,23"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="80,69 120,92 120,138 80,161 40,138 40,92"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="160,69 200,92 200,138 160,161 120,138 120,92"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="240,69 280,92 280,138 240,161 200,138 200,92"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="40,138 80,161 80,207 40,230 0,207 0,161" opacity=".5"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="120,138 160,161 160,207 120,230 80,207 80,161" opacity=".5"/><polygon fill="none" stroke="#c9a96e" stroke-width=".8" points="200,138 240,161 240,207 200,230 160,207 160,161" opacity=".4"/><circle fill="#c9a96e" cx="40" cy="0" r="2.5"/><circle fill="#c9a96e" cx="120" cy="0" r="2.5"/><circle fill="#c9a96e" cx="200" cy="0" r="2.5"/><circle fill="#c9a96e" cx="80" cy="69" r="2.5"/><circle fill="#c9a96e" cx="160" cy="69" r="2.5"/><circle fill="#c9a96e" cx="240" cy="69" r="2.5"/><circle fill="#4a9eff" cx="120" cy="92" r="3"/><circle fill="#4a9eff" cx="200" cy="92" r="3"/><circle fill="#4a9eff" cx="160" cy="161" r="3"/></g><g transform="translate(60,280)" opacity=".7"><line stroke="#c9a96e" stroke-width="1" x1="0" y1="60" x2="50" y2="30"/><line stroke="#c9a96e" stroke-width="1" x1="50" y1="30" x2="100" y2="60"/><line stroke="#c9a96e" stroke-width="1" x1="100" y1="60" x2="150" y2="30"/><line stroke="#c9a96e" stroke-width="1" x1="150" y1="30" x2="200" y2="60"/><line stroke="#c9a96e" stroke-width="1" x1="200" y1="60" x2="250" y2="30"/><line stroke="#c9a96e" stroke-width=".7" x1="50" y1="30" x2="50" y2="0"/><line stroke="#c9a96e" stroke-width=".7" x1="150" y1="30" x2="150" y2="0"/><line stroke="#4a9eff" stroke-width=".7" x1="100" y1="60" x2="100" y2="100"/><line stroke="#4a9eff" stroke-width=".7" x1="200" y1="60" x2="200" y2="100"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="0" cy="60" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="50" cy="30" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="100" cy="60" r="9"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="150" cy="30" r="7"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="200" cy="60" r="9"/><circle fill="none" stroke="#c9a96e" stroke-width="1" cx="250" cy="30" r="7"/><circle fill="#c9a96e" cx="0" cy="60" r="2.5"/><circle fill="#c9a96e" cx="100" cy="60" r="3"/><circle fill="#c9a96e" cx="200" cy="60" r="3"/><circle fill="#4a9eff" cx="50" cy="0" r="2.5"/><circle fill="#4a9eff" cx="150" cy="0" r="2.5"/></g><circle fill="#c9a96e" cx="600" cy="80" r="2" opacity=".4"/><circle fill="#c9a96e" cx="750" cy="380" r="2.5" opacity=".35"/><circle fill="#4a9eff" cx="500" cy="220" r="2" opacity=".3"/><circle fill="#4a9eff" cx="1300" cy="300" r="2" opacity=".35"/><line stroke="#c9a96e" stroke-width=".5" x1="600" y1="80" x2="750" y2="380" opacity=".15"/></svg><div class="hero-content"><div class="fade-up" style="margin-bottom:28px"><div class="hero-title-sub">RENECELL · 韓國最新科技保養品牌</div><h1 class="hero-title">從醫療修復到<em>居家護膚</em></h1></div><p class="hero-body fade-up" style="animation-delay:.15s;margin-bottom:8px">嗨！我是 Renecell 台灣的獨立業務夥伴。</p><p class="hero-body fade-up" style="animation-delay:.25s;margin-top:0">Renecell 的韓國母公司擁有燒燙傷皮膚再生的醫療專利，將醫療級細胞修復技術轉化成每天可在家使用的保養系統——以下整理的科學筆記讓你能快速了解產品邏輯跟成分。</p></div></section>
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
@@ -254,7 +255,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <!-- PAGE 2 — merged skin science + core technology -->
 <section class="skin-science" id="science"><div class="container">
 <div class="section-label reveal">SKIN SCIENCE &amp; CORE TECHNOLOGY</div>
-<h2 class="section-title reveal" style="max-width:700px;font-size:clamp(22px,3.2vw,38px)">皮膚的屏障怎麼突破，<em>Renecell 怎麼做到</em></h2>
+<h2 class="section-title reveal" style="max-width:700px">皮膚的屏障怎麼突破，<em><span style="font-family:var(--mono)">Renecell</span> 怎麼做到</em></h2>
 <p class="section-sub reveal">停留在角質層只是「表面濕潤」；抵達棘狀層才是「觸發細胞再生」。以下是兩步驟機制。</p>
 <div class="reveal" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:36px">
 <svg width="100%" viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" style="min-width:560px">
@@ -330,7 +331,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <!-- SOCIAL PROOF -->
 <section class="proof-section" id="results"><div class="container">
   <div class="section-label reveal">REAL RESULTS</div>
-  <h2 class="section-title reveal">真實使用者回饋，<em>未修圖</em></h2>
+  <h2 class="section-title reveal">真實使用者回饋</h2>
   <p class="section-sub reveal" style="margin-bottom:36px">完成第一個鑽石療程後的真實記錄。</p>
   <div class="proof-card reveal">
     <div class="proof-photos">
@@ -358,16 +359,15 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <section style="background:#0e0e0f;padding:80px 24px;border-top:1px solid rgba(255,255,255,.07)"><div class="container" style="max-width:720px">
   <div class="section-label reveal" style="margin-bottom:24px">MY EXPERIENCE</div>
   <div class="reveal" style="border-left:2px solid rgba(201,169,110,.3);padding-left:28px">
-    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#d4cec8;line-height:2;margin-bottom:20px">作為 SK-II、肌膚之鑰、Paula's Choice 的長期使用者，2026 年 2 月開始用 Renecell，全系列無香料、吸收速度快讓我印象深刻，馬上就做了鑽石療程。從第一顆到現在第三顆（每月一顆），每次做完都感覺保養品的吸收效率又更提升一層。</p>
-    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#d4cec8;line-height:2;margin-bottom:20px">中間有段時間想把舊品牌剩下的用完，拿起來才察覺：香味好重，擦完像是停在表面。不是以前沒注意到，是有了對照之後才感覺出來差距。</p>
-    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#e8d5a8;line-height:2;font-style:italic">這麼多品牌用下來，在保養吸收效率這件事上，Renecell 是目前讓我感受最明顯的一套——原因不是成分表最長或品牌最貴，而是皮膚準備好了才吸收。</p>
+    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#d4cec8;line-height:2;margin-bottom:20px">作為 SK-II、肌膚之鑰、Paula's Choice 的長期使用者，2026 年 2 月嘗試開始使用 Renecell 基礎保養之後，全系列無香料、吸收速度快讓我印象非常深刻，馬上就決定做鑽石療程。從第一顆到現在第三顆（每月一顆），每次做完都感覺保養品的吸收效率又更提升一層。</p>
+    <p style="font-family:'Noto Sans TC',sans-serif;font-size:15px;color:#e8d5a8;line-height:2;font-style:italic">中間有段時間想把舊品牌剩下的用完，對比之下才察覺香味好重，擦完也都像是停在表面沒有真正吸收。這麼多品牌用下來，保養吸收效率 Renecell 是最讓我有感的——先開通道，讓吸收真正發生。</p>
   </div>
 </div></section>
 
 <!-- PAGE 3 -->
 <section class="products-section" id="products"><div class="container">
 <div class="section-label reveal">PRODUCT LINE</div>
-<h2 class="section-title reveal" style="font-family:'Noto Sans TC',sans-serif;font-weight:500">Renecell 全系列高滲透率產品</h2>
+<h2 class="section-title reveal">Renecell 全系列高滲透率產品</h2>
 <p class="section-sub reveal">全系列產品皆無香料添加，可安全使用於眼周。<br>點擊任一產品，查看成分與對應的抗老化作用。</p>
 <div class="prod-grid reveal" id="prodGrid"></div>
 <div class="reveal" style="text-align:center;margin-top:48px">
@@ -379,7 +379,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <!-- PAGE 4 -->
 <section class="skintype-section" id="skintype"><div class="container">
 <div class="section-label reveal">YOU ARE...</div>
-<h2 class="section-title reveal" style="color:#2e2820">你是哪一種<em>狀態</em>？</h2>
+<h2 class="section-title reveal" style="color:#2e2820">你是哪一種狀態？</h2>
 <p class="section-sub reveal">找到你的肌膚狀態，就找到最適合的起點。</p>
 <div class="skin-grid-4" id="skinGrid"></div>
 </div></section>
