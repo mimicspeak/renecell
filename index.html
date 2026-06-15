@@ -225,7 +225,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 </style>
 </head>
 <body>
-<nav><div class="nav-logo">RENE·CELL / 成分筆記</div><ul class="nav-links"><li><a href="#products">成分介紹</a></li><li><a href="#skintype">入門建議</a></li><li><a href="#cta">個人化諮詢</a></li></ul><button class="nav-cta-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">免費體驗</button></nav>
+<nav><div class="nav-logo">RENE·CELL / 成分筆記</div><ul class="nav-links"><li><a href="#products">成分介紹</a></li><li><a href="#skintype">入門建議</a></li><li><a href="#cta">個人化諮詢</a></li></ul><button class="nav-cta-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">立即預約體驗 →</button></nav>
 
 <!-- HERO -->
 <section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-dot-bg"></div><div class="hero-glow"></div><div class="hero-content"><div class="fade-up" style="margin-bottom:28px"><div class="hero-title-sub">RENECELL · 韓國最新科技保養品牌</div><h1 class="hero-title">從醫療修復到<em>居家護膚</em></h1></div><p class="hero-body fade-up" style="animation-delay:.15s;margin-bottom:8px">保養品的成分停在角質層表面，皮膚細胞卻從未被真正觸及。</p><p class="hero-body fade-up" style="animation-delay:.25s;margin-top:0">Renecell 的起點不是美妝實驗室，而是一項燒燙傷皮膚再生的醫療專利——當初為了修復最極端的皮膚損傷而生，現在轉化成每天在家可用的細胞修復系統。</p></div><div class="hero-img"><img src="images/diamond-set.jpg" alt="Renecell Miracle Diamond Peel Program" onerror="this.parentElement.style.background='#111'"></div></section>
@@ -433,8 +433,15 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
   </div>
 </div>
 
+<!-- FAQ -->
+<section style="background:#0e0e0f;padding:80px 24px;border-top:1px solid rgba(255,255,255,.07)" id="faq"><div class="container" style="max-width:680px">
+  <div class="section-label reveal">FAQ</div>
+  <h2 class="section-title reveal" style="margin-bottom:40px">常見問題</h2>
+  <div id="faqList"></div>
+</div></section>
+
 <!-- PAGE 5 -->
-<section class="cta-section" id="cta"><div class="cta-inner"><div class="cta-label reveal">BEGIN YOUR JOURNEY</div><h2 class="cta-title reveal">不確定自己是哪種狀態？</h2><p class="cta-sub reveal">花 30 秒填寫，讓我們幫您找到最適合的組合。</p>
+<section class="cta-section" id="cta"><div class="cta-inner"><div class="cta-label reveal">BEGIN YOUR JOURNEY</div><h2 class="cta-title reveal">本月免費體驗名額剩餘 3 組</h2><p class="cta-sub reveal">花 30 秒填寫，確認你的膚況與適合的組合——名額用完即止。</p>
 <div class="contact-form reveal" id="contactForm" style="max-width:480px">
 <div class="form-section"><div class="form-section-num">01</div><label class="form-label">姓名</label><input class="form-input" type="text" id="cfName" placeholder="你的姓名或暱稱"></div>
 <div class="form-section"><div class="form-section-num">02</div><label class="form-label">聯絡方式</label><select class="form-select" id="cfMethod"><option value="">選擇聯絡管道</option><option value="ig">Instagram</option><option value="line">Line ID</option><option value="phone">手機號碼</option></select><div id="cfVR" style="display:none;margin-top:8px"><label class="form-label" id="cfVL">請輸入</label><input class="form-input" type="text" id="cfV" placeholder=""></div></div>
@@ -443,6 +450,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <div class="form-section"><div class="form-section-num">05</div><label class="form-label">想要免費體驗哪些？（可複選）</label><div class="dd-wrap"><button class="dd-btn" onclick="toggleDD(this)" type="button"><span class="dd-text">選擇感興趣的組合</span><span class="dd-arrow">▼</span></button><div class="dd-menu" data-field="wantsKit"><div class="dd-item" onclick="toggleItem(this)" data-val="組合A — 暗沉乾燥肌入門組合"><div class="dd-check"></div>組合 A — 暗沉乾燥肌</div><div class="dd-item" onclick="toggleItem(this)" data-val="組合B — 敏感泛紅肌入門組合"><div class="dd-check"></div>組合 B — 敏感泛紅肌</div><div class="dd-item" onclick="toggleItem(this)" data-val="組合C — 鬆弛抗老肌入門組合"><div class="dd-check"></div>組合 C — 鬆弛抗老肌</div><div class="dd-item" onclick="toggleItem(this)" data-val="組合D — 醫美後修護肌入門組合"><div class="dd-check"></div>組合 D — 醫美後修護肌</div><div class="dd-item" onclick="toggleItem(this)" data-val="組合E — 日間防護防曬組合"><div class="dd-check"></div>組合 E — 日間防護防曬</div></div></div><input class="form-input" type="text" id="cfWantsKitOther" placeholder="其他（選填）" style="margin-top:8px"></div>
 <button class="form-submit" id="cfBtn" disabled>免費諮詢體驗</button>
 <p class="form-privacy">🔒 你的資料僅用於肌膚諮詢，不會提供給第三方</p>
+<p style="font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.45;margin-top:10px;text-align:center;letter-spacing:1px">每月開放 8 組，已有 5 人預約本週諮詢</p>
 </div>
 <div class="form-success" id="cfOK"><div class="form-success-icon">✓</div><h3 style="font-size:20px;font-weight:500;margin-bottom:8px;color:var(--text)">已收到您的資料！</h3><p style="font-size:14px;color:var(--muted);line-height:1.8">我們將盡快與您聯繫，<br>提供個人化的保養建議。</p></div>
 </div></section>
@@ -544,6 +552,18 @@ document.getElementById('cfBtn').addEventListener('click',async function(){
   b.disabled=true;b.textContent='送出中…';
   try{const r=await fetch(CW,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});const j=await r.json();if(!r.ok||!j.success)throw new Error(j.error||'送出失敗');if(NW){try{await fetch(NW,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})}catch(e){}}document.getElementById('contactForm').style.display='none';document.getElementById('cfOK').style.display='block'}catch(e){alert('❌ '+e.message);b.disabled=false;b.textContent='免費諮詢體驗'}
 });
+
+/* ═══ FAQ ═══ */
+const FAQS=[
+{q:'鑽石系列跟一般去角質產品有什麼不同？',a:'一般去角質只是磨掉表層死皮，鑽石系列是物理疏通角質通道，目的是讓後續的保養品能真正滲透進去。去角質是清除，鑽石系列是「開路」。'},
+{q:'敏感肌或術後肌膚能用嗎？',a:'可以。全系列無香料、無酒精，敏感肌與醫美術後都有對應組合（組合 B 與組合 D）。第一次使用建議先局部測試。'},
+{q:'免費體驗是什麼意思？要付錢嗎？',a:'免費體驗是指諮詢完膚況與過敏史後，會提供適合的產品試用，讓你在決定購買前先感受產品吸收效果。諮詢本身和試用樣品都不收費。'},
+{q:'已經有在用其他品牌的保養品，可以混著用嗎？',a:'可以，但建議先用 4–8 週的單一系統觀察效果，再做調整。混用太多品牌很難判斷哪個有效、哪個沒效。'},
+{q:'一個入門組合大概能用多久？',a:'A–D 組合約 5–7 個月用量，組合 E（日間防護）約 6–8 個月。平均下來每個月的保養成本比單瓶 SK-II 青春露還低，但涵蓋完整的 5–6 步驟。'}
+];
+const faqEl=document.getElementById('faqList');
+faqEl.innerHTML=FAQS.map((f,i)=>`<div style="border-bottom:1px solid rgba(255,255,255,.07);padding:0"><button onclick="toggleFAQ(${i})" style="width:100%;background:none;border:none;text-align:left;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px"><span style="font-size:15px;font-weight:500;color:#e8e2d9;line-height:1.5;font-family:'Noto Sans TC',sans-serif">${f.q}</span><span id="faq-arrow-${i}" style="color:var(--gold);font-family:var(--mono);font-size:16px;flex-shrink:0;transition:transform .25s">+</span></button><div id="faq-body-${i}" style="display:none;padding-bottom:20px"><p style="font-size:13.5px;color:#8a8478;line-height:2;font-family:'Noto Sans TC',sans-serif">${f.a}</p></div></div>`).join('');
+function toggleFAQ(i){const body=document.getElementById('faq-body-'+i);const arrow=document.getElementById('faq-arrow-'+i);const isOpen=body.style.display==='block';FAQS.forEach((_,j)=>{document.getElementById('faq-body-'+j).style.display='none';document.getElementById('faq-arrow-'+j).textContent='+';document.getElementById('faq-arrow-'+j).style.transform='rotate(0deg)'});if(!isOpen){body.style.display='block';arrow.textContent='×';arrow.style.transform='rotate(0deg)'}}
 
 const rv=document.querySelectorAll('.reveal');const io=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),(parseInt(e.target.dataset.delay)||0)*80);io.unobserve(e.target)}})},{threshold:.1});rv.forEach((el,i)=>{el.dataset.delay=i%5;io.observe(el)});
 const ss=document.querySelectorAll('section[id]'),nl=document.querySelectorAll('.nav-links a');window.addEventListener('scroll',()=>{let c='';ss.forEach(s=>{if(scrollY>=s.offsetTop-200)c=s.id});nl.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'#ffffff':'#f0ece4'})});
