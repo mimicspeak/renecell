@@ -126,8 +126,8 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .kit-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:1000;align-items:center;justify-content:center;padding:20px}
 .kit-overlay.open{display:flex}
 .kit-modal{background:#141416;border:1px solid rgba(255,255,255,.1);border-radius:12px;width:100%;max-width:440px;overflow:hidden;position:relative}
-.kit-modal-head{padding:24px 28px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
-.kit-modal-tag{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--gold);opacity:.6;margin-bottom:6px}
+.kit-modal-head{padding:24px 28px 16px;border-bottom:1px solid rgba(255,255,255,.07);border-left:3px solid transparent;transition:border-color .2s}
+.kit-modal-tag{font-family:var(--mono);font-size:9px;letter-spacing:2px;margin-bottom:6px}
 .kit-modal-title{font-size:17px;font-weight:500;color:var(--text);font-family:'Noto Sans TC',sans-serif}
 .kit-modal-items{padding:4px 0}
 .kit-modal-item{display:flex;align-items:flex-start;gap:10px;padding:11px 28px;border-bottom:1px solid rgba(255,255,255,.05)}
@@ -138,6 +138,7 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .kit-modal-footer{padding:16px 28px;border-top:1px solid rgba(255,255,255,.07);background:#1a1a1e;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .kit-modal-total-label{font-family:var(--mono);font-size:9px;letter-spacing:1px;color:#8a8478;margin-bottom:2px}
 .kit-modal-total{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--gold-lt)}
+.kit-modal-usage{font-family:var(--mono);font-size:10px;margin-top:4px;letter-spacing:.5px}
 .kit-cta-btn{font-family:var(--mono);font-size:10px;letter-spacing:1px;padding:12px 16px;background:var(--gold);color:#0e0e0f;border:none;cursor:pointer;transition:background .2s;line-height:1.5;text-align:center;font-weight:700}
 .kit-cta-btn:hover{background:var(--gold-lt)}
 .kit-close{position:absolute;top:14px;right:18px;background:none;border:none;color:#8a8478;font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -227,7 +228,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <nav><div class="nav-logo">RENE·CELL / 成分筆記</div><ul class="nav-links"><li><a href="#products">成分介紹</a></li><li><a href="#skintype">入門建議</a></li><li><a href="#cta">個人化諮詢</a></li></ul><button class="nav-cta-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">免費體驗</button></nav>
 
 <!-- HERO -->
-<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-dot-bg"></div><div class="hero-glow"></div><div class="hero-content"><div class="fade-up" style="margin-bottom:28px"><div class="hero-title-sub">RENECELL · 韓國最新科技保養品牌</div><h1 class="hero-title">從醫療修復到<em>居家護膚</em></h1></div><p class="hero-body fade-up" style="animation-delay:.15s;margin-bottom:8px">嗨！我是 Renecell 台灣的獨立業務夥伴。</p><p class="hero-body fade-up" style="animation-delay:.25s;margin-top:0">Renecell 的韓國母公司擁有燒燙傷皮膚再生的醫療專利，將醫療級細胞修復技術轉化成每天可在家使用的保養系統——以下整理的科學筆記讓你能快速了解產品邏輯跟成分。</p></div><div class="hero-img"><img src="images/diamond-set.jpg" alt="Renecell Miracle Diamond Peel Program" onerror="this.parentElement.style.background='#111'"></div></section>
+<section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-dot-bg"></div><div class="hero-glow"></div><div class="hero-content"><div class="fade-up" style="margin-bottom:28px"><div class="hero-title-sub">RENECELL · 韓國最新科技保養品牌</div><h1 class="hero-title">從醫療修復到<em>居家護膚</em></h1></div><p class="hero-body fade-up" style="animation-delay:.15s;margin-bottom:8px">保養品的成分停在角質層表面，皮膚細胞卻從未被真正觸及。</p><p class="hero-body fade-up" style="animation-delay:.25s;margin-top:0">Renecell 的起點不是美妝實驗室，而是一項燒燙傷皮膚再生的醫療專利——當初為了修復最極端的皮膚損傷而生，現在轉化成每天在家可用的細胞修復系統。</p></div><div class="hero-img"><img src="images/diamond-set.jpg" alt="Renecell Miracle Diamond Peel Program" onerror="this.parentElement.style.background='#111'"></div></section>
 
 <section class="about-section" id="about">
   <div class="about-inner">
@@ -416,13 +417,17 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <div class="kit-overlay" id="kitOverlay" onclick="if(event.target===this)closeKit()">
   <div class="kit-modal">
     <button class="kit-close" onclick="closeKit()">✕</button>
-    <div class="kit-modal-head">
+    <div class="kit-modal-head" id="kitHead">
       <div class="kit-modal-tag" id="kitTag">入門組合</div>
       <div class="kit-modal-title" id="kitTitle">入門組合</div>
     </div>
     <div class="kit-modal-items" id="kitItems"></div>
     <div class="kit-modal-footer">
-      <div><div class="kit-modal-total-label">組合總價</div><div class="kit-modal-total" id="kitTotal">NT$ —</div></div>
+      <div>
+        <div class="kit-modal-total-label">組合總價</div>
+        <div class="kit-modal-total" id="kitTotal">NT$ —</div>
+        <div class="kit-modal-usage" id="kitUsage"></div>
+      </div>
       <button class="kit-cta-btn" onclick="closeKit();document.getElementById('cta').scrollIntoView({behavior:'smooth'})">諮詢並免費體驗這個組合</button>
     </div>
   </div>
@@ -445,23 +450,35 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <footer><div class="footer-inner"><div class="footer-al">關於這份筆記</div><p class="footer-ab">本內容為個人體驗與成分研究紀錄，非品牌官方內容，非醫療建議。<br>使用任何保養品前建議先諮詢專業人員或進行局部肌膚測試。</p><div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:2px;margin-bottom:12px">參考來源</div><div class="footer-refs"><a href="https://www.ewg.org/skindeep/" target="_blank" class="footer-ref">EWG Skin Deep ↗</a><a href="https://ec.europa.eu/growth/tools-databases/cosing/" target="_blank" class="footer-ref">CosIng 歐盟 ↗</a><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="footer-ref">PubMed ↗</a><a href="https://www.mfds.go.kr/" target="_blank" class="footer-ref">韓國 MFDS ↗</a></div><div class="footer-bot">© 2026 RENE-CELL 科學筆記 · Made in Korea · 非醫療建議</div></div></footer>
 
 <script>
-/* ═══ SVG ═══ */
-
-
 /* ═══ SKIN TYPES ═══ */
 const SK=[
-{label:'A',tag:'暗沉乾燥肌',sc:'#4a9eff',sl:'rgba(74,158,255,.08)',sd:'#1a5fa0',hl:'臉色蠟黃、乾到緊繃——\u003cstrong\u003e保養品根本滲不進去\u003c/strong\u003e',tr:['補水後幾小時又乾','膚色黯淡、毛孔越來越明顯','塗了像沒塗，缺乏光澤'],
-kit:[['酵素潔顏粉','溫和去角質・清潔基底'],['水凝膜 1+2 號','深層補水・屏障修護'],['活顏噴霧','保濕活化・隨時補水'],['透明質酸精華','多層次補水・保濕'],['維生素 C 精華','提亮膚色・抗氧化'],['淡斑霜','淡化色素・均勻膚色']],total:'NT$ 10,143'},
-{label:'B',tag:'敏感泛紅肌',sc:'#d4827a',sl:'rgba(212,130,122,.08)',sd:'#a05048',hl:'換季就炸、用什麼都怕——\u003cstrong\u003e屏障早就在求救了\u003c/strong\u003e',tr:['容易泛紅、緊繃、乾癢','被酸類或過度清潔傷過','想修護但怕選錯越補越糟'],
-kit:[['酵素潔顏粉','溫和清潔・不刺激'],['水凝膜 2 號','舒緩修護・屏障修復'],['119 面膜','高效舒緩・急救鎮靜'],['多肽化妝水','溫和導入・準備肌膚'],['透明質酸精華','補水鎮靜・舒緩'],['滋潤修護精華','深層修護・強化屏障'],['Q肌底面霜','鎖住修護・日間防護']],total:'NT$ 8,076'},
-{label:'C',tag:'鬆弛抗老肌',sc:'#9880b8',sl:'rgba(152,128,184,.08)',sd:'#6848a0',hl:'法令紋、眼尾紋開始明顯——\u003cstrong\u003e想介入但不知從哪開始\u003c/strong\u003e',tr:['彈力肉眼可見下滑','膚色暗沉、輪廓開始鬆垮','重視成分與效果，不想亂買'],
-kit:[['酵素潔顏粉','深層清潔・活化肌膚'],['水凝膜 1+2 號','緊緻補養・深度修護'],['Q肌底精華','高濃度胜肽・抗老緊緻'],['滋潤修護精華','滋養深層・再生修護'],['多肽霜','鎖住胜肽・晚間修護']],total:'NT$ 11,730'},
-{label:'D',tag:'醫美後修護肌',sc:'#c9a96e',sl:'rgba(201,169,110,.08)',sd:'#8a6830',hl:'療程後修復越來越慢——\u003cstrong\u003e皮膚可能正在透支\u003c/strong\u003e',tr:['恢復期變長、空窗期容易崩','療程效果越來越難維持','溫和但有效的日常保養加速修復'],
-kit:[['酵素潔顏粉','溫和清潔・術後適用'],['水凝膜 2 號','術後急速修護'],['119 面膜','高效舒緩・術後鎮靜'],['多肽化妝水','溫和補水・術後準備'],['透明質酸精華','深層補水・修護'],['滋潤修護精華','加速恢復・穩定膚況'],['Q肌底面霜','術後防護・空窗期保護']],total:'NT$ 8,076'}
+{label:'A',tag:'暗沉乾燥肌',sc:'#378ADD',sl:'rgba(55,138,221,.08)',sd:'#0C447C',hl:'臉色蠟黃、乾到緊繃——<strong>保養品根本滲不進去</strong>',tr:['補水後幾小時又乾','膚色黯淡、毛孔越來越明顯','塗了像沒塗，缺乏光澤'],
+kit:[['酵素潔顏粉','溫和去角質・清潔基底'],['水凝膜 1+2 號','深層補水・屏障修護'],['活顏噴霧','保濕活化・隨時補水'],['透明質酸精華','多層次補水・保濕'],['維生素 C 精華','提亮膚色・抗氧化'],['淡斑霜','淡化色素・均勻膚色']],total:'NT$ 10,143',usage:'約 5–7 個月用量'},
+{label:'B',tag:'敏感泛紅肌',sc:'#d4827a',sl:'rgba(212,130,122,.08)',sd:'#a05048',hl:'換季就炸、用什麼都怕——<strong>屏障早就在求救了</strong>',tr:['容易泛紅、緊繃、乾癢','被酸類或過度清潔傷過','想修護但怕選錯越補越糟'],
+kit:[['酵素潔顏粉','溫和清潔・不刺激'],['水凝膜 2 號','舒緩修護・屏障修復'],['119 面膜','高效舒緩・急救鎮靜'],['多肽化妝水','溫和導入・準備肌膚'],['透明質酸精華','補水鎮靜・舒緩'],['滋潤修護精華','深層修護・強化屏障'],['Q肌底面霜','鎖住修護・日間防護']],total:'NT$ 8,076',usage:'約 5–7 個月用量'},
+{label:'C',tag:'鬆弛抗老肌',sc:'#9880b8',sl:'rgba(152,128,184,.08)',sd:'#6848a0',hl:'法令紋、眼尾紋開始明顯——<strong>想介入但不知從哪開始</strong>',tr:['彈力肉眼可見下滑','膚色暗沉、輪廓開始鬆垮','重視成分與效果，不想亂買'],
+kit:[['酵素潔顏粉','深層清潔・活化肌膚'],['水凝膜 1+2 號','緊緻補養・深度修護'],['Q肌底精華','高濃度胜肽・抗老緊緻'],['滋潤修護精華','滋養深層・再生修護'],['多肽霜','鎖住胜肽・晚間修護']],total:'NT$ 11,730',usage:'約 5–7 個月用量'},
+{label:'D',tag:'醫美後修護肌',sc:'#c9a96e',sl:'rgba(201,169,110,.08)',sd:'#8a6830',hl:'療程後修復越來越慢——<strong>皮膚可能正在透支</strong>',tr:['恢復期皮膚不穩定','療程效果越來越難維持','有效保養，讓修復更快'],
+kit:[['酵素潔顏粉','溫和清潔・術後適用'],['水凝膜 2 號','術後急速修護'],['119 面膜','高效舒緩・術後鎮靜'],['多肽化妝水','溫和補水・術後準備'],['透明質酸精華','深層補水・修護'],['滋潤修護精華','加速恢復・穩定膚況'],['Q肌底面霜','術後防護・空窗期保護']],total:'NT$ 8,076',usage:'約 5–7 個月用量'}
 ];
-const UNIV={label:'E',tag:'全膚質適用',sc:'#1D9E75',kit:[['保濕修護霜','日間保濕・鎖水基底'],['防曬霜 SPF+PA++++','全效防曬・日間防護'],['滋潤BB霜','均勻膚色・輕量遮瑕']],total:'NT$ 1,955'};
+const UNIV={label:'E',tag:'全膚質適用',sc:'#1D9E75',kit:[['保濕修護霜','日間保濕・鎖水基底'],['防曬霜 SPF+PA++++','全效防曬・日間防護'],['滋潤BB霜','均勻膚色・輕量遮瑕']],total:'NT$ 1,955',usage:'約 6–8 個月用量'};
 document.getElementById('skinGrid').innerHTML=SK.map((s,i)=>`<div class="skin-card-w reveal" style="--sc:${s.sc};--sc-lt:${s.sl};--sc-dk:${s.sd}"><div class="skin-tag-w">${s.tag}</div><p class="skin-headline-w">${s.hl}</p><ul class="skin-traits-w">${s.tr.map(t=>`<li>${t}</li>`).join('')}</ul><button class="kit-open-btn" onclick="openKit(${i})"><span>查看入門組合 ${s.label}</span><span>→</span></button></div>`).join('');
-function openKit(i){const s=i===4?UNIV:SK[i];const label=s.label;const dot=i===4?UNIV.sc:SK[i].sc;document.getElementById('kitTag').textContent=`組合 ${label}`;document.getElementById('kitTitle').textContent=i===4?'日間防護防曬組合':`${s.tag} 入門組合`;document.getElementById('kitItems').innerHTML=s.kit.map(([n,r])=>`<div class="kit-modal-item"><div class="kit-modal-dot" style="background:${dot}"></div><div><div class="kit-modal-name">${n}</div><div class="kit-modal-role">${r}</div></div></div>`).join('');document.getElementById('kitTotal').textContent=s.total;document.getElementById('kitOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function openKit(i){
+  const s=i===4?UNIV:SK[i];
+  const label=s.label;
+  const dot=s.sc;
+  document.getElementById('kitTag').textContent=`組合 ${label}`;
+  document.getElementById('kitTag').style.color=dot;
+  document.getElementById('kitHead').style.borderLeftColor=dot;
+  document.getElementById('kitTitle').textContent=i===4?'日間防護防曬組合':`${s.tag} 入門組合`;
+  document.getElementById('kitItems').innerHTML=s.kit.map(([n,r])=>`<div class="kit-modal-item"><div class="kit-modal-dot" style="background:${dot}"></div><div><div class="kit-modal-name">${n}</div><div class="kit-modal-role">${r}</div></div></div>`).join('');
+  document.getElementById('kitTotal').textContent=s.total;
+  const usageEl=document.getElementById('kitUsage');
+  usageEl.textContent=s.usage;
+  usageEl.style.color=dot;
+  document.getElementById('kitOverlay').classList.add('open');
+  document.body.style.overflow='hidden'
+}
 function closeKit(){document.getElementById('kitOverlay').classList.remove('open');document.body.style.overflow=''}
 
 /* ═══ PRODUCTS ═══ */
