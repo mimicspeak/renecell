@@ -25,44 +25,6 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap}.hero-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;font-family:var(--mono);font-size:11px;letter-spacing:3px;transition:all .3s;text-transform:uppercase;cursor:pointer;border:none}.hero-btn-primary{background:var(--gold);color:#0e0e0f;font-weight:500}.hero-btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px)}.hero-btn-ghost{background:none;border:1px solid var(--border2);color:var(--text)}.hero-btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 .hero-disclaimer{margin-top:60px;font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.4;letter-spacing:1px;border-left:1px solid var(--border);padding-left:16px;max-width:500px}
 
-/* ── ABOUT SECTION ── */
-.about-section{background:#1e1c1a;padding:72px 24px;border-bottom:1px solid rgba(255,255,255,.06)}
-.about-inner{max-width:900px;margin:0 auto}
-.about-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px}
-.about-eyebrow::before{content:'';width:20px;height:1px;background:var(--muted);opacity:.5}
-.about-headline{font-family:'Noto Sans TC',sans-serif;font-size:clamp(24px,3.2vw,36px);font-weight:600;line-height:1.2;color:#e8e2d9;margin-bottom:6px}
-.about-headline em{font-style:normal;color:var(--gold)}
-.about-sub{font-family:var(--serif);font-size:clamp(13px,1.6vw,17px);font-weight:300;font-style:italic;color:#5a5450;line-height:1.6;margin-bottom:36px}
-.about-rule{width:1px;height:44px;background:rgba(201,169,110,.2);margin:0 0 32px 2px}
-
-/* contrast cards */
-.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
-.ab-card{border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;background:#fff;box-shadow:0 2px 20px rgba(0,0,0,.08);border:none}
-.ab-bad{}
-.ab-good{}
-.ab-card-head{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(0,0,0,.06)}
-.ab-good .ab-card-head{border-bottom-color:rgba(0,0,0,.06)}
-.ab-sym{font-family:var(--mono);font-size:14px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700}
-.ab-bad .ab-sym{color:#c44;background:#fee}
-.ab-good .ab-sym{color:#185FA5;background:#E6F1FB}
-.ab-lbl{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase}
-.ab-bad .ab-lbl{color:#8a7060}
-.ab-good .ab-lbl{color:#185FA5}
-.ab-steps{display:flex;flex-direction:column;gap:12px;flex:1;margin-bottom:20px}
-.ab-step{display:flex;align-items:flex-start;gap:10px}
-.ab-num{font-family:var(--mono);font-size:10px;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px}
-.ab-bad .ab-num{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.1);color:#999}
-.ab-good .ab-num{background:rgba(55,138,221,.08);border:1px solid rgba(55,138,221,.2);color:#185FA5}
-.ab-step-txt{font-size:13px;line-height:1.7}
-.ab-bad .ab-step-txt{color:#6a5038}
-.ab-good .ab-step-txt{color:#2a3a5a}
-.ab-result{padding:18px 20px;border-radius:10px;font-size:17px;font-weight:700;line-height:1.4;margin-top:auto;text-align:center}
-.ab-bad .ab-result{background:#f8f0e8;color:#6a4028}
-.ab-good .ab-result{background:#E6F1FB;color:#185FA5}
-
-.about-bio{font-size:13.5px;line-height:2.1;color:#c8c0b4;max-width:700px;margin-bottom:10px}
-.about-bio strong{color:var(--text);font-weight:500}
-.about-disclaimer{font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.4;letter-spacing:1px;border-left:1px solid var(--border);padding-left:14px;margin-top:18px;line-height:1.9}
 
 /* ── ORIGIN / TECH SECTION ── */
 .origin-section{background:var(--bg2)}
@@ -204,7 +166,7 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .dd-wrap{position:relative}.dd-btn{width:100%;padding:11px 16px;background:var(--surface);border:1px solid var(--border2);color:var(--muted);font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:border-color .2s;outline:none}.dd-btn:hover,.dd-btn.open{border-color:rgba(201,169,110,.5)}.dd-btn.has-value{color:var(--text)}.dd-arrow{font-size:10px;color:var(--muted);transition:transform .2s;flex-shrink:0;margin-left:8px}.dd-btn.open .dd-arrow{transform:rotate(180deg)}.dd-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--surface);border:1px solid rgba(201,169,110,.3);z-index:50;max-height:220px;overflow-y:auto}.dd-menu.show{display:block}.dd-item{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;transition:background .15s;font-size:13px;color:#c8c0b4}.dd-item:hover{background:rgba(201,169,110,.08)}.dd-item.selected{color:var(--gold-lt);background:rgba(201,169,110,.06)}.dd-check{width:14px;height:14px;border:1px solid rgba(255,255,255,.2);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all .15s}.dd-item.selected .dd-check{background:var(--gold);border-color:var(--gold);color:#0e0e0f}
 .form-section{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}.form-section:last-of-type{border-bottom:none;margin-bottom:16px;padding-bottom:0}.form-section-num{font-family:var(--mono);font-size:9px;color:var(--gold);letter-spacing:2px;opacity:.5;margin-bottom:2px}
 footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.footer-inner{max-width:720px;margin:0 auto}.footer-al{font-family:var(--mono);font-size:10px;color:var(--gold);letter-spacing:3px;margin-bottom:16px}.footer-ab{font-size:13px;color:rgba(138,132,120,.4);line-height:2;margin-bottom:28px}.footer-refs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}.footer-ref{font-family:var(--mono);font-size:10px;color:var(--muted);border:1px solid var(--border);padding:5px 12px;transition:color .2s,border-color .2s}.footer-ref:hover{color:var(--gold);border-color:var(--gold)}.footer-bot{font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.4;letter-spacing:2px;text-align:center;line-height:2.2;border-top:1px solid var(--border);padding-top:24px}
-@media(max-width:900px){.about-cards{grid-template-columns:1fr}.tech-row{grid-template-columns:56px 1fr}.t-right{display:none}.skin-grid-4{grid-template-columns:repeat(2,1fr)!important}.prod-grid{grid-template-columns:repeat(3,1fr)}section{padding:72px 20px}.hero{grid-template-columns:1fr}.hero-img{display:none}}
+@media(max-width:900px){.tech-row{grid-template-columns:56px 1fr}.t-right{display:none}.skin-grid-4{grid-template-columns:repeat(2,1fr)!important}.prod-grid{grid-template-columns:repeat(3,1fr)}section{padding:72px 20px}.hero{grid-template-columns:1fr}.hero-img{display:none}}
 @media(max-width:640px){
   .hero{display:block;position:relative;min-height:460px;overflow:hidden;padding:0}
   .hero-img{display:block!important;position:absolute!important;inset:0!important}
@@ -215,7 +177,6 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
   .hero-title{font-size:28px!important;white-space:normal!important;line-height:1.2!important}
   .hero-body{font-size:13px;margin-bottom:6px}
   .section-title{font-size:20px!important;white-space:normal!important;word-break:keep-all!important;line-height:1.35!important}
-  .about-headline{font-size:20px!important;white-space:normal!important;word-break:keep-all!important;line-height:1.35!important}
   .cta-title{font-size:20px!important;white-space:normal!important;word-break:keep-all!important;line-height:1.35!important}
   .skin-grid-4{grid-template-columns:1fr!important}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
@@ -230,58 +191,73 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <!-- HERO -->
 <section class="hero" id="home"><div class="hero-grid-bg"></div><div class="hero-dot-bg"></div><div class="hero-glow"></div><div class="hero-content"><div class="fade-up" style="margin-bottom:28px"><div class="hero-title-sub">RENECELL · 韓國最新科技保養品牌</div><h1 class="hero-title">從醫療修復到<em>居家護膚</em></h1></div><p class="hero-body fade-up" style="animation-delay:.15s;margin-bottom:8px">保養品的成分停在角質層表面，皮膚細胞卻從未被真正觸及。</p><p class="hero-body fade-up" style="animation-delay:.25s;margin-top:0">Renecell 的起點不是美妝實驗室，而是一項燒燙傷皮膚再生的醫療專利——當初為了修復最極端的皮膚損傷而生，現在轉化成每天在家可用的細胞修復系統。</p></div><div class="hero-img"><img src="images/diamond-set.jpg" alt="Renecell Miracle Diamond Peel Program" onerror="this.parentElement.style.background='#111'"></div></section>
 
-<section class="about-section" id="about">
-  <div class="about-inner">
-    <div class="about-headline reveal">你的保養品，<em>從未到達它該去的地方</em></div>
-
-    <div class="about-cards reveal">
-      <div class="ab-card ab-bad">
-        <div class="ab-card-head">
-          <div class="ab-sym">×</div>
-          <div class="ab-lbl">一般保養品</div>
-        </div>
-        <div class="ab-steps">
-          <div class="ab-step"><div class="ab-num">1</div><div class="ab-step-txt">分子偏大，無法穿越角質層</div></div>
-          <div class="ab-step"><div class="ab-num">2</div><div class="ab-step-txt">成分停在角質層表面</div></div>
-          <div class="ab-step"><div class="ab-num">3</div><div class="ab-step-txt">細胞更新層從未被觸及</div></div>
-        </div>
-        <div class="ab-result" style="font-size:18px;font-weight:600;padding:20px 18px">表面濕潤，僅止於此</div>
-      </div>
-
-      <div class="ab-card ab-good">
-        <div class="ab-card-head">
-          <div class="ab-sym">↓</div>
-          <div class="ab-lbl">RENE-CELL</div>
-        </div>
-        <div class="ab-steps">
-          <div class="ab-step"><div class="ab-num">1</div><div class="ab-step-txt">物理疏通角質通道，為成分開路</div></div>
-          <div class="ab-step"><div class="ab-num">2</div><div class="ab-step-txt">奈米化胜肽完整穿越角質層</div></div>
-          <div class="ab-step"><div class="ab-num">3</div><div class="ab-step-txt">抵達棘皮層，觸發細胞更新</div></div>
-        </div>
-        <div class="ab-result" style="font-size:18px;font-weight:600;padding:20px 18px">真正啟動皮膚自我更新</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- ORIGIN / TECH -->
-<!-- PAGE 2 — merged skin science + core technology -->
+<!-- PAGE 2 — merged about + skin science + core technology -->
 <section class="skin-science" id="science"><div class="container">
-<div class="section-label reveal">SKIN SCIENCE &amp; CORE TECHNOLOGY</div>
-<h2 class="section-title reveal" style="max-width:700px">皮膚的屏障怎麼突破，<em><span style="font-family:var(--mono)">Renecell</span> 怎麼做到</em></h2>
-<p class="section-sub reveal">停留在角質層只是「表面濕潤」；抵達棘狀層才是「觸發細胞再生」。以下是兩步驟機制。</p>
+<div class="section-label reveal">SKIN SCIENCE</div>
+<h2 class="section-title reveal">你的保養品，<em>從未到達它該去的地方</em></h2>
+<div class="reveal" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:32px">
+<svg width="100%" viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" style="min-width:560px" role="img">
+<title>皮膚剖面比較：一般保養品停留表面，RENE-CELL 滲透至棘狀層</title>
+<desc>左側顯示一般保養品成分停留在角質層表面並被排斥；右側顯示 RENE-CELL 因分子量小，能穿越角質層並抵達棘狀層。</desc>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="36" y="14" width="140" height="26" rx="13" fill="#fbeae6"/>
+<circle cx="52" cy="27" r="8" fill="#f6c8bc"/>
+<text x="52" y="28" text-anchor="middle" dominant-baseline="central" font-size="11" font-family="sans-serif" fill="#a04030">×</text>
+<text x="66" y="28" dominant-baseline="central" font-size="12" font-family="sans-serif" fill="#8a5040">一般保養品</text>
+<rect x="372" y="14" width="140" height="26" rx="13" fill="#E6F1FB"/>
+<circle cx="388" cy="27" r="8" fill="#B5D4F4"/>
+<text x="388" y="28" text-anchor="middle" dominant-baseline="central" font-size="11" font-family="sans-serif" fill="#185FA5">↓</text>
+<text x="402" y="28" dominant-baseline="central" font-size="12" font-family="sans-serif" fill="#185FA5">RENE-CELL</text>
+<line x1="360" y1="44" x2="360" y2="220" stroke="#D8D0C0" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="360" cy="132" r="12" fill="#faf6f0" stroke="#D8D0C0" stroke-width="1"/>
+<text x="360" y="133" text-anchor="middle" dominant-baseline="central" font-size="9" font-family="sans-serif" fill="#9a8060">VS</text>
+<rect x="36" y="90" width="312" height="64" fill="#F2D8C8"/>
+<line x1="36" y1="112" x2="348" y2="112" stroke="#E4C0A8" stroke-width="0.5"/>
+<line x1="36" y1="133" x2="348" y2="133" stroke="#E4C0A8" stroke-width="0.5"/>
+<text x="192" y="122" text-anchor="middle" dominant-baseline="central" font-size="12" font-family="sans-serif" fill="#8a96a0">角質層</text>
+<rect x="36" y="154" width="312" height="8" fill="#F5E8C0"/>
+<rect x="36" y="162" width="312" height="46" fill="#DCE4EA" stroke="#B8C4CC" stroke-width="0.5"/>
+<text x="192" y="185" text-anchor="middle" dominant-baseline="central" font-size="12" font-family="sans-serif" fill="#8a96a0">棘狀層</text>
+<rect x="36" y="208" width="312" height="8" fill="#E8C888" opacity="0.6"/>
+<rect x="372" y="90" width="312" height="64" fill="#F2D8C8"/>
+<line x1="372" y1="112" x2="684" y2="112" stroke="#E4C0A8" stroke-width="0.5"/>
+<line x1="372" y1="133" x2="684" y2="133" stroke="#E4C0A8" stroke-width="0.5"/>
+<rect x="372" y="154" width="312" height="8" fill="#F5E8C0"/>
+<rect x="372" y="162" width="312" height="46" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+<text x="528" y="200" text-anchor="middle" dominant-baseline="central" font-size="12" font-family="sans-serif" fill="#0C447C">棘狀層・細胞再生核心</text>
+<rect x="372" y="208" width="312" height="8" fill="#E8C888"/>
+<circle cx="140" cy="50" r="4" fill="#D4A860"/>
+<circle cx="192" cy="50" r="4" fill="#D4A860"/>
+<circle cx="244" cy="50" r="4" fill="#D4A860"/>
+<line x1="140" y1="54" x2="140" y2="90" stroke="#C46A48" stroke-width="1.3" marker-end="url(#ar)"/>
+<line x1="192" y1="54" x2="192" y2="90" stroke="#C46A48" stroke-width="1.3" marker-end="url(#ar)"/>
+<line x1="244" y1="54" x2="244" y2="90" stroke="#C46A48" stroke-width="1.3" marker-end="url(#ar)"/>
+<circle cx="476" cy="50" r="4" fill="#D4A860"/>
+<circle cx="528" cy="50" r="4" fill="#D4A860"/>
+<circle cx="580" cy="50" r="4" fill="#D4A860"/>
+<line x1="476" y1="58" x2="476" y2="176" stroke="#378ADD" stroke-width="1.3" marker-end="url(#ar)"/>
+<line x1="528" y1="58" x2="528" y2="176" stroke="#378ADD" stroke-width="1.3" marker-end="url(#ar)"/>
+<line x1="580" y1="58" x2="580" y2="176" stroke="#378ADD" stroke-width="1.3" marker-end="url(#ar)"/>
+<text x="192" y="240" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#6a5038">成分停留在角質層表面</text>
+<text x="192" y="260" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#6a5038">未能真正被肌膚吸收</text>
+<text x="528" y="240" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="500" fill="#0C447C">EXA PEPTASOME™ 奈米化專利</text>
+<text x="528" y="260" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="500" fill="#0C447C">讓胜肽分子完整穿越角質層</text>
+</svg>
+</div>
+<div class="reveal" style="text-align:center;margin:36px 0;font-family:var(--mono);font-size:11px;letter-spacing:2px;color:#9a7840">這是怎麼做到的？</div>
+<h3 class="reveal" style="font-size:clamp(20px,2.6vw,28px);font-weight:600;color:#2e2820;margin-bottom:10px;max-width:620px;line-height:1.35"><span style="color:#185FA5">鑽石系列</span>：讓保養品真正抵達它該去的地方</h3>
+<p class="section-sub reveal">皮膚屏障像篩子，500 Da（道爾頓，分子質量單位）以上的分子難以穿越；鑽石系列先疏通角質通道，胜肽才能順勢抵達棘狀層。</p>
 <div class="reveal" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:36px">
-<svg width="100%" viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" style="min-width:560px">
+<svg width="100%" viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg" style="min-width:560px">
 <defs>
 <marker id="ma" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.8" stroke-linecap="round"/></marker>
 <linearGradient id="mgb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F2D8C8"/><stop offset="100%" stop-color="#E4C0A8"/></linearGradient>
 <linearGradient id="mgg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5E8C0"/><stop offset="100%" stop-color="#EDD898"/></linearGradient>
 <linearGradient id="mgs" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#85B7EB"/><stop offset="60%" stop-color="#AAD0F5"/><stop offset="100%" stop-color="#D0E8FC"/></linearGradient>
 <linearGradient id="mgba" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8C888"/><stop offset="100%" stop-color="#D4A860"/></linearGradient>
-<linearGradient id="mgd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EAD8F0"/><stop offset="100%" stop-color="#CAAAE0"/></linearGradient>
 </defs>
-<rect width="720" height="380" fill="#faf6f0"/>
+<rect width="720" height="310" fill="#faf6f0"/>
 <text font-size="9" fill="#A08060" opacity=".65" x="171" y="50" text-anchor="middle" font-family="sans-serif">— 皮膚表面 —</text>
 <rect x="36" y="56" width="270" height="14" fill="url(#mgb)" opacity=".92"/>
 <rect x="36" y="70" width="270" height="14" fill="url(#mgb)" opacity=".85"/>
@@ -293,10 +269,7 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <rect x="28" y="141" width="286" height="74" rx="2" fill="#378ADD" opacity=".12"/>
 <rect x="36" y="144" width="270" height="70" fill="url(#mgs)" opacity=".65"/>
 <rect x="36" y="214" width="270" height="14" fill="url(#mgba)"/>
-<rect x="36" y="228" width="270" height="82" fill="url(#mgd)"/>
-<path d="M46 248Q86 240 126 248Q166 256 206 248Q246 240 286 248" fill="none" stroke="#A080C8" stroke-width=".65" opacity=".5"/>
-<path d="M46 278Q86 270 126 278Q166 286 206 278Q246 270 286 278" fill="none" stroke="#A080C8" stroke-width=".55" opacity=".3"/>
-<rect x="36" y="56" width="270" height="254" fill="none" stroke="#C0A880" stroke-width=".7" opacity=".3"/>
+<rect x="36" y="56" width="270" height="172" fill="none" stroke="#C0A880" stroke-width=".7" opacity=".3"/>
 <line x1="308" y1="56" x2="320" y2="56" stroke="#8A7050" stroke-width=".6"/>
 <line x1="320" y1="56" x2="320" y2="126" stroke="#8A7050" stroke-width=".6"/>
 <line x1="308" y1="126" x2="320" y2="126" stroke="#8A7050" stroke-width=".6"/>
@@ -310,11 +283,6 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <text font-size="14" font-weight="700" fill="#185FA5" x="390" y="170" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">棘狀層 ★</text>
 <text font-size="10" font-weight="500" fill="#2070C0" x="390" y="188" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">細胞再生核心</text>
 <text font-size="8.5" fill="#8A7040" x="324" y="221" dominant-baseline="central" font-family="sans-serif">基底層</text>
-<line x1="308" y1="228" x2="320" y2="228" stroke="#8A7050" stroke-width=".6"/>
-<line x1="320" y1="228" x2="320" y2="310" stroke="#8A7050" stroke-width=".6"/>
-<line x1="308" y1="310" x2="320" y2="310" stroke="#8A7050" stroke-width=".6"/>
-<text font-size="10" fill="#6A5038" x="324" y="263" dominant-baseline="central" font-family="sans-serif">真皮層</text>
-<text font-size="8.5" fill="#8A7050" x="324" y="277" dominant-baseline="central" font-family="sans-serif">膠原 / 彈力蛋白</text>
 <line x1="450" y1="56" x2="716" y2="56" stroke="#C0A880" stroke-width=".5" opacity=".3"/>
 <line x1="450" y1="126" x2="716" y2="126" stroke="#8A7050" stroke-width=".4" stroke-dasharray="3 3" opacity=".18"/>
 <line x1="450" y1="144" x2="716" y2="144" stroke="#378ADD" stroke-width=".7" stroke-dasharray="4 3" opacity=".3"/>
@@ -336,9 +304,6 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
 <text x="480" y="259" text-anchor="middle" dominant-baseline="central" font-size="15" font-family="sans-serif">🏅</text>
 <text x="577" y="250" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="13" font-weight="500" fill="#E6F1FB">細胞更新</text>
 <text x="577" y="269" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="11" fill="#B5D4F4">觸發細胞再生</text>
-<rect x="36" y="324" width="648" height="44" rx="4" fill="#F5F0E8" stroke="#D8D0C0" stroke-width=".6"/>
-<text font-size="9.5" fill="#6A5838" x="360" y="338" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">皮膚屏障像篩子，500 Da 以上的分子進不去。（Da＝道爾頓，分子重量單位）</text>
-<text font-size="9" fill="#9A8060" x="360" y="355" text-anchor="middle" dominant-baseline="central" font-family="sans-serif">鑽石系列先疏通角質通道，其他奈米化胜肽保養品才能順勢深入棘皮層。</text>
 </svg>
 </div>
 <div class="reveal" style="margin-top:40px;max-width:580px;margin-left:auto;margin-right:auto">
