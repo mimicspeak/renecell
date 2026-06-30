@@ -166,7 +166,7 @@ section{padding:100px 24px}.container{max-width:1080px;margin:0 auto;padding:0 2
 .dd-wrap{position:relative}.dd-btn{width:100%;padding:11px 16px;background:var(--surface);border:1px solid var(--border2);color:var(--muted);font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:border-color .2s;outline:none}.dd-btn:hover,.dd-btn.open{border-color:rgba(201,169,110,.5)}.dd-btn.has-value{color:var(--text)}.dd-arrow{font-size:10px;color:var(--muted);transition:transform .2s;flex-shrink:0;margin-left:8px}.dd-btn.open .dd-arrow{transform:rotate(180deg)}.dd-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--surface);border:1px solid rgba(201,169,110,.3);z-index:50;max-height:220px;overflow-y:auto}.dd-menu.show{display:block}.dd-item{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;transition:background .15s;font-size:13px;color:#c8c0b4}.dd-item:hover{background:rgba(201,169,110,.08)}.dd-item.selected{color:var(--gold-lt);background:rgba(201,169,110,.06)}.dd-check{width:14px;height:14px;border:1px solid rgba(255,255,255,.2);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all .15s}.dd-item.selected .dd-check{background:var(--gold);border-color:var(--gold);color:#0e0e0f}
 .form-section{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}.form-section:last-of-type{border-bottom:none;margin-bottom:16px;padding-bottom:0}.form-section-num{font-family:var(--mono);font-size:9px;color:var(--gold);letter-spacing:2px;opacity:.5;margin-bottom:2px}
 footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.footer-inner{max-width:720px;margin:0 auto}.footer-al{font-family:var(--mono);font-size:10px;color:var(--gold);letter-spacing:3px;margin-bottom:16px}.footer-ab{font-size:13px;color:rgba(138,132,120,.4);line-height:2;margin-bottom:28px}.footer-refs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}.footer-ref{font-family:var(--mono);font-size:10px;color:var(--muted);border:1px solid var(--border);padding:5px 12px;transition:color .2s,border-color .2s}.footer-ref:hover{color:var(--gold);border-color:var(--gold)}.footer-bot{font-family:var(--mono);font-size:10px;color:var(--muted);opacity:.4;letter-spacing:2px;text-align:center;line-height:2.2;border-top:1px solid var(--border);padding-top:24px}
-@media(max-width:900px){.tech-row{grid-template-columns:56px 1fr}.t-right{display:none}.skin-grid-4{grid-template-columns:repeat(2,1fr)!important}.prod-grid{grid-template-columns:repeat(3,1fr)}section{padding:72px 20px}.hero{grid-template-columns:1fr}.hero-img{display:none}}
+@media(max-width:900px){.tech-row{grid-template-columns:56px 1fr}.t-right{display:none}.tech-row.row3 .t-right{display:flex;padding-left:0;border-left:none;padding-top:16px;grid-column:1/-1}.tech-row.row3{grid-template-columns:56px 1fr}.skin-grid-4{grid-template-columns:repeat(2,1fr)!important}.prod-grid{grid-template-columns:repeat(3,1fr)}section{padding:72px 20px}.hero{grid-template-columns:1fr}.hero-img{display:none}}
 @media(max-width:640px){
   .hero{display:block;position:relative;min-height:460px;overflow:hidden;padding:0}
   .hero-img{display:block!important;position:absolute!important;inset:0!important}
@@ -311,6 +311,32 @@ footer{background:#0a0a0b;padding:48px 24px;border-top:1px solid var(--border)}.
   <img src="images/tech-diagram.jpg" alt="Renecell 核心技術圖" style="width:100%;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,.1)" onerror="this.style.display='none'">
 </div>
 </div></section>
+
+<!-- INTERNATIONAL CERTIFICATION -->
+<section class="origin-section" id="certs"><div class="container">
+  <div class="section-label reveal">CORE TECHNOLOGY</div>
+  <h2 class="section-title reveal">國際製造<em>品質認證</em></h2>
+  <div class="tech-rows">
+    <div class="tech-row row3 reveal">
+      <div class="t-icon">
+        <div class="t-icon-circle">🏅</div>
+      </div>
+      <div class="t-body">
+        <div class="t-num">國際認證</div>
+        <div class="t-title">三項國際製造品質認證</div>
+        <div class="t-desc">符合<strong>韓國 MFDS</strong> 及歐盟同等標準，從原料到成品每年接受外部稽核。</div>
+      </div>
+      <div class="t-right">
+        <div class="certs">
+          <div class="cert"><div class="cert-dot"></div><div class="cert-code">CGMP</div><div class="cert-name">優良製造規範</div></div>
+          <div class="cert"><div class="cert-dot"></div><div class="cert-code">ISO 9001</div><div class="cert-name">國際品質管理</div></div>
+          <div class="cert"><div class="cert-dot"></div><div class="cert-code">ISO 22716</div><div class="cert-name">化妝品 GMP</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
 <!-- SOCIAL PROOF -->
 <section class="proof-section" id="results"><div class="container">
   <div class="section-label reveal">REAL RESULTS</div>
